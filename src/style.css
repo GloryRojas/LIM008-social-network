@@ -1,3 +1,107 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: Gentium Book Basic;
+}
+.pantallaPrincipal{
+    background:rgba(24, 61, 141, 0.3);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.login{
+    text-align: center;
+}
+.inicia-sesion{
+    display: flex;
+    justify-content: center;
+}
+.titulo{
+        font-style: italic;
+        font-size: 36px;
+}
+h3{
+    font-weight: normal;
+    width: 176px;
+    margin-left: 10%;
+}
+header{
+    height: 60px;
+    display: flex;
+    justify-content: flex-end;
+    background: #9DACFF;
+}
+header label{
+    font-size: 30px;
+    cursor: pointer;
+    display: none;
+}
+#btn-menu{
+    display: none;
+}
+.cabecera{
+  width: 100%;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+.logo{
+    border-radius: 100px;
+    width: 90px; 
+}
+/*.titulo{
+position: absolute;
+width: 162px;
+height: 28px;
+left: 99px;
+top: 15px;
+
+font-family: Gentium Book Basic;
+font-style: italic;
+font-weight: bold;
+line-height: normal;
+font-size: 24px;
+text-align: center;
+}*/
+.menu ul{
+    display: flex;
+    list-style: none;
+}
+.menu a{
+    display: block;
+    padding: 15px 20px;
+    color:#24243e;
+    text-decoration: none;
+}
+.menu a:hover{
+    background: rgba(3, 1, 15, 0.5);
+}
+@media (max-width:768px){
+    header label{
+        display: block;
+    }
+    .menu{
+        
+        background: rgba(67, 67, 70, 0.5);
+        position: absolute;
+        top: 50px;
+        left: 0;
+        width: 50%;
+        transform:translatex(-100%);
+        transition: all 0.3s;
+    }
+    .menu ul{
+        display: block;
+    }
+    #btn-menu:checked ~ .menu{
+        transform:translatex(0%) 
+    }
+}
+
+
+
 .form {
   display: block;
   height: 40px;
