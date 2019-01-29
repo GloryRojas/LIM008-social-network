@@ -27,3 +27,32 @@
 [debug] [2019-01-29T20:58:18.345Z] <<< HTTP RESPONSE 200
 [info] i  hosting: Serving hosting files from: ./src
 [info] +  hosting: Local server: http://localhost:5000
+[debug] [2019-01-29T22:55:41.340Z] ----------------------------------------------------------------------
+[debug] [2019-01-29T22:55:41.408Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\DESKTOP\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js serve
+[debug] [2019-01-29T22:55:41.409Z] CLI Version:   6.3.0
+[debug] [2019-01-29T22:55:41.409Z] Platform:      win32
+[debug] [2019-01-29T22:55:41.410Z] Node Version:  v10.13.0
+[debug] [2019-01-29T22:55:41.496Z] Time:          Tue Jan 29 2019 17:55:41 GMT-0500 (GMT-05:00)
+[debug] [2019-01-29T22:55:41.497Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2019-01-29T22:55:41.739Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-01-29T22:55:41.741Z] > authorizing via signed-in user
+[debug] [2019-01-29T22:55:41.742Z] [iam] checking project certain-drake-112614 for permissions ["firebase.projects.get"]
+[debug] [2019-01-29T22:55:41.749Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2019-01-29T22:55:41.750Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2019-01-29T22:55:43.401Z] <<< HTTP RESPONSE 200
+[debug] [2019-01-29T22:55:43.591Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/certain-drake-112614:testIamPermissions  
+
+[debug] [2019-01-29T22:55:44.924Z] <<< HTTP RESPONSE 200
+[debug] [2019-01-29T22:55:44.927Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/certain-drake-112614  
+ 
+[debug] [2019-01-29T22:55:45.691Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from 'C:\Users\DESKTOP\Documents\Laboratoria\LIM008-social-network'...
+[info] 
+[debug] [2019-01-29T22:55:45.908Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/522299815615/clients/_:getWebAppConfig  
+ 
+[debug] [2019-01-29T22:55:47.257Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: ./src
+[info] +  hosting: Local server: http://localhost:5000
