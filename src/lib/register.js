@@ -64,4 +64,4 @@ const logWithGoogle = (event) => {
   });
 }
 
-window.onload = inicializar;
+// window.onload = inicializar;
