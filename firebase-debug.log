@@ -1,51 +1,29 @@
-[debug] [2019-01-29T15:47:43.037Z] ----------------------------------------------------------------------
-[debug] [2019-01-29T15:47:43.040Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Glory\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js serve
-[debug] [2019-01-29T15:47:43.040Z] CLI Version:   6.3.0
-[debug] [2019-01-29T15:47:43.040Z] Platform:      win32
-[debug] [2019-01-29T15:47:43.040Z] Node Version:  v10.14.1
-[debug] [2019-01-29T15:47:43.042Z] Time:          Tue Jan 29 2019 10:47:43 GMT-0500 (GMT-05:00)
-[debug] [2019-01-29T15:47:43.042Z] ----------------------------------------------------------------------
+[debug] [2019-01-29T20:58:11.660Z] ----------------------------------------------------------------------
+[debug] [2019-01-29T20:58:11.677Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Laboratoria\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js serve
+[debug] [2019-01-29T20:58:11.679Z] CLI Version:   6.3.0
+[debug] [2019-01-29T20:58:11.680Z] Platform:      win32
+[debug] [2019-01-29T20:58:11.680Z] Node Version:  v10.13.0
+[debug] [2019-01-29T20:58:11.689Z] Time:          Tue Jan 29 2019 15:58:11 GMT-0500 (GMT-05:00)
+[debug] [2019-01-29T20:58:11.689Z] ----------------------------------------------------------------------
 [debug] 
-[debug] [2019-01-29T15:47:43.051Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
-[debug] [2019-01-29T15:47:43.052Z] > authorizing via signed-in user
-[debug] [2019-01-29T15:47:43.052Z] [iam] checking project lim008-social-network for permissions ["firebase.projects.get"]
-[debug] [2019-01-29T15:47:43.054Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/lim008-social-network:testIamPermissions  
+[debug] [2019-01-29T20:58:11.762Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-01-29T20:58:11.765Z] > authorizing via signed-in user
+[debug] [2019-01-29T20:58:11.766Z] [iam] checking project lim008-social-network for permissions ["firebase.projects.get"]
+[debug] [2019-01-29T20:58:11.780Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2019-01-29T20:58:11.782Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2019-01-29T20:58:13.275Z] <<< HTTP RESPONSE 200
+[debug] [2019-01-29T20:58:13.306Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/lim008-social-network:testIamPermissions  
 
-[debug] [2019-01-29T15:47:43.619Z] <<< HTTP RESPONSE 200
-[debug] [2019-01-29T15:47:43.621Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/lim008-social-network  
+[debug] [2019-01-29T20:58:15.320Z] <<< HTTP RESPONSE 200
+[debug] [2019-01-29T20:58:15.328Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/lim008-social-network  
  
-[debug] [2019-01-29T15:47:43.999Z] <<< HTTP RESPONSE 200
+[debug] [2019-01-29T20:58:16.604Z] <<< HTTP RESPONSE 200
 [info] 
-[info] === Serving from 'C:\Users\Glory\Documents\Laboratoria 18-19\LIM008-social-network'...
+[info] === Serving from 'C:\Users\Laboratoria\Documents\Projects\LIM008-social-network'...
 [info] 
-[debug] [2019-01-29T15:47:44.004Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/3950063519/clients/_:getWebAppConfig  
+[debug] [2019-01-29T20:58:16.625Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/3950063519/clients/_:getWebAppConfig  
  
-[debug] [2019-01-29T15:47:44.536Z] <<< HTTP RESPONSE 200
+[debug] [2019-01-29T20:58:18.345Z] <<< HTTP RESPONSE 200
 [info] i  hosting: Serving hosting files from: ./src
 [info] +  hosting: Local server: http://localhost:5000
-[debug] [2019-01-29T16:13:12.206Z] ----------------------------------------------------------------------
-[debug] [2019-01-29T16:13:12.209Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Glory\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js serve
-[debug] [2019-01-29T16:13:12.209Z] CLI Version:   6.3.0
-[debug] [2019-01-29T16:13:12.209Z] Platform:      win32
-[debug] [2019-01-29T16:13:12.209Z] Node Version:  v10.14.1
-[debug] [2019-01-29T16:13:12.211Z] Time:          Tue Jan 29 2019 11:13:12 GMT-0500 (GMT-05:00)
-[debug] [2019-01-29T16:13:12.211Z] ----------------------------------------------------------------------
-[debug] 
-[debug] [2019-01-29T16:13:12.220Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
-[debug] [2019-01-29T16:13:12.221Z] > authorizing via signed-in user
-[debug] [2019-01-29T16:13:12.221Z] [iam] checking project lim008-social-network for permissions ["firebase.projects.get"]
-[debug] [2019-01-29T16:13:12.223Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/lim008-social-network:testIamPermissions  
-
-[debug] [2019-01-29T16:13:12.814Z] <<< HTTP RESPONSE 200
-[debug] [2019-01-29T16:13:12.818Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/lim008-social-network  
- 
-[debug] [2019-01-29T16:13:13.401Z] <<< HTTP RESPONSE 200
-[info] 
-[info] === Serving from 'C:\Users\Glory\Documents\Laboratoria 18-19\LIM008-social-network'...
-[info] 
-[debug] [2019-01-29T16:13:13.408Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/3950063519/clients/_:getWebAppConfig  
- 
-[debug] [2019-01-29T16:13:14.094Z] <<< HTTP RESPONSE 200
-[warn] !  hosting: Port 5000 is not available. Trying another port...
-[info] i  hosting: Serving hosting files from: ./src
-[info] +  hosting: Local server: http://localhost:5005
