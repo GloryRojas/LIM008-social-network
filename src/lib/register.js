@@ -10,7 +10,7 @@ const formRegister = `
         </form>
       </div>
       <div class="">
-        <button class="form" id="btn-login" type="submit"><span>Ingresa con Google</span></button>
+        <button id="btn-google" class="form" type="submit"><span>Ingresa con Google</span></button>
       </div>
     </fieldset>
 
@@ -20,9 +20,12 @@ const formIn = document.getElementById('form-in');
 formIn.innerHTML = formRegister;
 
 let formAutenticacion;
+let btnGoogle;
 const inicializar = () => {
   formAutenticacion = document.getElementById("form-autenticacion");
   formAutenticacion.addEventListener("submit", autentificar);
+  btnGoogle = document.getElementById("btn-google");
+  btnGoogle.addEventListener("submit", logWithGoogle);
 }
 
 // Iniciar sesión con cuenta registrada
@@ -40,37 +43,24 @@ const autentificar = (event) => {
     })
 }
 
-const logWithGoogle = () => {
+const logWithGoogle = (event) => {
   event.preventDefault();
   var provider = new firebase.auth.GoogleAuthProvider();
-  firebase.auth().signInWithRedirect(provider);
-  firebase.auth().getRedirectResult()
-  .then((result) => {
-      // This gives you a Google Access Token. You can use it to access the Google API.
-      if (result.credential) {
-          var token = result.credential.accessToken;
-          console.log('token ' + token);
-      }
-      // The signed-in user info.
-      var user = result.user;
-      console.log('user ' + user);
-      // if success redirect to
-      $state.go('maps-fullwidth');
-      window.location = "home.html"
-      // ...
-  }).catch(function (error) {
-      // Handle Errors here.
-      var errorCode = error.code;
-      console.log(errorCode);
-      var errorMessage = error.message;
-      // The email of the user's account used.
-      console.log(errorMessage);
-      var email = error.email;
-      console.log(email);
-      // The firebase.auth.AuthCredential type that was used.
-      var credential = error.credential;
-      console.log(credential);
-      // ...
+  firebase.auth().signInWithPopup(provider).then(function(result) {
+    // This gives you a Google Access Token. You can use it to access the Google API.
+    var token = result.credential.accessToken;
+    // The signed-in user info.
+    var user = result.user;
+    // ...
+  }).catch(function(error) {
+    // Handle Errors here.
+    var errorCode = error.code;
+    var errorMessage = error.message;
+    // The email of the user's account used.
+    var email = error.email;
+    // The firebase.auth.AuthCredential type that was used.
+    var credential = error.credential;
+    // ...
   });
 }
 
