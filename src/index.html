@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>REDSOCIAL</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="" id= "form-in"></div>
+<!--
+  
+  <fieldset>
+    <div>
+      <form id="form-autenticacion" class="" action="index.html" method="post">
+        <h3>Inicia sesión en tu cuenta</h3>
+        <input class="form" type="text" id="email" placeholder="Correo electrónico"></input>
+        <input class="form" type="password" id="password" placeholder="Contraseña"></input>
+        <button class="form" id="btn-login" type="submit"><span>Ingresa</span></button>
+      </form>
+    </div>
+    <div class="">
+      <button class="form" id="btn-google" type="submit"><span>Ingresa con Google</span></button>
+    </div>
+  </fieldset>
+-->
+  <script src="https://www.gstatic.com/firebasejs/5.8.1/firebase.js"></script>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyAs6PO8-5P1Y3i_qX_jaXnUeF44OYmpgZc",
+      authDomain: "lim008-social-network.firebaseapp.com",
+      databaseURL: "https://lim008-social-network.firebaseio.com",
+      projectId: "lim008-social-network",
+      storageBucket: "lim008-social-network.appspot.com",
+      messagingSenderId: "3950063519"
+    };
+    firebase.initializeApp(config);
+  </script>
+  <script type="module" src="main.js"></script>
+  <script type="module" src="lib/templatesLogin.js"></script>
+  <script type="module" src="lib/index.js"></script>
+</body>
+</html>
