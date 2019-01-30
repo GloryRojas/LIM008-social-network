@@ -1,5 +1,5 @@
 // Iniciar sesión con cuenta registrada
-export const autentificar = (event) => {
+export const logWithPasswordAndEmail = (event) => {
   event.preventDefault();
   let usuario = event.target.email.value;
   let contrasena = event.target.password.value;
@@ -57,5 +57,26 @@ export const logWithFacebook = (event) =>{
     // The firebase.auth.AuthCredential type that was used.
     var credential = error.credential;
     // ...
+  });
+}
+
+// Registrarse con correo y contraseña
+
+export const registerWithEmail = (email, password) => {
+  firebase.auth().createUserWithEmailAndPassword(email, password)
+  .then(result => {
+
+
+    const configuracion = {
+      url: 'http://localhost:3000/'
+    }
+    result.user.sendEmailVerification(configuracion).catch(function(error) {
+      console.log('No se pudo enviar email')
+    });
+
+    firebase.auth().signOut()
+
+  }).catch(function(error) {
+    console.log(error.message)
   });
 }
