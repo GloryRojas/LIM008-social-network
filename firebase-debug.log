@@ -1,74 +1,13 @@
-<<<<<<< HEAD
-[debug] [2019-01-29T09:38:05.758Z] ----------------------------------------------------------------------
-[debug] [2019-01-29T09:38:05.762Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Laboratoria\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js login
-[debug] [2019-01-29T09:38:05.762Z] CLI Version:   6.3.0
-[debug] [2019-01-29T09:38:05.762Z] Platform:      win32
-[debug] [2019-01-29T09:38:05.762Z] Node Version:  v10.13.0
-[debug] [2019-01-29T09:38:05.764Z] Time:          Tue Jan 29 2019 04:38:05 GMT-0500 (GMT-05:00)
-[debug] [2019-01-29T09:38:05.765Z] ----------------------------------------------------------------------
+[debug] [2019-01-30T01:51:49.256Z] ----------------------------------------------------------------------
+[debug] [2019-01-30T01:51:49.260Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Laboratoria\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js serve
+[debug] [2019-01-30T01:51:49.260Z] CLI Version:   6.3.0
+[debug] [2019-01-30T01:51:49.260Z] Platform:      win32
+[debug] [2019-01-30T01:51:49.260Z] Node Version:  v10.13.0
+[debug] [2019-01-30T01:51:49.262Z] Time:          Tue Jan 29 2019 20:51:49 GMT-0500 (GMT-05:00)
+[debug] [2019-01-30T01:51:49.262Z] ----------------------------------------------------------------------
 [debug] 
-[info] 
-[info] Visit this URL on any device to log in:
-[info] https://accounts.google.com/o/oauth2/auth?client_id=563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com&scope=email%20openid%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fcloudplatformprojects.readonly%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Ffirebase%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fcloud-platform&response_type=code&state=948594231&redirect_uri=http%3A%2F%2Flocalhost%3A9005
-[info] 
-[info] Waiting for authentication...
-=======
-[debug] [2019-01-29T20:58:11.660Z] ----------------------------------------------------------------------
-[debug] [2019-01-29T20:58:11.677Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Laboratoria\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js serve
-[debug] [2019-01-29T20:58:11.679Z] CLI Version:   6.3.0
-[debug] [2019-01-29T20:58:11.680Z] Platform:      win32
-[debug] [2019-01-29T20:58:11.680Z] Node Version:  v10.13.0
-[debug] [2019-01-29T20:58:11.689Z] Time:          Tue Jan 29 2019 15:58:11 GMT-0500 (GMT-05:00)
-[debug] [2019-01-29T20:58:11.689Z] ----------------------------------------------------------------------
-[debug] 
-[debug] [2019-01-29T20:58:11.762Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
-[debug] [2019-01-29T20:58:11.765Z] > authorizing via signed-in user
-[debug] [2019-01-29T20:58:11.766Z] [iam] checking project lim008-social-network for permissions ["firebase.projects.get"]
-[debug] [2019-01-29T20:58:11.780Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
-[debug] [2019-01-29T20:58:11.782Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
- <request body omitted>
-[debug] [2019-01-29T20:58:13.275Z] <<< HTTP RESPONSE 200
-[debug] [2019-01-29T20:58:13.306Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/lim008-social-network:testIamPermissions  
+[debug] [2019-01-30T01:51:49.276Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-01-30T01:51:49.277Z] > authorizing via signed-in user
+[debug] [2019-01-30T01:51:49.277Z] [iam] checking project lim008-social-network for permissions ["firebase.projects.get"]
+[debug] [2019-01-30T01:51:49.280Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/lim008-social-network:testIamPermissions  
 
-[debug] [2019-01-29T20:58:15.320Z] <<< HTTP RESPONSE 200
-[debug] [2019-01-29T20:58:15.328Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/lim008-social-network  
- 
-[debug] [2019-01-29T20:58:16.604Z] <<< HTTP RESPONSE 200
-[info] 
-[info] === Serving from 'C:\Users\Laboratoria\Documents\Projects\LIM008-social-network'...
-[info] 
-[debug] [2019-01-29T20:58:16.625Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/3950063519/clients/_:getWebAppConfig  
- 
-[debug] [2019-01-29T20:58:18.345Z] <<< HTTP RESPONSE 200
-[info] i  hosting: Serving hosting files from: ./src
-[info] +  hosting: Local server: http://localhost:5000
-[debug] [2019-01-29T22:55:41.340Z] ----------------------------------------------------------------------
-[debug] [2019-01-29T22:55:41.408Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\DESKTOP\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js serve
-[debug] [2019-01-29T22:55:41.409Z] CLI Version:   6.3.0
-[debug] [2019-01-29T22:55:41.409Z] Platform:      win32
-[debug] [2019-01-29T22:55:41.410Z] Node Version:  v10.13.0
-[debug] [2019-01-29T22:55:41.496Z] Time:          Tue Jan 29 2019 17:55:41 GMT-0500 (GMT-05:00)
-[debug] [2019-01-29T22:55:41.497Z] ----------------------------------------------------------------------
-[debug] 
-[debug] [2019-01-29T22:55:41.739Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
-[debug] [2019-01-29T22:55:41.741Z] > authorizing via signed-in user
-[debug] [2019-01-29T22:55:41.742Z] [iam] checking project certain-drake-112614 for permissions ["firebase.projects.get"]
-[debug] [2019-01-29T22:55:41.749Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
-[debug] [2019-01-29T22:55:41.750Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
- <request body omitted>
-[debug] [2019-01-29T22:55:43.401Z] <<< HTTP RESPONSE 200
-[debug] [2019-01-29T22:55:43.591Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/certain-drake-112614:testIamPermissions  
-
-[debug] [2019-01-29T22:55:44.924Z] <<< HTTP RESPONSE 200
-[debug] [2019-01-29T22:55:44.927Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/certain-drake-112614  
- 
-[debug] [2019-01-29T22:55:45.691Z] <<< HTTP RESPONSE 200
-[info] 
-[info] === Serving from 'C:\Users\DESKTOP\Documents\Laboratoria\LIM008-social-network'...
-[info] 
-[debug] [2019-01-29T22:55:45.908Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/522299815615/clients/_:getWebAppConfig  
- 
-[debug] [2019-01-29T22:55:47.257Z] <<< HTTP RESPONSE 200
-[info] i  hosting: Serving hosting files from: ./src
-[info] +  hosting: Local server: http://localhost:5000
->>>>>>> 907bf58580b87033d325ae6d1a2d13d42c35769b
