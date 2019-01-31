@@ -61,22 +61,23 @@ export const logWithFacebook = (event) =>{
 }
 
 // Registrarse con correo y contraseña
+export const registerWithEmail = (event) => {
+  event.preventDefault();
+  let user = event.target.correo.value;
+  let password1 = event.target.contrasena.value;
 
-export const registerWithEmail = (email, password) => {
-  firebase.auth().createUserWithEmailAndPassword(email, password)
+  firebase.auth().createUserWithEmailAndPassword(user, password1)
   .then(result => {
-
-
-    const configuracion = {
-      url: 'http://localhost:3000/'
-    }
-    result.user.sendEmailVerification(configuracion).catch(function(error) {
+    result.user.sendEmailVerification()
+    .then(result => {
+      alert("Email enviado, revise su bandeja");
+    })
+    .catch((error) => {
       console.log('No se pudo enviar email')
     });
-
-    firebase.auth().signOut()
-
+    // firebase.auth().signOut()
   }).catch(function(error) {
-    console.log(error.message)
+    alert(error.message)
+    console.log(error.message);
   });
-}
+};
