@@ -51,18 +51,14 @@ registrate.addEventListener("click", () => {
   formIn.innerHTML = formRegister;
 });
 
-let formAutenticacion;
-let btnGoogle;
-let btnFacebook;
-let formRegistrar;
 const inicializar = () => {
-  formAutenticacion = document.getElementById("form-autenticacion");
+  const formAutenticacion = document.getElementById("form-autenticacion");
   formAutenticacion.addEventListener("submit", logWithPasswordAndEmail);
-  btnGoogle = document.getElementById("btn-google");
+  const btnGoogle = document.getElementById("btn-google");
   btnGoogle.addEventListener("click", logWithGoogle);
-  btnFacebook = document.getElementById("btn-facebook");
+  const btnFacebook = document.getElementById("btn-facebook");
   btnFacebook.addEventListener("click", logWithFacebook);
-  formRegistrar = document.getElementById("form-registrar");
+  const formRegistrar = document.getElementById("form-registrar");
   formRegistrar.addEventListener("submit", registerWithEmail);
 }
 
