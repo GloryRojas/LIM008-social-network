@@ -1,5 +1,5 @@
+/* Estilos formulario login */
 @import url('https://fonts.googleapis.com/css?family=Gentium+Book+Basic');
-
 *{
   margin:0;
   padding:0;
@@ -7,9 +7,10 @@
   font-family: 'Gentium Book Basic', serif;
 }
 body{
-  background-color: #9DACFF;
+  background-color: #FFFFFF;
 }
 .iniciar-sesion{
+  background-color: #9DACFF;
   position: absolute;
   width: 360px;
   height: 640px;
@@ -87,4 +88,25 @@ body{
 .iconFacebook{
   box-sizing: border-box;
   float: left;
+}
+/* Estilos formulario Registrar */
+.registrarse{
+  background: #FFFFFF;
+  width: 360px;
+  height: 640px;
+  left: 0px;
+  top: 0px;
+}
+.form-registrar{
+  display: inline-block
+}
+.logo-registro{
+  margin-left: 40px;
+  margin-top: 35px;
+}
+.titulo-registrarse{
+  font-style: normal;
+  font-weight: bold;
+  line-height: normal;
+  font-size: 18px;
 }
