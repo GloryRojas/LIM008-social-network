@@ -225,3 +225,28 @@
 [debug] [2019-02-01T14:51:41.084Z] <<< HTTP RESPONSE 200
 [info] i  hosting: Serving hosting files from: ./src
 [info] +  hosting: Local server: http://localhost:5000
+[debug] [2019-02-01T15:25:48.378Z] ----------------------------------------------------------------------
+[debug] [2019-02-01T15:25:48.380Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Glory\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js serve
+[debug] [2019-02-01T15:25:48.381Z] CLI Version:   6.3.0
+[debug] [2019-02-01T15:25:48.381Z] Platform:      win32
+[debug] [2019-02-01T15:25:48.381Z] Node Version:  v10.14.1
+[debug] [2019-02-01T15:25:48.382Z] Time:          Fri Feb 01 2019 10:25:48 GMT-0500 (GMT-05:00)
+[debug] [2019-02-01T15:25:48.382Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2019-02-01T15:25:48.392Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-02-01T15:25:48.393Z] > authorizing via signed-in user
+[debug] [2019-02-01T15:25:48.393Z] [iam] checking project lim008-social-network for permissions ["firebase.projects.get"]
+[debug] [2019-02-01T15:25:48.395Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/lim008-social-network:testIamPermissions  
+
+[debug] [2019-02-01T15:25:49.095Z] <<< HTTP RESPONSE 200
+[debug] [2019-02-01T15:25:49.096Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/lim008-social-network  
+ 
+[debug] [2019-02-01T15:25:49.483Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from 'C:\Users\Glory\Documents\Laboratoria 18-19\LIM008-social-network'...
+[info] 
+[debug] [2019-02-01T15:25:49.491Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/3950063519/clients/_:getWebAppConfig  
+ 
+[debug] [2019-02-01T15:25:50.178Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: ./src
+[info] +  hosting: Local server: http://localhost:5000
