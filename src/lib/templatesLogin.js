@@ -1,38 +1,65 @@
-import { autentificar } from './autentificacion.js';
-import { logWithGoogle } from './autentificacion.js';
-import { logWithFacebook} from './autentificacion.js';
+import { logWithPasswordAndEmail, logWithGoogle, logWithFacebook, registerWithEmail } from './autentificacion.js';
+
+export const formLogin = `
+  <section>
+    <div class="login">
+      <div class="iniciar-sesion">
+        <div class="cabecera-login">
+          <img class="logo" src="img/logo.png" alt="">
+          <h1 class="titulo">Infocourse</h1>
+          <span class="slogan">Comparte tus conocimientos y aprende de otros</span>
+        </div>
+        <form id="form-autenticacion" class="form-autenticacion" action="index.html" method="post">
+          <input class="form" type="text" id="email" placeholder="Correo electrónico"></input>
+          <input class="form" type="password" id="password" placeholder="Contraseña"></input>
+          <button class="btn-login" id="btn-login" type="submit">INICIAR SESIÓN</button>
+          <div class="iconos">
+            <button id="btn-google" class="formGoogle" ><img class = "iconGoogle" src="img/icono-google.png">Iniciar sesión con Google</button>
+            <button id="btn-facebook" class="formFacebook"><img class = "iconFacebook" src="img/icono-face.png">Iniciar sesión con Facebook</button><br><br>
+            <a>¿No tienes cuenta?</a>
+            <a id = "registrate">Regístrate AQUI</a>
+          </div><br>
+        </form>
+      </div>
+    </div>
+  </section>
+`;
 
 export const formRegister = `
-
-   <fieldset>
-     <div>
-       <form id="form-autenticacion" class="" action="index.html" method="post">
-         <h3>Inicia sesión en tu cuenta</h3>
-         <input class="form" type="text" id="email" placeholder="Correo electrónico"></input>
-         <input class="form" type="password" id="password" placeholder="Contraseña"></input>
-         <button class="form" id="btn-login" type="submit"><span>Ingresa</span></button>
-       </form>
-     </div>
-     <div class="">
-       <button id="btn-google" class="form" type="submit"><span>Ingresa con Google</span></button>
-       <button id="btn-facebook" class="form" type="submit"><span>Ingresa con Facebook</span></button>
-     </div>
-   </fieldset>
-
+   <div>
+    <form id="form-registrar" class="" action="index.html" method="post">
+      <fieldset>
+        <h4>Registrate con tu direccion de correo electronico</h4>
+        <input class="form" type="text" id="correo" placeholder="Correo electrónico"></input>
+        <input class="form" type="password" id="contrasena" placeholder="Contraseña"></input>
+        <input class="form" type="password" id="nombres" placeholder="Nombres"></input>
+        <h6>Fecha de Nacimiento</h6>
+        <input class="form" type="text" id="dia" placeholder="Día"></input>
+        <input class="form" type="password" id="mes" placeholder="Mes"></input>
+        <input class="form" type="text" id="año" placeholder="Año"></input>
+        <button class="form" id="btn-register" type="submit"><span>REGISTRATE</span></button>
+      </fieldset>
+    </form>
+   </div>
 `;
 
 const formIn = document.getElementById('form-in');
-formIn.innerHTML = formRegister;
-let formAutenticacion;
-let btnGoogle;
-let btnFacebook;
+formIn.innerHTML = formLogin;
+
+const registrate = document.getElementById("registrate");
+registrate.addEventListener("click", () => {
+  formIn.innerHTML = formRegister;
+});
+
 const inicializar = () => {
-  formAutenticacion = document.getElementById("form-autenticacion");
-  formAutenticacion.addEventListener("submit", autentificar);
-  btnGoogle = document.getElementById("btn-google");
+  const formAutenticacion = document.getElementById("form-autenticacion");
+  formAutenticacion.addEventListener("submit", logWithPasswordAndEmail);
+  const btnGoogle = document.getElementById("btn-google");
   btnGoogle.addEventListener("click", logWithGoogle);
-  btnFacebook = document.getElementById("btn-facebook");
-  btnFacebook.addEventListener("click",logWithFacebook);
+  const btnFacebook = document.getElementById("btn-facebook");
+  btnFacebook.addEventListener("click", logWithFacebook);
+  const formRegistrar = document.getElementById("form-registrar");
+  formRegistrar.addEventListener("submit", registerWithEmail);
 }
 
 window.onload = inicializar;

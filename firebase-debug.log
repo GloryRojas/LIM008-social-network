@@ -1,0 +1,25 @@
+[debug] [2019-02-01T19:24:14.329Z] ----------------------------------------------------------------------
+[debug] [2019-02-01T19:24:14.349Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Laboratoria\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js serve
+[debug] [2019-02-01T19:24:14.351Z] CLI Version:   6.3.0
+[debug] [2019-02-01T19:24:14.352Z] Platform:      win32
+[debug] [2019-02-01T19:24:14.352Z] Node Version:  v10.13.0
+[debug] [2019-02-01T19:24:14.362Z] Time:          Fri Feb 01 2019 14:24:14 GMT-0500 (GMT-05:00)
+[debug] [2019-02-01T19:24:14.362Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2019-02-01T19:24:14.442Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-02-01T19:24:14.445Z] > authorizing via signed-in user
+[debug] [2019-02-01T19:24:14.446Z] [iam] checking project lim008-social-network for permissions ["firebase.projects.get"]
+[debug] [2019-02-01T19:24:14.461Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/lim008-social-network:testIamPermissions  
+
+[debug] [2019-02-01T19:24:16.547Z] <<< HTTP RESPONSE 200
+[debug] [2019-02-01T19:24:16.563Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/lim008-social-network  
+ 
+[debug] [2019-02-01T19:24:19.235Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from 'C:\Users\Laboratoria\Documents\Projects\LIM008-social-network'...
+[info] 
+[debug] [2019-02-01T19:24:19.248Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/3950063519/clients/_:getWebAppConfig  
+ 
+[debug] [2019-02-01T19:24:20.756Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: ./src
+[info] +  hosting: Local server: http://localhost:5000
