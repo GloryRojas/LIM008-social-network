@@ -72,3 +72,25 @@ firebase.auth().signOut().then(() => {
 .catch(err => console.log('Error logout', err))
 };
 
+// Registrarse con correo y contraseña
+export const registerWithEmail = (event) => {
+  event.preventDefault();
+  let user = event.target.correo.value;
+  let password1 = event.target.contrasena.value;
+
+  firebase.auth().createUserWithEmailAndPassword(user, password1)
+  .then(result => {
+    let user = firebase.auth().currentUser;
+    user.sendEmailVerification()
+      .then(result => {
+        alert("Email enviado, revise su bandeja");
+      })
+    .catch((error) => {
+      console.log('No se pudo enviar email')
+    });
+    // firebase.auth().signOut()
+  }).catch(function(error) {
+    alert(error.message)
+    console.log(error.message);
+  });
+};
