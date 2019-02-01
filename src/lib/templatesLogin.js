@@ -17,7 +17,7 @@ export const formLogin = `
           <button id="btn-google" class="formGoogle" ><img class = "iconGoogle" src="img/icono-google.png">Iniciar sesión con Google</button>
           <button id="btn-facebook" class="formFacebook"><img class = "iconFacebook" src="img/icono-face.png">Iniciar sesión con Facebook</button><br><br>
           <a>¿No tienes cuenta?</a>
-          <a>Regístrate AQUI</a>
+          <a >Regístrate AQUI</a>
         </div><br> 
       </form>
     </div>
@@ -25,7 +25,8 @@ export const formLogin = `
 </section>
 `;
 
-export const formRegister = `
+
+/*export const formRegister = `
    <div>
     <form id="form-registrar" class="" action="index.html" method="post">
       <fieldset>
@@ -41,12 +42,12 @@ export const formRegister = `
       </fieldset>
     </form>
    </div>
-`;
+`;*/
 const formIn = document.getElementById('form-in');
 formIn.innerHTML = formLogin;
 
-const formRegisterOne = document.getElementById("form-register");
-formRegisterOne.innerHTML = formRegister;
+/*const formRegisterOne = document.getElementById("form-register");
+formRegisterOne.innerHTML = formRegister;*/
 
 let formAutenticacion;
 let btnGoogle;
