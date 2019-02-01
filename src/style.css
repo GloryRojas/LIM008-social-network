@@ -1,7 +1,68 @@
-.form {
-  display: block;
-  height: 40px;
-  width: 220px;
-  padding: 2px;
-  margin: 10px;
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family:Apple Chancery, cursive ;
+
+}
+header{
+    height: 50px;
+    display: flex;
+    justify-content: flex-end;
+    background: #0f0c29; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #0f0c29, #302b63, #24243e); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #0f0c29, #302b63, #24243e); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+header label{
+    font-size: 30px;
+    cursor: pointer;
+    display: none;
+}
+#btn-menu{
+    display: none;
+}
+.cabecera{
+  width: 100%;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+.logo{
+    border-radius: 100px;
+    width: 20%  
+}
+.menu ul{
+    display: flex;
+    list-style: none;
+}
+.menu a{
+    display: block;
+    padding: 15px 20px;
+    color:#24243e;
+    text-decoration: none;
+}
+.menu a:hover{
+    background: rgba(3, 1, 15, 0.5);
+}
+@media (max-width:768px){
+    header label{
+        display: block;
+    }
+    .menu{
+        
+        background: rgba(67, 67, 70, 0.5);
+        position: absolute;
+        top: 50px;
+        left: 0;
+        width: 50%;
+        transform:translatex(-100%);
+        transition: all 0.3s;
+    }
+    .menu ul{
+        display: block;
+    }
+    #btn-menu:checked ~ .menu{
+        transform:translatex(0%) 
+    }
 }
