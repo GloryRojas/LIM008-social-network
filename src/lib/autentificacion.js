@@ -1,5 +1,5 @@
 // Iniciar sesión con cuenta registrada
-export const autentificar = (event) => {
+export const logWithPasswordAndEmail = (event) => {
   event.preventDefault();
   let usuario = event.target.email.value;
   let contrasena = event.target.password.value;
@@ -59,3 +59,16 @@ export const logWithFacebook = (event) =>{
     // ...
   });
 }
+
+export const cerrarSesion =(user) => {
+  
+//event.preventDefault();
+firebase.auth().signOut().then(() => {
+  //profile.classList.add("hidden");
+  //profile.classList.remove("show");
+  location.href = 'index.html';
+
+})
+.catch(err => console.log('Error logout', err))
+};
+

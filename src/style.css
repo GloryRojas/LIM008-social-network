@@ -3,7 +3,19 @@
     padding:0;
     box-sizing: border-box;
     font-family:Apple Chancery, cursive ;
-
+}
+    body{
+    min-height :100vh;
+    display: flex;
+}
+form{
+    margin: auto;
+    width: 50%;
+    max-width: 500px;
+    background: #F3F3F3;
+    padding: 30px;
+    border: 1px solid rgba(0,0,0,0.2);
+    text-align: center;
 }
 header{
     height: 50px;
@@ -20,6 +32,10 @@ header label{
 }
 #btn-menu{
     display: none;
+}
+.cabecera1{
+    text-align: center;
+    margin-bottom: 20px;
 }
 .cabecera{
   width: 100%;
