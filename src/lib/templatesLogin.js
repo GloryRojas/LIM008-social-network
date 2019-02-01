@@ -51,15 +51,18 @@ registrate.addEventListener("click", () => {
   formIn.innerHTML = formRegister;
 });
 
-const inicializar = () => {
-  const formAutenticacion = document.getElementById("form-autenticacion");
-  formAutenticacion.addEventListener("submit", logWithPasswordAndEmail);
-  const btnGoogle = document.getElementById("btn-google");
-  btnGoogle.addEventListener("click", logWithGoogle);
-  const btnFacebook = document.getElementById("btn-facebook");
-  btnFacebook.addEventListener("click", logWithFacebook);
-  const formRegistrar = document.getElementById("form-registrar");
-  formRegistrar.addEventListener("submit", registerWithEmail);
-}
+// Inicia sesión con Correo y contraseña
+const formAutenticacion = document.getElementById("form-autenticacion");
+formAutenticacion.addEventListener("submit", logWithPasswordAndEmail);
 
-window.onload = inicializar;
+// Inicia sesion con cuenta Google
+const btnGoogle = document.getElementById("btn-google");
+btnGoogle.addEventListener("click", logWithGoogle);
+
+// Inicia sesion con cuenta Facebook
+const btnFacebook = document.getElementById("btn-facebook");
+btnFacebook.addEventListener("click", logWithFacebook);
+
+
+const formRegistrar = document.getElementById("form-registrar");
+formRegistrar.addEventListener("submit", registerWithEmail);
