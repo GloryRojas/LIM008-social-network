@@ -68,10 +68,11 @@ export const registerWithEmail = (event) => {
 
   firebase.auth().createUserWithEmailAndPassword(user, password1)
   .then(result => {
-    result.user.sendEmailVerification()
-    .then(result => {
-      alert("Email enviado, revise su bandeja");
-    })
+    let user = firebase.auth().currentUser;
+    user.sendEmailVerification()
+      .then(result => {
+        alert("Email enviado, revise su bandeja");
+      })
     .catch((error) => {
       console.log('No se pudo enviar email')
     });

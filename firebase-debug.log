@@ -172,3 +172,32 @@
 [debug] [2019-01-31T15:47:21.683Z] <<< HTTP RESPONSE 200
 [info] i  hosting: Serving hosting files from: ./src
 [info] +  hosting: Local server: http://localhost:5000
+[debug] [2019-01-31T19:20:32.455Z] ----------------------------------------------------------------------
+[debug] [2019-01-31T19:20:32.474Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Laboratoria\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js serve
+[debug] [2019-01-31T19:20:32.476Z] CLI Version:   6.3.0
+[debug] [2019-01-31T19:20:32.477Z] Platform:      win32
+[debug] [2019-01-31T19:20:32.477Z] Node Version:  v10.13.0
+[debug] [2019-01-31T19:20:32.516Z] Time:          Thu Jan 31 2019 14:20:32 GMT-0500 (GMT-05:00)
+[debug] [2019-01-31T19:20:32.516Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2019-01-31T19:20:32.655Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-01-31T19:20:32.661Z] > authorizing via signed-in user
+[debug] [2019-01-31T19:20:32.662Z] [iam] checking project lim008-social-network for permissions ["firebase.projects.get"]
+[debug] [2019-01-31T19:20:32.705Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2019-01-31T19:20:32.707Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2019-01-31T19:20:34.331Z] <<< HTTP RESPONSE 200
+[debug] [2019-01-31T19:20:34.368Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/lim008-social-network:testIamPermissions  
+
+[debug] [2019-01-31T19:20:35.753Z] <<< HTTP RESPONSE 200
+[debug] [2019-01-31T19:20:35.760Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/lim008-social-network  
+ 
+[debug] [2019-01-31T19:20:36.684Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from 'C:\Users\Laboratoria\Documents\Projects\LIM008-social-network'...
+[info] 
+[debug] [2019-01-31T19:20:36.703Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/3950063519/clients/_:getWebAppConfig  
+ 
+[debug] [2019-01-31T19:20:38.114Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: ./src
+[info] +  hosting: Local server: http://localhost:5000
