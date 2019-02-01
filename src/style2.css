@@ -1,0 +1,93 @@
+
+@import url('https://fonts.googleapis.com/css?family=PT+Sans');
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'PT Sans', sans-serif;
+}
+/*estilos para el header de la pagina principal*/
+header{
+    width: 100%;
+    height: 50px;
+    background: #9DACFF;
+    color: #000000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+}
+.logo{
+    width: 11%;
+
+}
+.contendor{
+    width: 98%;
+    margin: auto;
+}
+h1{
+    float: left;
+    font-style: italic;
+    
+}
+header .contendor{
+    display: table;
+}
+#btn-menu{
+    display: none;
+}
+header label{
+    float: right;
+    font-size: 28px;
+    margin: 6px 0;
+    cursor: pointer;
+}
+.menu{
+   position: absolute;
+   top: 50px;
+   left: 0;
+   width: 100%;
+   height: 100vh;
+   transition: all 0.5s;
+   transform: translateX(-100%);
+}
+.menu a{
+    
+    display: block;
+    color: #000000;
+    height: 50px;
+    text-decoration: none;
+    padding: 15px;
+    border-bottom: 1px solid rgba(255,255,255,0.5);
+
+}
+.menu a :hover{
+    background:rgba(60, 95, 141, 0.3);
+}
+#btn-menu:checked ~ .menu {
+    transform: translateX(0);
+}
+@media (min-width:900px){
+.menu{
+    position: static;
+    width:auto;
+    height: auto;
+    transform :translateX(0%);
+    float: right;
+    display: flex;
+}
+.menu a{
+    font-family: 'PT Sans', sans-serif;
+    
+    font-style: italic;
+    border: none;
+}
+.menu a :hover{
+    background:rgba(60, 95, 141, 0.3);
+}
+header label{
+    display: none;
+}
+}

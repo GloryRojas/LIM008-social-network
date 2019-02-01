@@ -22,7 +22,10 @@ export const logWithGoogle = (event) => {
     var token = result.credential.accessToken;
     // The signed-in user info.
     var user = result.user;
+    var name = result.user.displayName;
+    document.querySelector("nombre").textContent= "bienvenido" + name;
     location.href = 'home.html';
+    
    console.log(result);
    console.log("Sucees .. Google");
     // ...
@@ -64,8 +67,8 @@ export const cerrarSesion =(user) => {
   
 //event.preventDefault();
 firebase.auth().signOut().then(() => {
-  //profile.classList.add("hidden");
-  //profile.classList.remove("show");
+  profile.classList.add("hidden");
+  profile.classList.remove("show");
   location.href = 'index.html';
 
 })

@@ -1,27 +1,19 @@
 import{cerrarSesion} from './autentificacion.js';
-const pantallaPrincipal = `<section class="pantallaInterna">
+const pantallaPrincipal = `
 <header>
-    <div class="cabecera">
-      <h1> 
-
-        <img class="logo" src="img/logo.png" alt="">
-        <a class="titulo">Infocourse</a>
-      </h1>
-    </div>
+  <div class="contenedor">
+    <h1 ><img class="logo" src="img/logo.png" alt="">Infocourse</h1>
     <input type="checkbox"  id="btn-menu"><label for="btn-menu" class="icon-menu"></label>
+    
     <nav class="menu">
-      <ul>
-        
-        <li><a href="#">Inicio</a></li>
-        <li><a href="#">Mi Perfil</a></li>
-        <li><a href="#">Cerrar Sesión </a></li>
-      </ul>     
-
-      </nav>
-    </header>
-  </section>
-<a href="#">hola</a>
-<button id="btn-cerrar-sesion">cerrar sesion</button>`;
+         <a href="#">Inicio</a>
+         <a href="#">Mi Perfil</a>
+         <a href="#" id="btn-cerrar-sesion">Cerrar Sesión </a>     
+    </nav>
+    <h1 id="nombre"></h1>
+  </div>
+</header>
+`;
 
 const formCerrarSesion = document.getElementById('form-in2');
 formCerrarSesion.innerHTML = pantallaPrincipal;
