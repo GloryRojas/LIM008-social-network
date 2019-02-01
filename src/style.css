@@ -1,85 +1,90 @@
+@import url('https://fonts.googleapis.com/css?family=Gentium+Book+Basic');
 
 *{
-    margin:0;
-    padding:0;
-    box-sizing: border-box;
-    font-family:Apple Chancery, cursive ;
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+  font-family: 'Gentium Book Basic', serif;
 }
-    body{
-    min-height :100vh;
-    display: flex;
+body{
+  background-color: #9DACFF;
 }
-form{
-    margin: auto;
-    width: 50%;
-    max-width: 500px;
-    background: #F3F3F3;
-    padding: 30px;
-    border: 1px solid rgba(0,0,0,0.2);
-    text-align: center;
+.iniciar-sesion{
+  position: absolute;
+  width: 360px;
+  height: 640px;
+  left: 0px;
+  top: 0px;
+  display: inline-block;
 }
-header{
-    height: 50px;
-    display: flex;
-    justify-content: flex-end;
-    background: #0f0c29; /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #0f0c29, #302b63, #24243e); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #0f0c29, #302b63, #24243e); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-}
-header label{
-    font-size: 30px;
-    cursor: pointer;
-    display: none;
-}
-#btn-menu{
-    display: none;
-}
-.cabecera1{
-    text-align: center;
-    margin-bottom: 20px;
-}
-.cabecera{
-  width: 100%;
-  display: flex;
+.cabecera-login{
+  height: 240px;
+  color : #333333;
   text-align: center;
-  align-items: center;
-  justify-content: center;
 }
 .logo{
-    border-radius: 100px;
-    width: 20%  
+  position: absolute;
+  width: 90px;
+  height: 90px;
+  left: 135px;
+  top: 20px;
 }
-.menu ul{
-    display: flex;
-    list-style: none;
+.titulo{
+  padding-top: 120px;
+  font-size: 36px;
 }
-.menu a{
-    display: block;
-    padding: 15px 20px;
-    color:#24243e;
-    text-decoration: none;
+.slogan{
+  font-size: 18px;
+  font-style: normal;
+  text-align: center;
 }
-.menu a:hover{
-    background: rgba(3, 1, 15, 0.5);
+.form-autenticacion{
+  text-align: center;
 }
-@media (max-width:768px){
-    header label{
-        display: block;
-    }
-    .menu{
-        
-        background: rgba(67, 67, 70, 0.5);
-        position: absolute;
-        top: 50px;
-        left: 0;
-        width: 50%;
-        transform:translatex(-100%);
-        transition: all 0.3s;
-    }
-    .menu ul{
-        display: block;
-    }
-    #btn-menu:checked ~ .menu{
-        transform:translatex(0%) 
-    }
+.form{
+  display: block;
+  height: 40px;
+  width: 80%;
+  padding: 2px;
+  margin: 20px;
+  margin-left: 33px;
+}
+.btn-login{
+  background: #4BC0D9;
+  color: #FFFFFF;
+  height: 40px;
+  width: 80%;
+  font-size: 18px;
+}
+.iconos{
+  display: block;
+  height: 40px;
+  width: 80%;
+  padding: 2px;
+  box-sizing: border-box;
+}
+.formGoogle{
+  background: #FFFFFF;
+  height: 40px;
+  width: 100%;
+  padding: 2px;
+  margin: 20px;
+  margin-left: 33px;
+}
+.formFacebook{
+  background: #3B5998;
+  height: 40px;
+  width: 100%;
+  padding: 2px;
+  margin: 20px;
+  margin-left: 33px;
+  color: #FFFFFF;
+}
+.iconGoogle{
+  box-sizing: border-box;
+  float: left;
+}
+.iconFacebook{
+  box-sizing: border-box;
+  float: left;
 }
