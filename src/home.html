@@ -1,10 +1,37 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-    <meta charset="utf-8">
-    <title>home</title>
-  </head>
+    <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Home</title>
+  <link rel="stylesheet" href="style2.css" />
+  <link rel="stylesheet" href="css/fontello.css">
   <body>
+    <div id="form-in2"></div>
     <h1>Aqui va tu red social</h1>
+<script type="module" src="main.js"></script>
+<!----<script type="module" src="lib/templatesLogin.js"></script>-->
+
+
+<script src="https://www.gstatic.com/firebasejs/5.8.1/firebase.js"></script>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyAs6PO8-5P1Y3i_qX_jaXnUeF44OYmpgZc",
+      authDomain: "lim008-social-network.firebaseapp.com",
+      databaseURL: "https://lim008-social-network.firebaseio.com",
+      projectId: "lim008-social-network",
+      storageBucket: "lim008-social-network.appspot.com",
+      messagingSenderId: "3950063519"
+    };
+    firebase.initializeApp(config);
+  </script>
+
+
+
+<script type="module" src="lib/index.js"></script>
+<script type="module" src="lib/templateLoginOut.js"></script>
   </body>
 </html>
+
