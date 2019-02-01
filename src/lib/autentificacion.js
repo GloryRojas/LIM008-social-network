@@ -3,7 +3,6 @@ export const logWithPasswordAndEmail = (event) => {
   event.preventDefault();
   let usuario = event.target.email.value;
   let contrasena = event.target.password.value;
-
   firebase.auth().signInWithEmailAndPassword(usuario, contrasena)
     .then((result) => {
       window.location = "home.html";
@@ -22,6 +21,8 @@ export const logWithGoogle = (event) => {
     var token = result.credential.accessToken;
     // The signed-in user info.
     var user = result.user;
+    //var name = result.user.displayName;
+    //document.querySelector("nombre").textContent= "bienvenido" + name;
     location.href = 'home.html';
    console.log(result);
    console.log("Sucees .. Google");
@@ -59,6 +60,17 @@ export const logWithFacebook = (event) =>{
     // ...
   });
 }
+
+export const cerrarSesion =(user) => {
+  
+//event.preventDefault();
+firebase.auth().signOut().then(() => {
+  //profile.classList.add("hidden");
+  //profile.classList.remove("show");
+  location.href = 'index.html';
+})
+.catch(err => console.log('Error logout', err))
+};
 
 // Registrarse con correo y contraseña
 export const registerWithEmail = (event) => {

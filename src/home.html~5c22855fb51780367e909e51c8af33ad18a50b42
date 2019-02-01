@@ -1,20 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link href='http://fonts.googleapis.com/css?family=Gentium+Book+Basic' rel='stylesheet' type='text/css'>
-  <title>REDSOCIAL</title>
-  <link rel="stylesheet" href="style.css" />
+  <title>Home</title>
+  <link rel="stylesheet" href="style2.css" />
   <link rel="stylesheet" href="css/fontello.css">
-</head>
-<body>
-  <div class="" id= "form-in"></div>
-  <!----<div class="" id= "form-register"></div>-->
+  <body>
+    <div id="form-in2"></div>
+    <h1>Aqui va tu red social</h1>
+<script type="module" src="main.js"></script>
+<!----<script type="module" src="lib/templatesLogin.js"></script>-->
 
 
-  <script src="https://www.gstatic.com/firebasejs/5.8.1/firebase.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.8.1/firebase.js"></script>
   <script>
     // Initialize Firebase
     var config = {
@@ -27,8 +27,11 @@
     };
     firebase.initializeApp(config);
   </script>
-  <script type="module" src="main.js"></script>
-  <script type="module" src="lib/templatesLogin.js"></script>
-  <script type="module" src="lib/index.js"></script>
-</body>
+
+
+
+<script type="module" src="lib/index.js"></script>
+<script type="module" src="lib/templateLoginOut.js"></script>
+  </body>
 </html>
+
