@@ -13,6 +13,13 @@ const pantallaPrincipal = `
     <h1 id="nombre"></h1>
   </div>
 </header>
+<br>
+<div>
+<textarea name="post" id="post" ></textarea>
+<br>
+<button id="publicar">publicar</button>
+</div>
+
 `;
 
 const formCerrarSesion = document.getElementById('form-in2');

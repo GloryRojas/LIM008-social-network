@@ -12,7 +12,7 @@ export const formLogin = `
       <form id="form-autenticacion" class="form-autenticacion" action="index.html" method="post">
         <input class="form" type="text" id="email" placeholder="Correo electrónico"></input>
         <input class="form" type="password" id="password" placeholder="Contraseña"></input>
-        <button class="btn-login" id="btn-login" type="submit">INICIAR SESIÓN</button>
+        <button class="btn-login" id="btn-login" type="submit" href="#/panatalla-principal>INICIAR SESIÓN</button>
         <div class="iconos">
           <button id="btn-google" class="formGoogle" ><img class = "iconGoogle" src="img/icono-google.png">Iniciar sesión con Google</button>
           <button id="btn-facebook" class="formFacebook"><img class = "iconFacebook" src="img/icono-face.png">Iniciar sesión con Facebook</button><br><br>

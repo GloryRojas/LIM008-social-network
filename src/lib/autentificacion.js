@@ -94,3 +94,4 @@ export const registerWithEmail = (event) => {
     console.log(error.message);
   });
 };
+

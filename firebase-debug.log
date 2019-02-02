@@ -11,3 +11,44 @@
 [debug] [2019-02-01T19:58:59.766Z] [iam] checking project lim008-social-network for permissions ["firebase.projects.get"]
 [debug] [2019-02-01T19:58:59.769Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/lim008-social-network:testIamPermissions  
 
+[debug] [2019-02-01T19:59:00.874Z] <<< HTTP RESPONSE 200
+[debug] [2019-02-01T19:59:00.878Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/lim008-social-network  
+ 
+[debug] [2019-02-01T19:59:01.665Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from 'C:\Users\Laboratoria\Desktop\project\project-redsocial\LIM008-social-network'...
+[info] 
+[debug] [2019-02-01T19:59:01.676Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/3950063519/clients/_:getWebAppConfig  
+ 
+[debug] [2019-02-01T19:59:02.797Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: ./src
+[info] +  hosting: Local server: http://localhost:5000
+[debug] [2019-02-01T20:47:53.772Z] ----------------------------------------------------------------------
+[debug] [2019-02-01T20:47:53.777Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Laboratoria\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js serve
+[debug] [2019-02-01T20:47:53.777Z] CLI Version:   6.3.0
+[debug] [2019-02-01T20:47:53.778Z] Platform:      win32
+[debug] [2019-02-01T20:47:53.778Z] Node Version:  v10.13.0
+[debug] [2019-02-01T20:47:53.780Z] Time:          Fri Feb 01 2019 15:47:53 GMT-0500 (GMT-05:00)
+[debug] [2019-02-01T20:47:53.780Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2019-02-01T20:47:53.795Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-02-01T20:47:53.795Z] > authorizing via signed-in user
+[debug] [2019-02-01T20:47:53.795Z] [iam] checking project lim008-social-network for permissions ["firebase.projects.get"]
+[debug] [2019-02-01T20:47:53.798Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2019-02-01T20:47:53.798Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2019-02-01T20:47:54.666Z] <<< HTTP RESPONSE 200
+[debug] [2019-02-01T20:47:54.683Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/lim008-social-network:testIamPermissions  
+
+[debug] [2019-02-01T20:47:56.096Z] <<< HTTP RESPONSE 200
+[debug] [2019-02-01T20:47:56.097Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/lim008-social-network  
+ 
+[debug] [2019-02-01T20:47:57.261Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from 'C:\Users\Laboratoria\Desktop\project\project-redsocial\LIM008-social-network'...
+[info] 
+[debug] [2019-02-01T20:47:57.268Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/3950063519/clients/_:getWebAppConfig  
+ 
+[debug] [2019-02-01T20:47:58.197Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: ./src
+[info] +  hosting: Local server: http://localhost:5000
