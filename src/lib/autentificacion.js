@@ -1,3 +1,7 @@
+const changeHash = (hash) =>  {
+  location.hash = hash;
+}
+
 // Iniciar sesión con cuenta registrada
 export const logWithPasswordAndEmail = (event) => {
   event.preventDefault();
@@ -5,10 +9,10 @@ export const logWithPasswordAndEmail = (event) => {
   let contrasena = event.target.password.value;
   firebase.auth().signInWithEmailAndPassword(usuario, contrasena)
     .then((result) => {
-      window.location = "home.html";
+      changeHash('/home');
     })
     .catch((error) => {
-      alert("Información incorrecta");
+      alert('Información incorrecta');
     })
 }
 
@@ -22,10 +26,10 @@ export const logWithGoogle = (event) => {
     // The signed-in user info.
     var user = result.user;
     //var name = result.user.displayName;
-    //document.querySelector("nombre").textContent= "bienvenido" + name;
-    location.href = 'home.html';
+    //document.querySelector('nombre').textContent= 'bienvenido' + name;
+    changeHash('/home');
    console.log(result);
-   console.log("Sucees .. Google");
+   console.log('Sucees .. Google');
     // ...
   }).catch(function(error) {
     // Handle Errors here.
@@ -47,7 +51,7 @@ export const logWithFacebook = (event) =>{
     var token = result.credential.accessToken;
     // The signed-in user info.
     var user = result.user;
-    location.href = 'home.html';
+    changeHash('/home');
     // ...
     }).catch(function(error) {
     // Handle Errors here.
@@ -62,12 +66,12 @@ export const logWithFacebook = (event) =>{
 }
 
 export const cerrarSesion =(user) => {
-  
+
 //event.preventDefault();
 firebase.auth().signOut().then(() => {
-  //profile.classList.add("hidden");
-  //profile.classList.remove("show");
-  location.href = 'index.html';
+  //profile.classList.add('hidden');
+  //profile.classList.remove('show');
+  changeHash('/index');
 })
 .catch(err => console.log('Error logout', err))
 };
@@ -83,11 +87,12 @@ export const registerWithEmail = (event) => {
     let user = firebase.auth().currentUser;
     user.sendEmailVerification()
       .then(result => {
-        alert("Email enviado, revise su bandeja");
+        alert('Email enviado, revise su bandeja');
       })
     .catch((error) => {
       console.log('No se pudo enviar email')
     });
+    changeHash('/index');
     // firebase.auth().signOut()
   }).catch(function(error) {
     alert(error.message)
