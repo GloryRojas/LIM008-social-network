@@ -1,28 +1,29 @@
-import { iniciarSesion } from './lib/templatesLogin.js';
-import { headerHome, registrarCuenta } from './lib/templateLoginOut.js';
+import { iniciarSesion } from '../templates/login.js';
+import { menuNavegacionHome } from '../templates/network.js';
+import { registrarCuenta } from '../templates/register.js';
 
-const changeTmp = (hash) => {
+const cambiarTmp = (hash) => {
   if (hash === '#/' || hash === '' || hash === '#') {
-    return viewTmp('#/index');
-  } else if (hash === '#/index' || hash === '#/home' || hash === '#/registro') {
-    return viewTmp(hash);
+    return vistaTmp('#/login');
+  } else if (hash === '#/login' || hash === '#/home' || hash === '#/signup') {
+    return vistaTmp(hash);
   } else {
-    return viewTmp('#/index');
+    return vistaTmp('#/login');
   }
 }
 
-const viewTmp = (routers) => {
+const vistaTmp = (routers) => {
   const router = routers.substr(2, routers.length - 2)
-  const root = document.getElementById('form-in');
+  const root = document.getElementById('root');
   root.innerHTML = '';
   switch (router) {
     case 'home':
-      root.appendChild(headerHome());
+      root.appendChild(menuNavegacionHome());
       break;
-    case 'index':
+    case 'login':
       root.appendChild(iniciarSesion());
       break;
-    case 'registro':
+    case 'signup':
       root.appendChild(registrarCuenta());
       break;
     default:
@@ -32,6 +33,6 @@ const viewTmp = (routers) => {
 }
 
 export const initRouter = () => {
-  window.addEventListener('load', changeTmp(window.location.hash))
-  if (('onhashchange' in window)) window.onhashchange = () => changeTmp(window.location.hash)
+  window.addEventListener('load', cambiarTmp(window.location.hash))
+  if (('onhashchange' in window)) window.onhashchange = () => cambiarTmp(window.location.hash)
 }
