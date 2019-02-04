@@ -1,10 +1,10 @@
 import { iniciarSesion } from './lib/templatesLogin.js';
-import { headerHome } from './lib/templateLoginOut.js';
+import { headerHome, registrarCuenta } from './lib/templateLoginOut.js';
 
 const changeTmp = (hash) => {
   if (hash === '#/' || hash === '' || hash === '#') {
     return viewTmp('#/index');
-  } else if (hash === '#/index' || hash === '#/home') {
+  } else if (hash === '#/index' || hash === '#/home' || hash === '#/registro') {
     return viewTmp(hash);
   } else {
     return viewTmp('#/index');
@@ -21,6 +21,9 @@ const viewTmp = (routers) => {
       break;
     case 'index':
       root.appendChild(iniciarSesion());
+      break;
+    case 'registro':
+      root.appendChild(registrarCuenta());
       break;
     default:
       root.appendChild(iniciarSesion());

@@ -1,4 +1,4 @@
-const changeHash = (hash) =>  {
+export const changeHash = (hash) =>  {
   location.hash = hash;
 }
 
@@ -80,9 +80,9 @@ firebase.auth().signOut().then(() => {
 export const registerWithEmail = (event) => {
   event.preventDefault();
   let user = event.target.correo.value;
-  let password1 = event.target.contrasena.value;
+  let password = event.target.contrasena.value;
 
-  firebase.auth().createUserWithEmailAndPassword(user, password1)
+  firebase.auth().createUserWithEmailAndPassword(user, password)
   .then(result => {
     let user = firebase.auth().currentUser;
     user.sendEmailVerification()
@@ -92,6 +92,7 @@ export const registerWithEmail = (event) => {
     .catch((error) => {
       console.log('No se pudo enviar email')
     });
+    alert('Datos registrados: Inicie sesión')
     changeHash('/index');
     // firebase.auth().signOut()
   }).catch(function(error) {
