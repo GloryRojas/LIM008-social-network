@@ -22,10 +22,15 @@ export const iniciarSesion = () => {
     </div>
   `;
   formIniciar.innerHTML = formLogin;
-
+    
   // Inicia sesión con Correo y contraseña
   const formAutenticacion = formIniciar.querySelector('#form-autenticacion');
-  formAutenticacion.addEventListener('submit', ingresarConCorreoYContrasena);
+  formAutenticacion.addEventListener('submit', event => {
+    event.preventDefault();
+    let usuario = formIniciar.querySelector('#email').value;
+    let contrasena = formIniciar.querySelector('#password').value;
+    ingresarConCorreoYContrasena(usuario, contrasena)
+   });
 
   // Inicia sesion con cuenta Google
   const btnGoogle = formIniciar.querySelector('#btn-google');

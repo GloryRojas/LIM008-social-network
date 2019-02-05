@@ -6,10 +6,7 @@ export const cambiarHash = (hash) =>  {
 // Aqui todas las funciones que involucran FIREBASE AUTH
 
 // Iniciar sesión con cuenta registrada
-export const ingresarConCorreoYContrasena = (event) => {
-  event.preventDefault();
-  let usuario = event.target.email.value;
-  let contrasena = event.target.password.value;
+export const ingresarConCorreoYContrasena = (usuario, contrasena) => {
   firebase.auth().signInWithEmailAndPassword(usuario, contrasena)
     .then((result) => {
       cambiarHash('/home');
