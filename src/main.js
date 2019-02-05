@@ -4,11 +4,10 @@ import { myFunction } from './lib/index.js';
 
 myFunction(); */
 
-import { iniciarSesion, registrarCuenta } from './lib/templatesLogin.js'
+import { initRouter } from './router.js';
 
-const init = function() {
-  iniciarSesion();
-
+const init = () => {
+ initRouter();
 }
 
 window.addEventListener('load', init)

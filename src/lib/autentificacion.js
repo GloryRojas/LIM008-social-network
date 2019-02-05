@@ -1,19 +1,26 @@
+// Funcion para cambiar la ruta
+export const cambiarHash = (hash) =>  {
+  location.hash = hash;
+}
+
+// Aqui todas las funciones que involucran FIREBASE AUTH
+
 // Iniciar sesión con cuenta registrada
-export const logWithPasswordAndEmail = (event) => {
+export const ingresarConCorreoYContrasena = (event) => {
   event.preventDefault();
   let usuario = event.target.email.value;
   let contrasena = event.target.password.value;
   firebase.auth().signInWithEmailAndPassword(usuario, contrasena)
     .then((result) => {
-      window.location = "home.html";
+      cambiarHash('/home');
     })
     .catch((error) => {
-      alert("Información incorrecta");
+      alert('Información incorrecta');
     })
 }
 
 // Iniciar sesion con cuenta de Google
-export const logWithGoogle = (event) => {
+export const ingresarConGoogle = (event) => {
   event.preventDefault();
   var provider = new firebase.auth.GoogleAuthProvider();
   firebase.auth().signInWithPopup(provider).then(function(result) {
@@ -21,11 +28,7 @@ export const logWithGoogle = (event) => {
     var token = result.credential.accessToken;
     // The signed-in user info.
     var user = result.user;
-    //var name = result.user.displayName;
-    //document.querySelector("nombre").textContent= "bienvenido" + name;
-    location.href = 'home.html';
-   console.log(result);
-   console.log("Sucees .. Google");
+    cambiarHash('/home');
     // ...
   }).catch(function(error) {
     // Handle Errors here.
@@ -39,7 +42,7 @@ export const logWithGoogle = (event) => {
   });
 };
 
-export const logWithFacebook = (event) =>{
+export const ingresarConFacebook = (event) =>{
   event.preventDefault();
   const  provider = new firebase.auth.FacebookAuthProvider();
     firebase.auth().signInWithPopup(provider).then(function(result) {
@@ -47,7 +50,7 @@ export const logWithFacebook = (event) =>{
     var token = result.credential.accessToken;
     // The signed-in user info.
     var user = result.user;
-    location.href = 'home.html';
+    cambiarHash('/home');
     // ...
     }).catch(function(error) {
     // Handle Errors here.
@@ -61,36 +64,36 @@ export const logWithFacebook = (event) =>{
   });
 }
 
-export const cerrarSesion =(user) => {
-  
-//event.preventDefault();
-firebase.auth().signOut().then(() => {
-  //profile.classList.add("hidden");
-  //profile.classList.remove("show");
-  location.href = 'index.html';
-})
-.catch(err => console.log('Error logout', err))
-};
-
 // Registrarse con correo y contraseña
-export const registerWithEmail = (event) => {
+export const registroConCorreo = (event) => {
   event.preventDefault();
   let user = event.target.correo.value;
-  let password1 = event.target.contrasena.value;
+  let password = event.target.contrasena.value;
 
-  firebase.auth().createUserWithEmailAndPassword(user, password1)
+  firebase.auth().createUserWithEmailAndPassword(user, password)
   .then(result => {
     let user = firebase.auth().currentUser;
     user.sendEmailVerification()
       .then(result => {
-        alert("Email enviado, revise su bandeja");
+        alert('Email enviado, revise su bandeja');
       })
     .catch((error) => {
       console.log('No se pudo enviar email')
     });
+    alert('Datos registrados: Inicie sesión')
+    cambiarHash('/login');
     // firebase.auth().signOut()
   }).catch(function(error) {
     alert(error.message)
     console.log(error.message);
   });
+};
+
+// Cerrar Sesión
+export const cerrarSesion =(user) => {
+// event.preventDefault();
+firebase.auth().signOut().then(() => {
+  cambiarHash('/login');
+})
+.catch(err => console.log('Error logout', err))
 };
