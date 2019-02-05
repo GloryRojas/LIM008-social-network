@@ -14,7 +14,7 @@ global.firebase = firebasemock.MockFirebaseSdk(
 
 // importamos la funcion que vamos a testear
 
-import { ingresarConCorreoYContrasena, ingresarConGoogle, ingresarConFacebook, cambiarHash } from "../src/lib/autentificacion.js";
+import { ingresarConCorreoYContrasena, ingresarConGoogle, ingresarConFacebook } from "../src/controller/autentificacion.js";
 
 describe('ingresarConCorreoYContrasena', () => {
   it('debería ser una función', () => {
@@ -37,9 +37,5 @@ describe('ingresarConFacebook', () => {
     expect(typeof ingresarConFacebook).toBe('function');
   });
 });
-describe('cambiarHash', () => {
-  it('debería ser una función', () => {
-    expect(typeof cambiarHash).toBe('function');
-  });
-});
+
 
