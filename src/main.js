@@ -19,3 +19,12 @@ const init = () => {
   window.onload = init();
  // window.addEventListener('load', init)
 
+/*myFunction();
+
+import { initRouter } from './router.js';
+
+const init = () => {
+ initRouter();
+}
+
+window.addEventListener('load', init)*/

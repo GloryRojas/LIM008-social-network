@@ -8,13 +8,19 @@
 }
 body{
 <<<<<<< HEAD
+<<<<<<< HEAD
   background-color: #FFFFFF;
 =======
+=======
+>>>>>>> 268535746890319f129ac34027805147e75f3913
   background-image: url(../img/fondo-pantalla.jpg);
   background-position: center center;
   background-attachment: fixed;
   background-size: 100vw 100vh;
+<<<<<<< HEAD
 >>>>>>> e816dd287a03bcfd1329d3c5b01954b741385efb
+=======
+>>>>>>> 268535746890319f129ac34027805147e75f3913
 }
 header{
     width: 100%;
@@ -27,11 +33,16 @@ header{
   }
 .iniciar-sesion{
 <<<<<<< HEAD
+<<<<<<< HEAD
   background-color: #9DACFF;
 =======
   background: rgba(236, 228, 183, 0.74);
   box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
 >>>>>>> e816dd287a03bcfd1329d3c5b01954b741385efb
+=======
+  background: rgba(236, 228, 183, 0.74);
+  box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+>>>>>>> 268535746890319f129ac34027805147e75f3913
   position: absolute;
   left: 700px;
   width: 360px;
@@ -134,7 +145,10 @@ header{
   line-height: normal;
   font-size: 18px;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 268535746890319f129ac34027805147e75f3913
 }
 .contenedor{
   width: 98%;
@@ -201,5 +215,8 @@ header label{
   header label{
       display: none;
   }
+<<<<<<< HEAD
 >>>>>>> e816dd287a03bcfd1329d3c5b01954b741385efb
+=======
+>>>>>>> 268535746890319f129ac34027805147e75f3913
 }
