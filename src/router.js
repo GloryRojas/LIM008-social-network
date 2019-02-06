@@ -1,36 +1,38 @@
-import { iniciarSesion,registrarCuenta,primeraPantalla} from './templates/login.js';
+import { iniciarSesion } from '../templates/login.js';
+import { menuNavegacionHome } from '../templates/network.js';
+import { registrarCuenta } from '../templates/register.js';
 
-const changeTmp = (hash) => {
+const cambiarTmp = (hash) => {
   if (hash === '#/' || hash === '' || hash === '#') {
-    return viewTmp('#/index');
-  } else if (hash === '#/index' || hash === '#/home'|| hash === '#/register') {
-    return viewTmp(hash);
+    return vistaTmp('#/login');
+  } else if (hash === '#/login' || hash === '#/home' || hash === '#/signup') {
+    return vistaTmp(hash);
   } else {
-    return viewTmp('#/index');
+    return vistaTmp('#/login');
   }
 }
 
-const viewTmp = (routers) => {
+const vistaTmp = (routers) => {
   const router = routers.substr(2, routers.length - 2)
-  const formIn = document.getElementById('form-in');
-  formIn.innerHTML = '';
+  const root = document.getElementById('root');
+  root.innerHTML = '';
   switch (router) {
     case 'home':
-    formIn.appendChild(primeraPantalla());
+      root.appendChild(menuNavegacionHome());
       break;
-    case 'index':
-    formIn.appendChild(iniciarSesion());
+    case 'login':
+      root.appendChild(iniciarSesion());
       break;
-      case 'register':
-      formIn.appendChild(registrarCuenta());
-        break;
+    case 'signup':
+      root.appendChild(registrarCuenta());
+      break;
     default:
-    formIn.appendChild(iniciarSesion());
+      root.appendChild(iniciarSesion());
       break;
   }
 }
 
 export const initRouter = () => {
-  window.addEventListener('load', changeTmp(window.location.hash))
-  if (("onhashchange" in window)) window.onhashchange = () => changeTmp(window.location.hash)
+  window.addEventListener('load', cambiarTmp(window.location.hash))
+  if (('onhashchange' in window)) window.onhashchange = () => cambiarTmp(window.location.hash)
 }

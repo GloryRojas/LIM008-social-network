@@ -13,11 +13,44 @@ global.firebase = firebasemock.MockFirebaseSdk(
 );
 
 // importamos la funcion que vamos a testear
-import { myFunction } from "../src/lib/index";
 
-describe('myFunction', () => {
+import { ingresarConCorreoYContrasena, ingresarConGoogle, ingresarConFacebook, registroConCorreo, cerrarSesion } from "../src/controller/autentificacion.js";
+
+describe('ingresarConCorreoYContrasena', () => {
   it('debería ser una función', () => {
-    expect(typeof myFunction).toBe('function');
+    expect(typeof ingresarConCorreoYContrasena).toBe('function');
+  });
+  it('Debería poder iniciar sesion', () => {
+    return ingresarConCorreoYContrasena('grojasm@gmail.com', 'grojasm')
+      .then((user) => {
+        expect(user.email).toBe('grojasm@gmail.com')
+      })
+  });
+});
+describe('ingresarConGoogle', () => {
+  it('debería ser una función', () => {
+    expect(typeof ingresarConGoogle).toBe('function');
+  });
+});
+describe('ingresarConFacebook', () => {
+  it('debería ser una función', () => {
+    expect(typeof ingresarConFacebook).toBe('function');
+  });
+});
+describe('registroConCorreo', () => {
+  it('debería ser una función', () => {
+    expect(typeof registroConCorreo).toBe('function');
+  });
+  it('Debería poder registrar', () => {
+    return registroConCorreo('lucero@gmail.com', 'lucero')
+      .then((user) => {
+        expect(user.email).toBe('lucero@gmail.com')
+      })
+  });
+});
+describe('cerrarSesion', () => {
+  it('debería ser una función', () => {
+    expect(typeof cerrarSesion).toBe('function');
   });
 });
 describe('cerrarSesion ', () => {
