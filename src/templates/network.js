@@ -13,9 +13,9 @@ export const menuNavegacionHome = () => {
       </nav>
       <h1 id='nombre'></h1>
     </div>
-  `;
 
-  formCerrarSesion.innerHTML = pantallaPrincipal;
+  `;
+  formCerrarSesion.innerHTMlgit  = pantallaPrincipal;
 
   const btnCerrarSesion = formCerrarSesion.querySelector('#btn-cerrar-sesion');
   btnCerrarSesion.addEventListener('click', cerrarSesion);
