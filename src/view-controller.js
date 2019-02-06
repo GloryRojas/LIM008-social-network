@@ -74,3 +74,24 @@ export const cerrarSesionClick = () => {
     .then(() => cambiarHash('/login'))
     .catch(err => console.log('Error logout', err))
  }
+
+
+
+ export const inicializarFire = ()=>{
+    firebase.auth().onAuthStateChanged((auth)=>{
+        console.log(auth)
+        var user = firebase.auth().currentUser;
+        var name, email, photoUrl, uid, emailVerified;
+        console.log(user)
+        if (user != null) {
+          name = user.displayName;
+          email = user.email;
+          photoUrl = user.photoURL;
+          uid = user.uid; 
+          emailVerified = user.emailVerified;
+          uid = user.uid;  
+          console.log(name,email, photoUrl, uid, emailVerified);
+
+              }
+            })
+        }

@@ -1,29 +1,29 @@
-[debug] [2019-02-06T16:21:43.289Z] ----------------------------------------------------------------------
-[debug] [2019-02-06T16:21:43.292Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Laboratoria\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js serve
-[debug] [2019-02-06T16:21:43.292Z] CLI Version:   6.3.0
-[debug] [2019-02-06T16:21:43.292Z] Platform:      win32
-[debug] [2019-02-06T16:21:43.292Z] Node Version:  v10.13.0
-[debug] [2019-02-06T16:21:43.295Z] Time:          Wed Feb 06 2019 11:21:43 GMT-0500 (GMT-05:00)
-[debug] [2019-02-06T16:21:43.295Z] ----------------------------------------------------------------------
+[debug] [2019-02-06T21:21:32.216Z] ----------------------------------------------------------------------
+[debug] [2019-02-06T21:21:32.220Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Laboratoria\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js serve
+[debug] [2019-02-06T21:21:32.220Z] CLI Version:   6.3.0
+[debug] [2019-02-06T21:21:32.220Z] Platform:      win32
+[debug] [2019-02-06T21:21:32.220Z] Node Version:  v10.13.0
+[debug] [2019-02-06T21:21:32.224Z] Time:          Wed Feb 06 2019 16:21:32 GMT-0500 (GMT-05:00)
+[debug] [2019-02-06T21:21:32.224Z] ----------------------------------------------------------------------
 [debug] 
-[debug] [2019-02-06T16:21:43.313Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
-[debug] [2019-02-06T16:21:43.314Z] > authorizing via signed-in user
-[debug] [2019-02-06T16:21:43.314Z] [iam] checking project lim008-social-network for permissions ["firebase.projects.get"]
-[debug] [2019-02-06T16:21:43.316Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
-[debug] [2019-02-06T16:21:43.317Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+[debug] [2019-02-06T21:21:32.241Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-02-06T21:21:32.242Z] > authorizing via signed-in user
+[debug] [2019-02-06T21:21:32.242Z] [iam] checking project lim008-social-network for permissions ["firebase.projects.get"]
+[debug] [2019-02-06T21:21:32.245Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2019-02-06T21:21:32.246Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
  <request body omitted>
-[debug] [2019-02-06T16:21:44.102Z] <<< HTTP RESPONSE 200
-[debug] [2019-02-06T16:21:44.117Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/lim008-social-network:testIamPermissions  
+[debug] [2019-02-06T21:21:33.165Z] <<< HTTP RESPONSE 200
+[debug] [2019-02-06T21:21:33.176Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/lim008-social-network:testIamPermissions  
 
-[debug] [2019-02-06T16:21:45.234Z] <<< HTTP RESPONSE 200
-[debug] [2019-02-06T16:21:45.238Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/lim008-social-network  
+[debug] [2019-02-06T21:21:34.493Z] <<< HTTP RESPONSE 200
+[debug] [2019-02-06T21:21:34.495Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/lim008-social-network  
  
-[debug] [2019-02-06T16:21:45.975Z] <<< HTTP RESPONSE 200
+[debug] [2019-02-06T21:21:35.621Z] <<< HTTP RESPONSE 200
 [info] 
 [info] === Serving from 'C:\Users\Laboratoria\Desktop\project\project-redsocial\LIM008-social-network'...
 [info] 
-[debug] [2019-02-06T16:21:45.981Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/3950063519/clients/_:getWebAppConfig  
+[debug] [2019-02-06T21:21:35.627Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/3950063519/clients/_:getWebAppConfig  
  
-[debug] [2019-02-06T16:21:47.047Z] <<< HTTP RESPONSE 200
+[debug] [2019-02-06T21:21:36.267Z] <<< HTTP RESPONSE 200
 [info] i  hosting: Serving hosting files from: ./src
 [info] +  hosting: Local server: http://localhost:5000

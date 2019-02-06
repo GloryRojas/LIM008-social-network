@@ -1,5 +1,6 @@
 import { initRouter } from './router.js'
 import { inicializarFire } from './view-controller.js';
+//import { inicializarFire } from './view-controller.js';
 const init = () => {
     // Initialize Firebase
     const config = {
@@ -11,20 +12,8 @@ const init = () => {
         messagingSenderId: "3950063519"
       };
       firebase.initializeApp(config);
-      inicializarFire()
-  
       initRouter();
+      inicializarFire();
   }
   
-  window.onload = init();
- // window.addEventListener('load', init)
-
-/*myFunction();
-
-import { initRouter } from './router.js';
-
-const init = () => {
- initRouter();
-}
-
-window.addEventListener('load', init)*/
+  window.onload = init;
