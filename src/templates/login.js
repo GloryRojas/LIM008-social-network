@@ -16,8 +16,8 @@ export const iniciarSesion = () => {
      </form>
      <div class='iconos'>
        <button id='btn-google' class='formGoogle' ><img class = 'iconGoogle' src='img/icono-google.png'>Iniciar sesión con Google</button>
-       <button id='btn-facebook' class='formFacebook'><img class = 'iconFacebook' src='img/icono-face.png'>Iniciar sesión con Facebook</button><br><br>
-       <a id='btn-registrate' >¿No tienes cuenta? Regístrate AQUI</a>
+       <button id='btn-facebook' class='formFacebook'><img class = 'iconFacebook' src='img/icono-face.png'>Iniciar sesión con Facebook</button>
+       <a id='btn-registrate'>¿No tienes cuenta? Regístrate AQUI</a>
      </div>
     </div>
   `;
