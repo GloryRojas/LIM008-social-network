@@ -1,5 +1,6 @@
 {
   "projects": {
-    "default": "lim008-social-network"
+    "default": "lim008-social-network",
+    "network": "lim008-social-network"
   }
 }
