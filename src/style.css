@@ -7,7 +7,7 @@
   font-family: 'Gentium Book Basic', serif;
 }
 body{
-  background-image: url(../img/fondo-pantalla.jpg);
+  background-image: url(./img/fondo-pantalla.jpg);
   background-position: center center;
   background-attachment: fixed;
   background-size: 100vw 100vh;
