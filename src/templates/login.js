@@ -1,4 +1,4 @@
-import { ingresarConCorreoYContrasena, ingresarConGoogle, ingresarConFacebook, cambiarHash } from '../lib/autentificacion.js';
+import { ingresarConCorreoYContrasenaClick, ingresarConGoogleClick, ingresarConFacebookClick, cambiarHash } from '../view-controller.js'
 
 export const iniciarSesion = () => {
   const formIniciar = document.createElement('section')
@@ -10,8 +10,8 @@ export const iniciarSesion = () => {
        <span class='slogan'>Comparte tus conocimientos y aprende de otros</span>
      </div>
      <form id='form-autenticacion' class='form-autenticacion' action='index.html' method='post'>
-       <input class='form ' type='text' id='email' placeholder='Correo electrónico'></input>
-       <input class='form' type='password' id='password' placeholder='Contraseña'></input>
+       <input class='form ' type='text' id='email' name='email' placeholder='Correo electrónico'></input>
+       <input class='form' type='password' id='password' name='password' placeholder='Contraseña'></input>
        <button class='btn-login' id='btn-login' type='submit'>INICIAR SESIÓN</button>
      </form>
      <div class='iconos'>
@@ -22,23 +22,23 @@ export const iniciarSesion = () => {
     </div>
   `;
   formIniciar.innerHTML = formLogin;
-
+    
   // Inicia sesión con Correo y contraseña
-  const formAutenticacion = formIniciar.querySelector('#form-autenticacion');
-  formAutenticacion.addEventListener('submit', ingresarConCorreoYContrasena);
+  const formAutenticacion = formIniciar.querySelector('#btn-login');
+  formAutenticacion.addEventListener('click', ingresarConCorreoYContrasenaClick);
 
   // Inicia sesion con cuenta Google
   const btnGoogle = formIniciar.querySelector('#btn-google');
-  btnGoogle.addEventListener('click', ingresarConGoogle);
+  btnGoogle.addEventListener('click', ingresarConGoogleClick);
 
   // Inicia sesion con cuenta Facebook
   const btnFacebook = formIniciar.querySelector('#btn-facebook');
-  btnFacebook.addEventListener('click', ingresarConFacebook);
+  btnFacebook.addEventListener('click', ingresarConFacebookClick);
 
   const btnRegister = formIniciar.querySelector('#btn-registrate');
   btnRegister.addEventListener('click', () => {
   cambiarHash('/signup')
   });
-
+ 
   return formIniciar;
 };

@@ -1,4 +1,4 @@
-import{cerrarSesion, registroConCorreo} from '../lib/autentificacion.js';
+import{cerrarSesion, registroConCorreo} from '../controller/autentificacion.js';
 
 export const menuNavegacionHome = () => {
   const formCerrarSesion = document.createElement('div');

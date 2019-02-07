@@ -1,4 +1,4 @@
-import { registroConCorreo } from '../lib/autentificacion.js';
+import { registroConCorreoClick } from '../view-controller.js';
 
 export const registrarCuenta = () => {
   const formularioRegistro = document.createElement('div');
@@ -20,6 +20,6 @@ export const registrarCuenta = () => {
 formularioRegistro.innerHTML = formulario;
 
 const subRegistrar = formularioRegistro.querySelector('#form-registrar');
-subRegistrar.addEventListener('submit', registroConCorreo);
+subRegistrar.addEventListener('submit', registroConCorreoClick);
 return formularioRegistro;
 }
