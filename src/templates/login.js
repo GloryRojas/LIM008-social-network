@@ -3,23 +3,23 @@ import { ingresarConCorreoYContrasenaClick, ingresarConGoogleClick, ingresarConF
 export const iniciarSesion = () => {
   const formIniciar = document.createElement('section')
   const formLogin = `
-    <div class='iniciar-sesion'>
-     <div class='cabecera-login'>
-       <img class='logo' src='img/logo.png' alt=''>
-       <h1 class='titulo'>Infocourse</h1>
-       <span class='slogan'>Comparte tus conocimientos y aprende de otros</span>
-     </div>
-     <form id='form-autenticacion' class='form-autenticacion' action='index.html' method='post'>
-       <input class='form ' type='text' id='email' name='email' placeholder='Correo electrónico'></input>
-       <input class='form' type='password' id='password' name='password' placeholder='Contraseña'></input>
-       <button class='btn-login' id='btn-login' type='submit'>INICIAR SESIÓN</button>
-     </form>
-     <div class='iconos'>
-       <button id='btn-google' class='formGoogle' ><img class = 'iconGoogle' src='img/icono-google.png'>Iniciar sesión con Google</button>
-       <button id='btn-facebook' class='formFacebook'><img class = 'iconFacebook' src='img/icono-face.png'>Iniciar sesión con Facebook</button>
-       <a id='btn-registrate'>¿No tienes cuenta? Regístrate AQUI</a>
-     </div>
-    </div>
+  div class='iniciar-sesion'>
+  <div class='cabecera-login'>
+    <img class='logo-inicio' src='img/logo.png' alt=''>
+    <h2 class='titulo-inicio'>Infocourse</h1>
+    <span class='slogan'>Comparte tus conocimientos y aprende de otros</span>
+  </div>
+  <form id='form-autenticacion' class='form-autenticacion' action='index.html' method='post'>
+    <input class='form ' type='text' id='email' name='email' placeholder='Correo electrónico'></input>
+    <input class='form' type='password' id='password' name='password' placeholder='Contraseña'></input>
+    <button class='btn-login' id='btn-login' type='submit'>INICIAR SESIÓN</button>
+  </form>
+  <div class='iconos'>
+    <button id='btn-google' class='formGoogle' ><img class = 'iconGoogle' src='img/icono-google.png'>Iniciar sesión con Google</button>
+    <button id='btn-facebook' class='formFacebook'><img class = 'iconFacebook' src='img/icono-face.png'>Iniciar sesión con Facebook</button>
+    <a id='btn-registrate'>¿No tienes cuenta? Regístrate AQUI</a>
+  </div>
+ </div>
   `;
   formIniciar.innerHTML = formLogin;
     
