@@ -1,6 +1,6 @@
-import { iniciarSesion } from '../templates/login.js';
-import { menuNavegacionHome } from '../templates/network.js';
-import { registrarCuenta } from '../templates/register.js';
+import { iniciarSesion } from './templates/login.js';
+import { menuNavegacionHome } from './templates/network.js';
+import { registrarCuenta } from './templates/register.js';
 
 const cambiarTmp = (hash) => {
   if (hash === '#/' || hash === '' || hash === '#') {
@@ -19,6 +19,8 @@ const vistaTmp = (routers) => {
   switch (router) {
     case 'home':
       root.appendChild(menuNavegacionHome());
+      root.appendChild(inicializarFire());
+      //root.appendChild(muestraDatosUsuario());
       break;
     case 'login':
       root.appendChild(iniciarSesion());

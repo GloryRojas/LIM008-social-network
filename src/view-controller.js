@@ -1,4 +1,4 @@
-import { ingresarConCorreoYContrasena, ingresarConGoogle, ingresarConFacebook, registroConCorreo, cerrarSesion } from '../controller/autentificacion.js';
+import { ingresarConCorreoYContrasena, ingresarConGoogle, ingresarConFacebook, registroConCorreo, cerrarSesion } from './controller/autentificacion.js';
 
 // Funcion para cambiar la ruta
 export const cambiarHash = (hash) =>  {
@@ -9,7 +9,7 @@ export const ingresarConCorreoYContrasenaClick = (event) => {
     event.preventDefault();
     let usuario = document.querySelector('#email').value;
     let contrasena = document.querySelector('#password').value;
-    ingresarConCorreoYContrasena(usuario, contrasena)    
+    ingresarConCorreoYContrasena(usuario, contrasena)
         .then(() => cambiarHash('/home'))
         .catch(() => alert('Información incorrecta'))
     }
@@ -31,7 +31,7 @@ export const ingresarConGoogleClick = (event) => {
     }
 
 export const ingresarConFacebookClick = (event) => {
-    event.preventDefault();  
+    event.preventDefault();
     ingresarConFacebook()
     .then(() => cambiarHash('/home'))
     .catch((error) => {
@@ -74,3 +74,26 @@ export const cerrarSesionClick = () => {
     .then(() => cambiarHash('/login'))
     .catch(err => console.log('Error logout', err))
  }
+
+
+ export const inicializarFire = () => {
+    firebase.auth().onAuthStateChanged(()=>{
+        const user = firebase.auth().currentUser;
+        let photo, name;
+        if (user !== null) {
+             name = user.displayName;
+             photo = user.photoURL;
+            console.log(name,photo); 
+            const nameInfo=`
+            <p>${name}</p>
+            <img src="${photo}">`;
+            const datosUsuario = document.getElementById('datos-usuario'); 
+            datosUsuario.innerHTML= nameInfo;
+            //menuNavegacionHome(displayName, photoURL);
+
+        } else {
+            console.log('hola')
+        }     
+        } )
+        }
+
