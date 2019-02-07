@@ -74,3 +74,26 @@ export const cerrarSesionClick = () => {
     .then(() => cambiarHash('/login'))
     .catch(err => console.log('Error logout', err))
  }
+
+
+ export const inicializarFire = () => {
+    firebase.auth().onAuthStateChanged(()=>{
+        const user = firebase.auth().currentUser;
+        let photo, name;
+        if (user !== null) {
+             name = user.displayName;
+             photo = user.photoURL;
+            console.log(name,photo); 
+            const nameInfo=`
+            <p>${name}</p>
+            <img src="${photo}">`;
+            const datosUsuario = document.getElementById('datos-usuario'); 
+            datosUsuario.innerHTML= nameInfo;
+            //menuNavegacionHome(displayName, photoURL);
+
+        } else {
+            console.log('hola')
+        }     
+        } )
+        }
+
