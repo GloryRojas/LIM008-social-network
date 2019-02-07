@@ -1,7 +1,6 @@
-import { iniciarSesion } from '../templates/login.js';
-import { menuNavegacionHome } from '../templates/network.js';
-import { registrarCuenta } from '../templates/register.js';
-//import {muestraDatosUsuario} from './templates/infoUser.js';
+import { iniciarSesion } from './templates/login.js';
+import { menuNavegacionHome } from './templates/network.js';
+import { registrarCuenta } from './templates/register.js';
 
 const cambiarTmp = (hash) => {
   if (hash === '#/' || hash === '' || hash === '#') {
