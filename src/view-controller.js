@@ -1,4 +1,5 @@
 import { ingresarConCorreoYContrasena, ingresarConGoogle, ingresarConFacebook, registroConCorreo, cerrarSesion } from '../controller/autentificacion.js';
+import {templateInfoUser} from './templates/infoUsuario.js'
 
 // Funcion para cambiar la ruta
 export const cambiarHash = (hash) =>  {
@@ -77,21 +78,24 @@ export const cerrarSesionClick = () => {
 
 
 
- export const inicializarFire = ()=>{
-    firebase.auth().onAuthStateChanged((auth)=>{
-        console.log(auth)
-        var user = firebase.auth().currentUser;
-        var name, email, photoUrl, uid, emailVerified;
-        console.log(user)
-        if (user != null) {
-          name = user.displayName;
-          email = user.email;
-          photoUrl = user.photoURL;
-          uid = user.uid; 
-          emailVerified = user.emailVerified;
-          uid = user.uid;  
-          console.log(name,email, photoUrl, uid, emailVerified);
+ 
+ export const inicializarFire = () => {
+    firebase.auth().onAuthStateChanged(()=>{
+        const user = firebase.auth().currentUser;
+        let photo, name;
+        if (user !== null) {
+             name = user.displayName;
+             photo = user.photoURL;
+            console.log(name,photo); 
+            const nameInfo=`
+            <p>${name}</p>
+            <img src="${photo}">`;
+            const datosUsuario = document.getElementById('datos-usuario'); 
+            datosUsuario.innerHTML= nameInfo;
+            //menuNavegacionHome(displayName, photoURL);
 
-              }
-            })
+        } else {
+            console.log('hola')
+        }     
+        } )
         }

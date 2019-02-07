@@ -49,17 +49,7 @@ describe('registroConCorreo', () => {
   });
 });
 describe('cerrarSesion', () => {
-<<<<<<< HEAD
   it('debería ser una función', () => {
     expect(typeof cerrarSesion).toBe('function');
-  });
-});
-describe('cerrarSesion ', () => {
-  it('debería ser una función', () => {
-    expect().toBe('');
-=======
-  it('debería ser una función', () => {
-    expect(typeof cerrarSesion).toBe('function');
->>>>>>> 268535746890319f129ac34027805147e75f3913
   });
 });

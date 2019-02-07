@@ -2,6 +2,7 @@ import { initRouter } from './router.js'
 import { inicializarFire } from './view-controller.js';
 //import { inicializarFire } from './view-controller.js';
 const init = () => {
+    console.log('1');
     // Initialize Firebase
     const config = {
         apiKey: "AIzaSyAs6PO8-5P1Y3i_qX_jaXnUeF44OYmpgZc",
@@ -13,7 +14,7 @@ const init = () => {
       };
       firebase.initializeApp(config);
       initRouter();
-      inicializarFire();
+      
   }
   
   window.onload = init;
