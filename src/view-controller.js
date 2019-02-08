@@ -50,9 +50,15 @@ export const registroConCorreoClick = (event) => {
     event.preventDefault();
     let user = event.target.correo.value;
     let password = event.target.contrasena.value;
+    let name = event.target.nombres.value;
     registroConCorreo(user, password)
-    .then(result => {
+    .then(() => {
         let user = firebase.auth().currentUser;
+        firebase.firestore().collection('users').doc(user.uid).set({
+        id: user.uid,
+        name: name,
+        email: user.email,
+        });
         user.sendEmailVerification()
           .then(result => {
             alert('Email enviado, revise su bandeja');
