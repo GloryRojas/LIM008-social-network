@@ -5,8 +5,8 @@ export const iniciarSesion = () => {
   const formLogin = `
     <div class='iniciar-sesion'>
      <div class='cabecera-login'>
-       <img class='logo' src='img/logo.png' alt=''>
-       <h1 class='titulo'>Infocourse</h1>
+       <img class='logo-inicio' src='img/logo.png' alt=''>
+       <h2 class='titulo-inicio'>Infocourse</h1>
        <span class='slogan'>Comparte tus conocimientos y aprende de otros</span>
      </div>
      <form id='form-autenticacion' class='form-autenticacion' action='index.html' method='post'>
