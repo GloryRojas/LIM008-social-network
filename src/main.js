@@ -1,9 +1,5 @@
-import { initRouter } from './router.js'
-import { inicializarFire } from './view-controller.js';
-//import { inicializarFire } from './view-controller.js';
+import { initRouter } from './router.js';
 const init = () => {
-    console.log('1');
-    // Initialize Firebase
     const config = {
         apiKey: "AIzaSyAs6PO8-5P1Y3i_qX_jaXnUeF44OYmpgZc",
         authDomain: "lim008-social-network.firebaseapp.com",
@@ -13,8 +9,6 @@ const init = () => {
         messagingSenderId: "3950063519"
       };
       firebase.initializeApp(config);
-      initRouter();
-      
-  }
-  
-  window.onload = init;
+    initRouter();
+}
+window.addEventListener('load', init)
