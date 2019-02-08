@@ -1,4 +1,4 @@
-import{cerrarSesion} from '../controller/autentificacion.js';
+import{cerrarSesionClick} from '../view-controller.js';
 
 export const menuNavegacionHome = () => {
   //Carga de Header/home
@@ -78,6 +78,6 @@ obtenerPost()
 
   //Carga de Cerrar Sesión
   const btnCerrarSesion = formCerrarSesion.querySelector('#btn-cerrar-sesion');
-  btnCerrarSesion.addEventListener('click', cerrarSesion);
+  btnCerrarSesion.addEventListener('click', cerrarSesionClick);
     return formCerrarSesion;
 }

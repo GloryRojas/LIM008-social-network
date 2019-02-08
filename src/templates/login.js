@@ -10,6 +10,7 @@ export const iniciarSesion = () => {
        <span class='slogan'>Comparte tus conocimientos y aprende de otros</span>
      </div>
      <form id='form-autenticacion' class='form-autenticacion' action='index.html' method='post'>
+       <span id='error-login'></span>
        <input class='form ' type='text' id='email' name='email' placeholder='Correo electrónico'></input>
        <input class='form' type='password' id='password' name='password' placeholder='Contraseña'></input>
        <button class='btn-login' id='btn-login' type='submit'>INICIAR SESIÓN</button>
