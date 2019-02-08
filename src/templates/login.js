@@ -39,6 +39,6 @@ export const iniciarSesion = () => {
   btnRegister.addEventListener('click', () => {
   cambiarHash('/signup')
   });
- 
+  
   return formIniciar;
 };

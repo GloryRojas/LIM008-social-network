@@ -1,7 +1,7 @@
-import{cerrarSesion, registroConCorreo} from '../controller/autentificacion.js';
+import{cerrarSesion} from '../controller/autentificacion.js';
 
 export const menuNavegacionHome = () => {
-  const formCerrarSesion = document.createElement('div');
+  const formCerrarSesion = document.createElement('header');
   const pantallaPrincipal = `
     <div class='contenedor'>
       <a class = "contenedor-home"><img class='logo' src='img/logo-home.png' alt=''>Infocourse</h1>
