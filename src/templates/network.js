@@ -1,10 +1,8 @@
 import{cerrarSesion} from '../controller/autentificacion.js';
-//import{inicializarFire} from '../view-controller.js';
 
 export const menuNavegacionHome = () => {
-  
-  
-  const formCerrarSesion = document.createElement('div');
+  const formCerrarSesion = document.createElement('header');
+
   const pantallaPrincipal = `
   <header>
     <div class="contenedor">
