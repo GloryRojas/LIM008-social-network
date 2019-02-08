@@ -72,6 +72,19 @@ header label{
 #btn-menu:checked ~ .menu {
   transform: translateX(0);
 }
+.formPost{
+  margin-top: 70px;
+  padding: 20px;
+}
+.contenedor-publicaciones{
+  width: 50%px;
+  background: blue;
+}
+.contenedor-post{
+  width: 500px;
+  height: 150px;
+  background: red;
+}
 @media (min-width:900px){
 .menu{
   position: static;
