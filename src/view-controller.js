@@ -80,9 +80,10 @@ export const cerrarSesionClick = () => {
     .then(() => cambiarHash('/login'))
     .catch(err => console.log('Error logout', err))
  }
+ 
 
 
- export const inicializarFire = () => {
+ /* export const inicializarFire = () => {
     firebase.auth().onAuthStateChanged(()=>{
         const user = firebase.auth().currentUser;
         let photo, name;
@@ -101,5 +102,5 @@ export const cerrarSesionClick = () => {
             console.log('hola')
         }     
         } )
-        }
+        }*/
 

@@ -19,7 +19,7 @@ const vistaTmp = (routers) => {
   switch (router) {
     case 'home':
       root.appendChild(menuNavegacionHome());
-      root.appendChild(inicializarFire());
+      
       //root.appendChild(muestraDatosUsuario());
       break;
     case 'login':

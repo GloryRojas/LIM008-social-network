@@ -15,6 +15,10 @@ export const menuNavegacionHome = () => {
           </nav>
     </div>
   </header>
+
+  </div>
+  <div id="datos-usuario">
+  </div>
   <div class="" id="id-post">
     <section id="id_publicaciones" class="formPost">
       <h3>Ingresa tus publicaciones aqui!</h3><br>
@@ -25,20 +29,44 @@ export const menuNavegacionHome = () => {
       <h3>Tus publicaciones aqui!</h3><br>
       <ul id="id-contenedorPublicaciones" class= "contenedor-publicaciones"></ul>
     </section>
-  </div>
-  <div id="datos-usuario">
-  </div>
+  
   `;
   //const datosUsuario = document.getElementById('datos-usuario');
   //datosUsuario.innerHTML=inicializarFire();
   formCerrarSesion.innerHTML = pantallaPrincipal;
+  //subir info
+  
+   const inicializarFire = () => {
+    firebase.auth().onAuthStateChanged(()=>{
+        const user = firebase.auth().currentUser;
+        let photo, name;
+        if (user !== null) {
+             name = user.displayName;
+             photo = user.photoURL;
+            console.log(name,photo); 
+            const nameInfo=`
+            <p>${name}</p>
+            <img src="${photo}">`;
+            const datosUsuario = document.getElementById('datos-usuario'); 
+            datosUsuario.innerHTML= nameInfo;
+            //menuNavegacionHome(displayName, photoURL);
+
+        } else {
+            console.log('hola')
+        }     
+        } );
+       console.log(inicializarFire());
+
+        }
 
   //Cargar de Post
   const collectionRef = firebase.firestore().collection("publicaciones");
   const agregarPost = (mensajePost) => {
+      let user = firebase.auth().currentUser;
       collectionRef.add({
-      autor : "user.display",
+      autor : user.displayName,
       mensaje : mensajePost,
+      like:"0",
       fecha : Date(),
       privacidad: "Publico o privado",
       })
@@ -50,31 +78,20 @@ export const menuNavegacionHome = () => {
   }
   btnGuardarPost.addEventListener('click', publicarMensaje);
   
-  const contenedorPublicaciones = formCerrarSesion.querySelector("#id-contenedorPublicaciones");
+  
   const obtenerPost = () => {
+    //console.log(collectionRef);
     collectionRef.onSnapshot(function(querySnapshot){
         const posts =[];
         querySnapshot.forEach(function(doc){
             posts.push(doc.data().mensaje)
         })
-        const templateContenedorPost = (data)=>{
-            let listPublicaciones = "";
-            data.forEach((data)=>{
-                const templateContenedorPost = `
-                <div>
-                    <p id ="id-contenedorPost" class ="contenedor-post">${data}</p>
-                    <button type="button">Editar</button>
-                    <button type="button">Eliminar</button>
-                </div>
-                `;
-                listPublicaciones += templateContenedorPost;
-            });
-            contenedorPublicaciones.innerHTML = listPublicaciones;
-        };
+        console.log(posts)
         templateContenedorPost(posts)
     })
 }
 obtenerPost()
+
 
   //Carga de Cerrar Sesión
   const btnCerrarSesion = formCerrarSesion.querySelector('#btn-cerrar-sesion');
