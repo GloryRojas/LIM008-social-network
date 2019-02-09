@@ -8,6 +8,7 @@ export const registrarCuenta = () => {
    <form id='form-registrar' class='form-registrar' action='index.html' method='post'>
      <fieldset>
        <span class='titulo-registrarse'>Regístrate con tu direccion de correo electronico</span>
+       <span id='error-registrarse'></span>
        <input class='form' type='text' name='nombres' placeholder='Nombres'></input>
        <input class='form' type='text' name='correo' placeholder='Correo electrónico'></input>
        <input class='form' type='password' name='contrasena' placeholder='Contraseña'></input>

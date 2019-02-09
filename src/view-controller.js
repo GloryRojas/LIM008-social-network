@@ -9,15 +9,55 @@ export const ingresarConCorreoYContrasenaClick = (event) => {
     event.preventDefault();
     let usuario = document.querySelector('#email').value;
     let contrasena = document.querySelector('#password').value;
+    let errorLogin = document.querySelector('#error-login');
     ingresarConCorreoYContrasena(usuario, contrasena)
         .then(() => cambiarHash('/home'))
-        .catch(() => alert('Información incorrecta'))
+        .catch(() => errorLogin.innerHTML= 'Datos incorrectos, vuelve a intentarlo')
     }
 
 export const ingresarConGoogleClick = (event) => {
     event.preventDefault();
     ingresarConGoogle()
-        .then(() => cambiarHash('/home'))
+        .then(() => {
+            let user = firebase.auth().currentUser;
+            if (user != null) {
+            user.providerData.forEach(function (profile) {
+                firebase.firestore().collection('users').doc(user.uid).set({
+                    id: profile.uid,
+                    name: profile.displayName,
+                    email: profile.email,
+                    photo: profile.photoURL,
+                    });
+            }
+            )}
+            cambiarHash('/home');
+        })
+        .catch((error) => {
+            // Handle Errors here.
+            var errorCode = error.code;
+            var errorMessage = error.message;
+            // The email of the user's account used.
+            var email = error.email;
+        })
+    }
+
+export const ingresarConFacebookClick = (event) => {
+    event.preventDefault();
+    ingresarConFacebook()
+        .then(() => {
+            let user = firebase.auth().currentUser;
+            if (user != null) {
+            user.providerData.forEach(function (profile) {
+                firebase.firestore().collection('users').doc(user.uid).set({
+                    id: profile.uid,
+                    name: profile.displayName,
+                    email: profile.email,
+                    photo: profile.photoURL,
+                    });
+            }
+            )}
+            cambiarHash('/home');
+        })
         .catch((error) => {
             // Handle Errors here.
             var errorCode = error.code;
@@ -30,50 +70,32 @@ export const ingresarConGoogleClick = (event) => {
         })
     }
 
-export const ingresarConFacebookClick = (event) => {
-    event.preventDefault();
-    ingresarConFacebook()
-    .then(() => cambiarHash('/home'))
-    .catch((error) => {
-        // Handle Errors here.
-        var errorCode = error.code;
-        var errorMessage = error.message;
-        // The email of the user's account used.
-        var email = error.email;
-        // The firebase.auth.AuthCredential type that was used.
-        var credential = error.credential;
-        // ...
-      })
-    }
-
 export const registroConCorreoClick = (event) => {
     event.preventDefault();
     let user = event.target.correo.value;
     let password = event.target.contrasena.value;
     let name = event.target.nombres.value;
     registroConCorreo(user, password)
-    .then(() => {
-        let user = firebase.auth().currentUser;
-        firebase.firestore().collection('users').doc(user.uid).set({
-        id: user.uid,
-        name: name,
-        email: user.email,
-        });
-        user.sendEmailVerification()
-          .then(result => {
-            alert('Email enviado, revise su bandeja');
-          })
-        .catch((error) => {
-          console.log('No se pudo enviar email')
-        });
-        alert('Datos registrados: Inicie sesión')
-        cambiarHash('/login');
-      })
-    .catch(function(error) {
-        alert(error.message)
-        console.log(error.message);
-      })
-    }
+        .then(() => {
+            let user = firebase.auth().currentUser;
+            firebase.firestore().collection('users').doc(user.uid).set({
+                id: user.uid,
+                name: name,
+                email: user.email,
+                photo: user.photoURL,
+                });
+            user.sendEmailVerification()
+            .catch((error) => {
+            console.log('No se pudo enviar email')
+            });
+            alert('Email enviado, revise su bandeja e inicie sesión');
+            cambiarHash('/login');
+        })
+        .catch(function(error) {
+            alert(error.message)
+            console.log(error.message);
+        })
+}
 
 export const cerrarSesionClick = () => {
     cerrarSesion()
@@ -96,12 +118,11 @@ export const cerrarSesionClick = () => {
             const datosUsuario = document.getElementById('datos-usuario'); 
             datosUsuario.innerHTML= nameInfo;
             //menuNavegacionHome(displayName, photoURL);
-
         } else {
             console.log('hola')
         }     
-        } )
-        }
+    } )
+}
 
 export const guardarConClick = (event) => {
     event.preventDefault();
