@@ -1,7 +1,7 @@
 import { ingresarConCorreoYContrasenaClick, ingresarConGoogleClick, ingresarConFacebookClick, cambiarHash } from '../view-controller.js'
 
 export const iniciarSesion = () => {
-  const formIniciar = document.createElement('section')
+  const formIniciar = document.createElement('section');
   const formLogin = `
     <div class='iniciar-sesion'>
      <div class='cabecera-login'>

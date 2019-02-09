@@ -82,13 +82,9 @@ header label{
 }
 .contenedor-publicaciones{
   width: 50%px;
-  background: blue;
+  background: lightcoral;
 }
-.contenedor-post{
-  width: 500px;
-  height: 150px;
-  background: red;
-}
+
 @media (min-width:900px){
 .menu{
   position: static;
@@ -130,18 +126,18 @@ header label{
   text-align: center;
 }
 .logo-inicio{
- 
- height: 150px;
+ width: 100px;
+ height: 100px;
 }
 
-.titulo-inicio,.logo-inicio,.slogan{
+.titulo-inicio,.slogan{
   width: 100%;
   display: flex;
   text-align: center;
   position: relative;
 }
 .titulo-inicio{
-  margin-left: 10%;
+  margin-left: 30%;
 }
 .form,.btn-login,#btn-google,#btn-facebook, #btn-registrate{
   display:block;
@@ -167,8 +163,6 @@ header label{
   justify-content:center;
   
 }
-
-
 #btn-google,#btn-facebook, #btn-registrate{
   font-size: 15px;
 }
