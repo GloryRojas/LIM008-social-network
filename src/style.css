@@ -38,7 +38,7 @@ header .contendor{
 #btn-menu{
   display: none;
 }
-#error-login {
+.error {
   color: red;
   text-align: center;
 }

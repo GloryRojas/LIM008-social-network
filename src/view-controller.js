@@ -75,6 +75,7 @@ export const registroConCorreoClick = (event) => {
     let user = event.target.correo.value;
     let password = event.target.contrasena.value;
     let name = event.target.nombres.value;
+    let errorRegis = document.getElementById('error-registrarse');
     registroConCorreo(user, password)
         .then(() => {
             let user = firebase.auth().currentUser;
@@ -86,13 +87,19 @@ export const registroConCorreoClick = (event) => {
                 });
             user.sendEmailVerification()
             .catch((error) => {
-            console.log('No se pudo enviar email')
-            });
-            alert('Email enviado, revise su bandeja e inicie sesión');
-            cambiarHash('/login');
+                if(user === '' & password === '' & user === ''){
+                    errorRegis.innerHTML = 'Debe completar todos los campos'
+                }
+                console.log('No se pudo enviar email')
+                });
+                alert('Email enviado, revise su bandeja e inicie sesión');
+                cambiarHash('/login');
         })
         .catch(function(error) {
-            alert(error.message)
+            errorRegis.innerHTML = error.message;
+            if(user === '' & password === '' & user === ''){
+                errorRegis.innerHTML = 'Debe completar todos los campos'
+            }
             console.log(error.message);
         })
 }
@@ -126,6 +133,6 @@ export const cerrarSesionClick = () => {
 
 export const guardarConClick = (event) => {
     event.preventDefault();
-      const valorMensaje = document.getElementById("id-publicacion").value;
+      const valorMensaje = document.querySelector("#id-publicacion").value;
       return agregarPost(valorMensaje);
 }

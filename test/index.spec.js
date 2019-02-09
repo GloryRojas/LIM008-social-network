@@ -1,3 +1,8 @@
+// importamos la funcion que vamos a testear
+
+import { ingresarConCorreoYContrasena, ingresarConGoogle, ingresarConFacebook, registroConCorreo, cerrarSesion } from "../src/controller/autentificacion.js";
+import { agregarPost, obtenerPost } from "../src/controller/publicacion.js";;
+
 // configurando firebase mock
 const firebasemock = require('firebase-mock');
 const mockauth = new firebasemock.MockFirebase();
@@ -12,9 +17,6 @@ global.firebase = firebasemock.MockFirebaseSdk(
   () => mockfirestore
 );
 
-// importamos la funcion que vamos a testear
-
-import { ingresarConCorreoYContrasena, ingresarConGoogle, ingresarConFacebook, registroConCorreo, cerrarSesion } from "../src/controller/autentificacion.js";
 
 describe('ingresarConCorreoYContrasena', () => {
   it('debería ser una función', () => {
@@ -51,5 +53,15 @@ describe('registroConCorreo', () => {
 describe('cerrarSesion', () => {
   it('debería ser una función', () => {
     expect(typeof cerrarSesion).toBe('function');
+  });
+});
+describe('agregarPost', () => {
+  it('debería ser una función', () => {
+    expect(typeof agregarPost).toBe('function');
+  });
+});
+describe('obtenerPost', () => {
+  it('debería ser una función', () => {
+    expect(typeof obtenerPost).toBe('function');
   });
 });
