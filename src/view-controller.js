@@ -1,5 +1,5 @@
 import { ingresarConCorreoYContrasena, ingresarConGoogle, ingresarConFacebook, registroConCorreo, cerrarSesion } from './controller/autentificacion.js';
-
+import { agregarPost} from './controller/publicacion.js';
 // Funcion para cambiar la ruta
 export const cambiarHash = (hash) =>  {
     location.hash = hash;
@@ -97,3 +97,8 @@ export const cerrarSesionClick = () => {
         } )
         }
 
+export const guardarConClick = (event) => {
+    event.preventDefault();
+      const valorMensaje = document.getElementById("id-publicacion").value;
+      return agregarPost(valorMensaje);
+}
