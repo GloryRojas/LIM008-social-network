@@ -38,6 +38,10 @@ header .contendor{
 #btn-menu{
   display: none;
 }
+#error-login {
+  color: red;
+  text-align: center;
+}
 header label{
   float: right;
   font-size: 28px;
