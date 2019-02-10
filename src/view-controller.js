@@ -51,13 +51,14 @@ export const registroConCorreoClick = (event) => {
     let user = event.target.correo.value;
     let password = event.target.contrasena.value;
     let name = event.target.nombres.value;
-    registroConCorreo(user, password)
+    registroConCorreo(user, password,name)
     .then(() => {
         let user = firebase.auth().currentUser;
         firebase.firestore().collection('users').doc(user.uid).set({
         id: user.uid,
         name: name,
         email: user.email,
+        photo: user.photoURL
         });
         user.sendEmailVerification()
           .then(result => {
@@ -83,26 +84,7 @@ export const cerrarSesionClick = () => {
  
 
 
- /* export const inicializarFire = () => {
-    firebase.auth().onAuthStateChanged(()=>{
-        const user = firebase.auth().currentUser;
-        let photo, name;
-        if (user !== null) {
-             name = user.displayName;
-             photo = user.photoURL;
-            console.log(name,photo); 
-            const nameInfo=`
-            <p>${name}</p>
-            <img src="${photo}">`;
-            const datosUsuario = document.getElementById('datos-usuario'); 
-            datosUsuario.innerHTML= nameInfo;
-            //menuNavegacionHome(displayName, photoURL);
-
-        } else {
-            console.log('hola')
-        }     
-        } )
-        }*/
+ 
 
 export const guardarConClick = (event) => {
     event.preventDefault();

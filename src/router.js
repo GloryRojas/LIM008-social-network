@@ -2,6 +2,8 @@ import { iniciarSesion } from './templates/login.js';
 import { menuNavegacionHome } from './templates/network.js';
 import { registrarCuenta } from './templates/register.js';
 import { cargarPublicaciones } from './templates/post.js';
+import { obtenerPost } from './controller/publicacion.js';
+
 
 const cambiarTmp = (hash) => {
   if (hash === '#/' || hash === '' || hash === '#') {
@@ -20,7 +22,11 @@ const vistaTmp = (routers) => {
   switch (router) {
     case 'home':
       root.appendChild(menuNavegacionHome());
-      root.appendChild(cargarPublicaciones())
+      obtenerPost((dataPost) => {
+        proot.innerHTML = '';
+        root.appendChild(cargarPublicaciones(dataPost));
+      })
+      //root.appendChild(cargarPublicaciones())
      // root.appendChild(inicializarFire());
       //root.appendChild(muestraDatosUsuario());
       break;

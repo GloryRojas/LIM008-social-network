@@ -4,9 +4,9 @@ import { obtenerPost } from '../controller/publicacion.js';
 export const cargarPublicaciones = () => {
     const templatePublicaciones = document.createElement('div');
     const publicaciones = `
-        <section id="id_publicaciones" class="formPost">
+        <section id="id_publicaciones" class="formPost" >
             <h3>Ingresa tus publicaciones aqui!</h3><br>
-            <input type= "textfield" id="id-publicacion">
+            <textarea type= "textfield" id="id-publicacion" class="id-publicacion" cols="50" rows="5"  autofocus placeholder="publica aqui" ></textarea>
             <button id = "id-save">guardar</button>
             <select>
                     <option value="Publico">Publico</option>
@@ -37,11 +37,18 @@ export const templateContenedorPost = (data)=>{
             <p id ="id-contenedorPost" class ="contenedor-post">${data.mensaje}</p>
             <p id ="id-contenedorPost" class ="contenedor-post">${data.fecha}</p>
             <button type="button">Editar</button>
-            <button type="button" id = "id-eliminarPost">Eliminar</button>
+            <img src="img/garbage.png" type="button" id = "id-eliminarPost">
+            <img src="img/like.png" type="button" id ="btn-megusta">
+            <label  id="contenedor-like"></label>
         </div>
         `;
-        listPublicaciones +=contenedorPost;
+
+    listPublicaciones +=contenedorPost;
+    
     });
+   
     const contenedorPublicaciones = document.getElementById("id-contenedorPublicaciones");
     contenedorPublicaciones.innerHTML = listPublicaciones;
-};
+
+    };
+   
