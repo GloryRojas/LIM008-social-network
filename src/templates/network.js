@@ -1,5 +1,4 @@
-import{cerrarSesion} from '../controller/autentificacion.js';
-import{cargarPublicaciones} from '../templates/post.js';
+import{cerrarSesionClick} from '../view-controller.js';
 
 export const menuNavegacionHome = () => {
   //Carga de Headerhome
@@ -20,6 +19,6 @@ export const menuNavegacionHome = () => {
   headerHome.innerHTML = pantallaPrincipal;
   //Carga de Cerrar Sesión
   const btnCerrarSesion = headerHome.querySelector('#btn-cerrar-sesion');
-  btnCerrarSesion.addEventListener('click', cerrarSesion);
-  return headerHome;
-  }
+  btnCerrarSesion.addEventListener('click', cerrarSesionClick);
+    return headerHome;
+}
