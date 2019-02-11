@@ -131,7 +131,7 @@ export const guardarConClick = (event) => {
       const valorMensaje = document.getElementById("id-publicacion").value;
       return agregarPost(valorMensaje);
 }
-export const verLike=(idPost)=>{
+/* export const verLike=(idPost)=>{
   return  firebase.firestore().collection("publicaciones").doc(idPost).get().then((result)=>{
 const countLike= result.data().like;
 return countLike;
@@ -142,7 +142,7 @@ export const contarLike=(idPost,likePost)=>{
   const countLike= result.data().like;
   return countLike.upDate({like : likePost +=1,});
    
-  };
+  }; */
 export const eliminarMensajeConClick = (event) =>{
   event.preventDefault();
   eliminarPost(event.target.id);
@@ -150,6 +150,6 @@ export const eliminarMensajeConClick = (event) =>{
 export const editarConClick = (event) => {
   event.preventDefault();
   const idMensaje = event.target.id
-  const post = "Lucero le dijo gorda a Glory"
+  const post = "Lucero se retractó con  Glory"
   editarPost(idMensaje, post)
 }

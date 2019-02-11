@@ -41,9 +41,9 @@ export const templateContenedorPost = (data)=>{
             <p id ="id-contenedorPost" class ="contenedor-post">${doc.autor}</p>
             <p id ="id-contenedorPost" class ="contenedor-post">${doc.mensaje}</p>
             <p id ="id-contenedorPost" class ="contenedor-post">${doc.fecha}</p>
-            <button class="btn-editar" type="button"  id = "${doc.id}" >Editar</button>
-            <img src="img/garbage.png" class="btn-eliminar" type="button" id = "${doc.id}">
-            <img src="img/like.png" type="button"  class="btn-like" id ="${doc.id}">
+            <button type="button" class="btn-editar" id = "${doc.id}">Editar</button>
+            <button type="button" class="btn-eliminar" id = "${doc.id}">Eliminar</button>
+            <button type="button" class="btn-like" id = "${doc.id}">like</button>
             <label  id="contenedor-like"></label>
 
         </div>
@@ -53,9 +53,9 @@ export const templateContenedorPost = (data)=>{
     });
     const contenedorPublicaciones = document.getElementById("id-contenedorPublicaciones");
     contenedorPublicaciones.innerHTML = listPublicaciones;
-   [...document.getElementsByClassName("btn-like")].forEach((btnLike)=>{
+  /* [...document.getElementsByClassName("btn-like")].forEach((btnLike)=>{
        btnLike.addEventListener('click',contarLikesConClick());
-   });  
+   }); */ 
  
     [...document.getElementsByClassName("btn-eliminar")].forEach(function(btnEliminar){
         btnEliminar.addEventListener("click", eliminarMensajeConClick);
