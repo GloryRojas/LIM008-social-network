@@ -1,13 +1,16 @@
 import { guardarConClick,eliminarMensajeConClick,editarConClick } from '../view-controller.js';
-import { obtenerPost} from '../controller/publicacion.js';
+import { obtenerPost,contarLikesConClick} from '../controller/publicacion.js';
 
 export const cargarPublicaciones = () => {
     const templatePublicaciones = document.createElement('div');
+    
     const publicaciones = `
-        <section id="id_publicaciones" class="formPost">
-            <h3>Ingresa tus publicaciones aqui!</h3><br>
-            <input type= "textfield" id="id-publicacion">
+        <section id="id_publicaciones" class="formPost" >
+            <h3 >Ingresa tus publicaciones aqui!</h3><br>
+            <div class="text-boton-post">
+            <textarea type= "textfield" id="id-publicacion" class="id-publicacion" cols="50" rows="5"  autofocus placeholder="publica aqui" ></textarea>
             <button id = "id-save">guardar</button>
+            </div>
             <select>
                     <option value="Publico">Publico</option>
                     <option value="Privado">Privado</option>
@@ -15,17 +18,21 @@ export const cargarPublicaciones = () => {
         </section>
         <section id="id_contenedor">
             <div>
-                <h3>Tus publicaciones aqui!</h3><br>
+                <h3 class="ingresar-post-aqui">Tus publicaciones aqui!</h3><br>
                 <ul id="id-contenedorPublicaciones" class= "contenedor-publicaciones"></ul>
             </div>
         </section>
     `;
     templatePublicaciones.innerHTML=publicaciones;
     const btnGuardarPost = templatePublicaciones.querySelector("#id-save");
-    btnGuardarPost.addEventListener("click",guardarConClick);
+
+    btnGuardarPost.addEventListener("click",contarLikesConClick);
     obtenerPost();
+
+    
   return templatePublicaciones;
 }
+
 export const templateContenedorPost = (data)=>{
     let listPublicaciones = "";
     data.forEach((doc)=>{
@@ -34,15 +41,22 @@ export const templateContenedorPost = (data)=>{
             <p id ="id-contenedorPost" class ="contenedor-post">${doc.autor}</p>
             <p id ="id-contenedorPost" class ="contenedor-post">${doc.mensaje}</p>
             <p id ="id-contenedorPost" class ="contenedor-post">${doc.fecha}</p>
-            <button type="button" class="btn-editar" id = "${doc.id}">Editar</button>
-            <button type="button" class="btn-eliminar" id = "${doc.id}">Eliminar</button>
+            <button class="btn-editar" type="button"  id = "${doc.id}" >Editar</button>
+            <img src="img/garbage.png" class="btn-eliminar" type="button" id = "${doc.id}">
+            <img src="img/like.png" type="button"  class="btn-like" id ="${doc.id}">
+            <label  id="contenedor-like"></label>
+
         </div>
         `;
-        listPublicaciones +=contenedorPost;
+
+    listPublicaciones +=contenedorPost;
     });
     const contenedorPublicaciones = document.getElementById("id-contenedorPublicaciones");
     contenedorPublicaciones.innerHTML = listPublicaciones;
-
+   [...document.getElementsByClassName("btn-like")].forEach((btnLike)=>{
+       btnLike.addEventListener('click',contarLikesConClick());
+   });  
+ 
     [...document.getElementsByClassName("btn-eliminar")].forEach(function(btnEliminar){
         btnEliminar.addEventListener("click", eliminarMensajeConClick);
     });

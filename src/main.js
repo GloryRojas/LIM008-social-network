@@ -1,4 +1,5 @@
 import { initRouter } from './router.js';
+
 const init = () => {
     const config = {
         apiKey: "AIzaSyAs6PO8-5P1Y3i_qX_jaXnUeF44OYmpgZc",
@@ -10,5 +11,6 @@ const init = () => {
       };
       firebase.initializeApp(config);
     initRouter();
+    
 }
 window.addEventListener('load', init)

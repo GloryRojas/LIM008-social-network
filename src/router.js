@@ -2,6 +2,8 @@ import { iniciarSesion } from './templates/login.js';
 import { menuNavegacionHome } from './templates/network.js';
 import { registrarCuenta } from './templates/register.js';
 import { cargarPublicaciones } from './templates/post.js';
+import { obtenerPost } from './controller/publicacion.js';
+
 
 const cambiarTmp = (hash) => {
   if (hash === '#/' || hash === '' || hash === '#') {
