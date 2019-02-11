@@ -131,18 +131,18 @@ export const guardarConClick = (event) => {
       const valorMensaje = document.getElementById("id-publicacion").value;
       return agregarPost(valorMensaje);
 }
-export const verLike=(idPost)=>{
+/* export const verLike=(idPost)=>{
   return  firebase.firestore().collection("publicaciones").doc(idPost).get().then((result)=>{
 const countLike= result.data().like;
 return countLike;
   }).catch(()=>{})
-};
-export const contarLike=(idPost,likePost)=>{
+}; */
+/* export const contarLike=(idPost,likePost)=>{
     let likeOnClick= firebase.firestore().collection("publicaciones").doc(idPost);
   const countLike= result.data().like;
   return countLike.upDate({like : likePost +=1,});
    
-  };
+  }; */
 export const eliminarMensajeConClick = (event) =>{
   event.preventDefault();
   eliminarPost(event.target.id);
@@ -151,5 +151,6 @@ export const editarConClick = (event) => {
   event.preventDefault();
   const idMensaje = event.target.id
   const post = "Lucero le dijo gorda a Glory"
+  console.log("hola")
   editarPost(idMensaje, post)
 }
