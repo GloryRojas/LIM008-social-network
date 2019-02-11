@@ -22,11 +22,7 @@ const vistaTmp = (routers) => {
   switch (router) {
     case 'home':
       root.appendChild(menuNavegacionHome());
-      obtenerPost((dataPost) => {
-        proot.innerHTML = '';
-        root.appendChild(cargarPublicaciones(dataPost));
-      })
-      //root.appendChild(cargarPublicaciones())
+      root.appendChild(cargarPublicaciones())
      // root.appendChild(inicializarFire());
       //root.appendChild(muestraDatosUsuario());
       break;

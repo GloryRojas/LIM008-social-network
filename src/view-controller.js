@@ -70,7 +70,7 @@ export const ingresarConFacebookClick = (event) => {
         })
     }
 
-export const registroConCorreoClick = (event) => {
+ export const registroConCorreoClick = (event) => {
     event.preventDefault();
     let user = event.target.correo.value;
     let password = event.target.contrasena.value;
@@ -95,7 +95,7 @@ export const registroConCorreoClick = (event) => {
             alert(error.message)
             console.log(error.message);
         })
-}
+} 
 
 export const cerrarSesionClick = () => {
     cerrarSesion()
@@ -122,7 +122,7 @@ export const cerrarSesionClick = () => {
         } else {
             console.log('hola')
         }     
-    } )
+    } ) 
 }
 
 export const guardarConClick = (event) => {
@@ -130,3 +130,17 @@ export const guardarConClick = (event) => {
       const valorMensaje = document.getElementById("id-publicacion").value;
       return agregarPost(valorMensaje);
 }
+export const verLike=(idPost)=>{
+  return  firebase.firestore().collection("publicaciones").doc(idPost).get().then((result)=>{
+const countLike= result.data().like;
+return countLike;
+  }).catch(()=>{})
+};
+export const contarLike=(idPost,likePost)=>{
+    let likeOnClick= firebase.firestore().collection("publicaciones").doc(idPost);
+  const countLike= result.data().like;
+  return countLike.upDate({like : likePost +=1,});
+   
+  };
+
+ 
