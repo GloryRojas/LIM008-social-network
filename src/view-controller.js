@@ -1,5 +1,6 @@
 import { ingresarConCorreoYContrasena, ingresarConGoogle, ingresarConFacebook, registroConCorreo, cerrarSesion } from './controller/autentificacion.js';
-import { agregarPost} from './controller/publicacion.js';
+import { agregarPost, eliminarPost, editarPost} from './controller/publicacion.js';
+
 // Funcion para cambiar la ruta
 export const cambiarHash = (hash) =>  {
     location.hash = hash;
@@ -105,6 +106,16 @@ export const cerrarSesionClick = () => {
 
 export const guardarConClick = (event) => {
     event.preventDefault();
-      const valorMensaje = document.getElementById("id-publicacion").value;
-      return agregarPost(valorMensaje);
+    const valorMensaje = document.getElementById("id-publicacion").value;
+    return agregarPost(valorMensaje);
+}
+export const eliminarMensajeConClick = (event) =>{
+  event.preventDefault();
+  eliminarPost(event.target.id);
+}
+export const editarConClick = (event) => {
+  event.preventDefault();
+  const idMensaje = event.target.id
+  const post = "Lucero le dijo gorda a Glory"
+  editarPost(idMensaje, post)
 }

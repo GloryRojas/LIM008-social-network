@@ -1,5 +1,5 @@
-import { guardarConClick} from '../view-controller.js';
-import { obtenerPost } from '../controller/publicacion.js';
+import { guardarConClick,eliminarMensajeConClick,editarConClick } from '../view-controller.js';
+import { obtenerPost} from '../controller/publicacion.js';
 
 export const cargarPublicaciones = () => {
     const templatePublicaciones = document.createElement('div');
@@ -28,20 +28,28 @@ export const cargarPublicaciones = () => {
 }
 export const templateContenedorPost = (data)=>{
     let listPublicaciones = "";
-    console.log(data);
-    
-    data.forEach((data)=>{
+    data.forEach((doc)=>{
         const contenedorPost = `
         <div>
-            <p id ="id-contenedorPost" class ="contenedor-post">${data.autor}</p>
-            <p id ="id-contenedorPost" class ="contenedor-post">${data.mensaje}</p>
-            <p id ="id-contenedorPost" class ="contenedor-post">${data.fecha}</p>
-            <button type="button">Editar</button>
-            <button type="button" id = "id-eliminarPost">Eliminar</button>
+            <p id ="id-contenedorPost" class ="contenedor-post">${doc.autor}</p>
+            <p id ="id-contenedorPost" class ="contenedor-post">${doc.mensaje}</p>
+            <p id ="id-contenedorPost" class ="contenedor-post">${doc.fecha}</p>
+            <button type="button" class="btn-editar" id = "${doc.id}">Editar</button>
+            <button type="button" class="btn-eliminar" id = "${doc.id}">Eliminar</button>
         </div>
         `;
         listPublicaciones +=contenedorPost;
     });
     const contenedorPublicaciones = document.getElementById("id-contenedorPublicaciones");
     contenedorPublicaciones.innerHTML = listPublicaciones;
+
+    [...document.getElementsByClassName("btn-eliminar")].forEach(function(btnEliminar){
+        btnEliminar.addEventListener("click", eliminarMensajeConClick);
+    });
+    [...document.getElementsByClassName("btn-editar")].forEach(function(btnEditar){
+        btnEditar.addEventListener("click", editarConClick);
+    });
 };
+
+    
+

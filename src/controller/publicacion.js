@@ -12,10 +12,16 @@ export const obtenerPost = () => {
   firebase.firestore().collection("publicaciones").onSnapshot(function(querySnapshot){
     const posts =[];
     querySnapshot.forEach(function(doc){
-      console.log(doc.data());
-      
         posts.push({id: doc.id, ...doc.data()});
     })
     templateContenedorPost(posts);
   })
+}
+export const eliminarPost = (idMensaje) =>{
+  firebase.firestore().collection("publicaciones").doc(idMensaje).delete();
+}
+export const editarPost = (idMensaje,post) =>{
+  firebase.firestore().collection("publicaciones").doc(idMensaje).update({
+    mensaje: post
+  });
 }
