@@ -1,8 +1,3 @@
-// importamos la funcion que vamos a testear
-
-import { ingresarConCorreoYContrasena, ingresarConGoogle, ingresarConFacebook, registroConCorreo, cerrarSesion } from "../src/controller/autentificacion.js";
-import { agregarPost, obtenerPost } from "../src/controller/publicacion.js";;
-
 // configurando firebase mock
 const firebasemock = require('firebase-mock');
 const mockauth = new firebasemock.MockFirebase();
@@ -17,6 +12,8 @@ global.firebase = firebasemock.MockFirebaseSdk(
   () => mockfirestore
 );
 
+// importamos la funcion que vamos a testear
+import { ingresarConCorreoYContrasena, ingresarConGoogle, ingresarConFacebook, registroConCorreo, cerrarSesion } from "../src/controller/autentificacion.js";
 
 describe('ingresarConCorreoYContrasena', () => {
   it('debería ser una función', () => {
@@ -33,10 +30,22 @@ describe('ingresarConGoogle', () => {
   it('debería ser una función', () => {
     expect(typeof ingresarConGoogle).toBe('function');
   });
+  it('Debería poder iniciar sesion con cuenta de Google', () => {
+    return ingresarConGoogle()
+      .then((user) => {
+        expect(user.providerData.providerId).toBe(google.com)
+      })
+  });
 });
 describe('ingresarConFacebook', () => {
   it('debería ser una función', () => {
     expect(typeof ingresarConFacebook).toBe('function');
+  });
+  it('Debería poder iniciar sesion con Facebook', () => {
+    return ingresarConFacebook()
+      .then((user) => {
+        expect(user.providerData.providerId).toBe(facebook.com)
+      })
   });
 });
 describe('registroConCorreo', () => {
@@ -54,14 +63,10 @@ describe('cerrarSesion', () => {
   it('debería ser una función', () => {
     expect(typeof cerrarSesion).toBe('function');
   });
-});
-describe('agregarPost', () => {
-  it('debería ser una función', () => {
-    expect(typeof agregarPost).toBe('function');
-  });
-});
-describe('obtenerPost', () => {
-  it('debería ser una función', () => {
-    expect(typeof obtenerPost).toBe('function');
+  it('Debería poder cerrar sesion', () => {
+    return cerrarSesion('grojasm@gmail.com', 'grojasm')
+      .then((user) => {
+        expect(user).toBe(undefined)
+      })
   });
 });
