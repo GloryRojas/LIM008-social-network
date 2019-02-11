@@ -1,5 +1,4 @@
 import { templateContenedorPost } from '../templates/post.js';
-import { verLike,contarLike } from '../view-controller.js';
 export const agregarPost = (mensajePost) => {
   let user = firebase.auth().currentUser;
   console.log(mensajePost); 
@@ -23,11 +22,11 @@ export const obtenerPost = () => {
   })
 }
 
-export const contarLikesConClick = (objPost)=>{
+/* export const contarLikesConClick = (objPost)=>{
   verLike(objPost.id);
   let contenedorLike= document.getElementById('contenedor-like');
   contenedorLike.innerHTML=contarLike(objPost.id,objPost.like);
-}
+} */
   export const eliminarPost = (idMensaje) =>{
   firebase.firestore().collection("publicaciones").doc(idMensaje).delete();
 }

@@ -1,5 +1,5 @@
 import { guardarConClick,eliminarMensajeConClick,editarConClick } from '../view-controller.js';
-import { obtenerPost,contarLikesConClick} from '../controller/publicacion.js';
+import { obtenerPost} from '../controller/publicacion.js';
 
 export const cargarPublicaciones = () => {
     const templatePublicaciones = document.createElement('div');
@@ -25,11 +25,8 @@ export const cargarPublicaciones = () => {
     `;
     templatePublicaciones.innerHTML=publicaciones;
     const btnGuardarPost = templatePublicaciones.querySelector("#id-save");
-
-    btnGuardarPost.addEventListener("click",contarLikesConClick);
+    btnGuardarPost.addEventListener("click",guardarConClick);
     obtenerPost();
-
-    
   return templatePublicaciones;
 }
 
@@ -41,11 +38,10 @@ export const templateContenedorPost = (data)=>{
             <p id ="id-contenedorPost" class ="contenedor-post">${doc.autor}</p>
             <p id ="id-contenedorPost" class ="contenedor-post">${doc.mensaje}</p>
             <p id ="id-contenedorPost" class ="contenedor-post">${doc.fecha}</p>
-            <button class="btn-editar" type="button"  id = "${doc.id}" >Editar</button>
-            <img src="img/garbage.png" class="btn-eliminar" type="button" id = "${doc.id}">
-            <img src="img/like.png" type="button"  class="btn-like" id ="${doc.id}">
-            <label  id="contenedor-like"></label>
-
+            <button type="button" id ="${doc.id}" class="btn-editar">Editar</button>
+            <button type="button" id ="${doc.id}" class="btn-eliminar">Eliminar</button>
+            <img src="img/like.png" type="button"  class="btn-like" id ="">
+            <label id="contenedor-like"></label>
         </div>
         `;
 
@@ -53,10 +49,9 @@ export const templateContenedorPost = (data)=>{
     });
     const contenedorPublicaciones = document.getElementById("id-contenedorPublicaciones");
     contenedorPublicaciones.innerHTML = listPublicaciones;
-   [...document.getElementsByClassName("btn-like")].forEach((btnLike)=>{
-       btnLike.addEventListener('click',contarLikesConClick());
-   });  
- 
+    /* [...document.getElementsByClassName("btn-like")].forEach((btnLike)=>{
+        btnLike.addEventListener('click',contarLikesConClick());
+    });  */ 
     [...document.getElementsByClassName("btn-eliminar")].forEach(function(btnEliminar){
         btnEliminar.addEventListener("click", eliminarMensajeConClick);
     });
