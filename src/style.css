@@ -1,14 +1,13 @@
 /* Estilos formulario login */
-@import url('https://fonts.googleapis.com/css?family=Gentium+Book+Basic');
+@import url('https://fonts.googleapis.com/css?family=Dancing+Script|Merienda');
 *{
   margin:0;
   padding:0;
   box-sizing: border-box;
-  
 }
 body{
   font-family: 'open Sans',sans-serif;
-  background-image: url(../img/fondo-pantalla.jpg);
+  /*background-image: url(../img/fondo-pantalla.jpg);*/
   background-attachment: fixed;
   background-size: 100vw 100vh;
 }
@@ -16,7 +15,7 @@ body{
 header{
   width: 100%;
     height: 50px; 
-    background: rgb(153, 33, 33);
+    background:#7f0000;
     color: rgb(8, 8, 8);
     position: fixed;
     top: 0;
@@ -25,11 +24,14 @@ header{
 }
 .contendor{
   display: flex;
-    justify-content: space-between;
-    /* text-align: center; */
-    align-items: flex-end;
-}
-h1{
+  justify-content: space-between;
+  align-items: flex-end;
+  }
+  .bienvenidx{
+  font-family: 'Dancing Script', cursive;
+  font-family: 'Merienda', cursive;
+  }
+h1{ 
   float: left;
 }
 header .contendor{
@@ -49,18 +51,18 @@ header label{
   cursor: pointer;
 }
 .menu{
-  
- position: absolute;
- top: 50px;
- left: 0;
- width: 100%;
- height: 100vh;
- background:rgba(150, 38, 38, 0.507);
- transition: all 0.5s;
- transform: translateX(-100%);
+  position: absolute;
+  top: 50px;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background:rgba(150, 38, 38, 0.507);
+  transition: all 0.5s;
+  transform: translateX(-100%);
+  font-family: 'Dancing Script', cursive;
+  font-family: 'Merienda', cursive;
 }
 .menu a{
-  
   background-color:solid rgba(175, 42, 42, 0.445); 
   display: block;
   color: #ffffff;
@@ -68,7 +70,6 @@ header label{
   text-decoration: none;
   padding: 15px;
   border-bottom: 1px solid rgba(163, 29, 29, 0.5);
-
 }
 .menu a :hover{
   background:rgba(255,255,255,0.5);
@@ -77,14 +78,10 @@ header label{
   transform: translateX(0);
 }
 .formPost{
-  margin-top: 70px;
+  margin-top: 20px;
   padding: 20px;
 }
-.contenedor-publicaciones{
-  width: 50%px;
-  background: lightcoral;
-}
-
+/* MODO RESPONDIVE TABLET */
 @media (min-width:900px){
 .menu{
   position: static;
@@ -129,7 +126,6 @@ header label{
  width: 100px;
  height: 100px;
 }
-
 .titulo-inicio,.slogan{
   width: 100%;
   display: flex;
@@ -161,7 +157,6 @@ header label{
   display: flex;
   flex-direction: row;
   justify-content:center;
-  
 }
 #btn-google,#btn-facebook, #btn-registrate{
   font-size: 15px;
@@ -172,20 +167,26 @@ header label{
 .form,.btn-login,#btn-google,#btn-facebook, #btn-registrate:active{
   transform: scale(0.95);
 }
-
+/* MODO RESPONDIVE CELULAR */
 @media(max-width:780px){
   .form{
-  max-width: 100%;
- max-height: 90%;
+    max-width: 100%;
+    max-height: 90%;
   }
   .iniciar-sesion{
     margin: auto;
-  width: 90%;
-  max-width: 500px;
-  margin-top: 10%;
+    width: 90%;
+    max-width: 500px;
+    margin-top: 10%;
   }
-  }
+}
   /*dandole estilo a registrarse*/
+  .text-boton-post{
+    display: flex;
+  }
+  .id-save{
+    width: 60px;
+  }
   .registrarse{
     margin: auto;
     width: 70%;
@@ -205,3 +206,71 @@ header label{
     max-width: 500px;
     border-radius: 15px; 
   }
+  /*dando estilos al contenido post*/
+
+  .contenedor-publicaciones{
+    margin: auto;
+    width: 70%;
+   /* max-width: 500px;*/ 
+    border-radius: 10px;
+    margin-top: 6%; 
+  }
+  .formPost{
+    margin: auto;
+    width: 70%;
+    margin-top: 12%;
+    border-radius: 10px;
+    font-family: 'Merienda', cursive;
+  }
+  .ingresar-post-aqui{
+    margin: auto;
+    width: 70%;
+    margin-top: 6%;
+    padding: 10px;
+    margin-top: 30px;
+    border-radius: 10px; 
+    font-family: 'Merienda', cursive;
+  }
+  .info-post{
+    background: rgba(221, 215, 215, 0.74);
+    box-shadow: inset 0px 4px 4px rgba(163, 29, 29, 0.74);
+    padding: 10px;
+    margin-top: 30px;
+    border-radius: 10px;  
+    font-family: 'Dancing Script', cursive;
+    font-family: 'Merienda', cursive;
+  }
+  .btn-like,.btn-eliminar,.btn-editar{
+    width: 40px;
+    height: auto;
+    padding: 0 5px;
+    cursor: pointer;
+}
+#id-save,select{
+  border-radius: 5px;
+  background-color:#7f0000;
+  color: #ffffff;
+  border: none;
+  font-family: 'Dancing Script', cursive;
+  font-family: 'Merienda', cursive;
+}
+.btn-editar,.btn-eliminar{
+  width: 60px;
+  height: 30px;
+  border-radius: 12px;
+  background-color:#7f0000;
+  color: #ffffff;
+  border: none;
+  font-family: 'Dancing Script', cursive;
+  font-family: 'Merienda', cursive;
+  }
+.btn-editar:hover{
+  background-color: rgba(107, 31, 31, 0.787);
+  border-radius: 12px;
+}
+.btn-like,.btn-eliminar,.btn-editar :hover{
+  cursor: pointer;
+}
+  
+    
+ 

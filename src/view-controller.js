@@ -1,5 +1,6 @@
 import { ingresarConCorreoYContrasena, ingresarConGoogle, ingresarConFacebook, registroConCorreo, cerrarSesion } from './controller/autentificacion.js';
-import { agregarPost} from './controller/publicacion.js';
+import { agregarPost, eliminarPost, editarPost} from './controller/publicacion.js';
+
 // Funcion para cambiar la ruta
 export const cambiarHash = (hash) =>  {
     location.hash = hash;
@@ -70,7 +71,7 @@ export const ingresarConFacebookClick = (event) => {
         })
     }
 
-export const registroConCorreoClick = (event) => {
+ export const registroConCorreoClick = (event) => {
     event.preventDefault();
     let user = event.target.correo.value;
     let password = event.target.contrasena.value;
@@ -102,13 +103,14 @@ export const registroConCorreoClick = (event) => {
             }
             console.log(error.message);
         })
-}
+} 
 
 export const cerrarSesionClick = () => {
     cerrarSesion()
     .then(() => cambiarHash('/login'))
     .catch(err => console.log('Error logout', err))
  }
+ 
 
 
  export const inicializarFire = () => {
@@ -128,11 +130,34 @@ export const cerrarSesionClick = () => {
         } else {
             console.log('hola')
         }     
-    } )
+    } ) 
 }
 
 export const guardarConClick = (event) => {
     event.preventDefault();
       const valorMensaje = document.querySelector("#id-publicacion").value;
       return agregarPost(valorMensaje);
+}
+/* export const verLike=(idPost)=>{
+  return  firebase.firestore().collection("publicaciones").doc(idPost).get().then((result)=>{
+const countLike= result.data().like;
+return countLike;
+  }).catch(()=>{})
+}; */
+/* export const contarLike=(idPost,likePost)=>{
+    let likeOnClick= firebase.firestore().collection("publicaciones").doc(idPost);
+  const countLike= result.data().like;
+  return countLike.upDate({like : likePost +=1,});
+   
+  }; */
+export const eliminarMensajeConClick = (event) =>{
+  event.preventDefault();
+  eliminarPost(event.target.id);
+}
+export const editarConClick = (event) => {
+  event.preventDefault();
+  const idMensaje = event.target.id
+  const post = "Lucero le dijo gorda a Glory"
+  console.log("hola")
+  editarPost(idMensaje, post)
 }
