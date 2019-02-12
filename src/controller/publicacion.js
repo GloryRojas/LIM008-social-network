@@ -1,10 +1,10 @@
-export const agregarPost = (photoUser, nameUser, mensajePost,likes) => { 
+export const agregarPost = (photoUser, nameUser, mensajePost, likes, privacidad) => { 
   return firebase.firestore().collection("publicaciones").add({
   photo: photoUser,
   autor : nameUser,
   mensaje : mensajePost,
   fecha : Date(),
-  privacidad: "privacidad",
+  privacidad: privacidad,
   like: 0,
   })
  
