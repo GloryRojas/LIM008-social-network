@@ -63,7 +63,7 @@ export const templateContenedorPost = (data)=>{
         btnLike.addEventListener('click',(e)=>{   
             let likes = parseInt(e.target.dataset.like);
             likes++;    
-            console.log(likesConClick(e.target.id , likes));
+            likesConClick(e.target.id , likes);
         });
     })
     
