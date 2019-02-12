@@ -143,7 +143,8 @@ export const guardarConClick = (event) => {
         const nameUser = user.displayName;
         const valorMensaje = document.getElementById("id-publicacion").value;
         let likes =  0;
-        return agregarPost(photoUser, nameUser, valorMensaje,likes);
+        const privacidad = document.getElementById("id-privacidad").value;
+        return agregarPost(photoUser, nameUser, valorMensaje,likes,privacidad);
     }
 }
 
