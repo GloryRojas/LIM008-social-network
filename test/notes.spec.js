@@ -2,11 +2,13 @@ import MockFirebase from 'mock-cloud-firestore';
 
 const fixtureData = {
   __collection__: {
-    notes: {
+    publicaciones: {
       __doc__: {
         abc123: {
-          title: 'Prueba publicacion',
-          complete: false
+          autor: 'Glory',
+          like:0, 
+          mensaje : 'Prueba publicacion',
+          photo: 'xyz',
         },
       }
     }
@@ -15,17 +17,20 @@ const fixtureData = {
 
 global.firebase = new MockFirebase(fixtureData, { isNaiveSnapshotListenerEnabled: true });
 
-import { agregarPost, obtenerPost } from "../src/controller/publicacion.js";
+import {eliminarPost } from "../src/controller/publicacion.js";
 
-describe('agregarPost', () => {
-  it('Debería porder agregar una publicacion', (done) => {
-    return agregarPost('Prueba publicacion')
-      .then(() => obtenerPost(
-        (data) => {
-          const result = data.find((note) => note.title === 'Prueba puublicacion');
-          expect(result.title).toBe('Prueba puublicacion');
-          done()
-        }
-      ))
+describe('eliminarPost', () => {
+  it('debería ser una función', () => {
+    expect(typeof eliminarPost).toBe('function');
   });
+  it('Debería poder eliminar una publicacion', (done) => {
+   return eliminarPost('abc123')
+   .then(() => obtenerPost(
+    (data) => {
+      const result = data.find((note) => note.id === 'abc123');
+      expect(result).toBe(undefined);
+      done()
+    }
+  ))
+})
 })

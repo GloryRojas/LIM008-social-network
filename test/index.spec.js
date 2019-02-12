@@ -30,22 +30,10 @@ describe('ingresarConGoogle', () => {
   it('debería ser una función', () => {
     expect(typeof ingresarConGoogle).toBe('function');
   });
-  it('Debería poder iniciar sesion con cuenta de Google', () => {
-    return ingresarConGoogle()
-      .then((user) => {
-        expect(user.providerData.providerId).toBe(google.com)
-      })
-  });
 });
 describe('ingresarConFacebook', () => {
   it('debería ser una función', () => {
     expect(typeof ingresarConFacebook).toBe('function');
-  });
-  it('Debería poder iniciar sesion con Facebook', () => {
-    return ingresarConFacebook()
-      .then((user) => {
-        expect(user.providerData.providerId).toBe(facebook.com)
-      })
   });
 });
 describe('registroConCorreo', () => {

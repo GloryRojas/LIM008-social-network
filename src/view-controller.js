@@ -135,9 +135,13 @@ export const cerrarSesionClick = () => {
 
 export const guardarConClick = (event) => {
     event.preventDefault();
-      const valorMensaje = document.querySelector("#id-publicacion").value;
-      return agregarPost(valorMensaje);
-}
+    const user = firebase.auth().currentUser;
+    const photoUser = user.photoURL;
+    const nameUser = user.displayName;
+    const valorMensaje = document.getElementById("id-publicacion").value;
+    let likes=0;
+        return agregarPost(photoUser, nameUser, valorMensaje,likes);
+ }
 /* export const verLike=(idPost)=>{
   return  firebase.firestore().collection("publicaciones").doc(idPost).get().then((result)=>{
 const countLike= result.data().like;
@@ -157,7 +161,7 @@ export const eliminarMensajeConClick = (event) =>{
 export const editarConClick = (event) => {
   event.preventDefault();
   const idMensaje = event.target.id
-  const post = "Lucero le dijo gorda a Glory"
+  const post = "Lucero"
   console.log("hola")
   editarPost(idMensaje, post)
 }
