@@ -34,3 +34,15 @@ export const editarPost = (idMensaje,post) =>{
     mensaje: post
   });
 }
+
+export const filtrarPost = (data, condition) =>{
+  let arrFiltrado = [];
+    for (let i = 0; i < data.length; i++) {
+      for (let j = 0; j < data[i].autor.length; j++) {
+        if (data[i].autor[j] === condition) {
+          arrFiltrado.push(data[i]);
+        }
+      }
+    return arrFiltrado;
+   };
+}

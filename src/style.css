@@ -298,5 +298,12 @@ header label{
 #id-publicacion{
   display: block
 }
-    
+.miPerfil{
+  margin-top: 60px;
+  padding: 30px;
+} 
+.foto-perfil{
+  width: 20%;
+  border-radius: 500px;
+}
  
