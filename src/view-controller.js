@@ -1,5 +1,5 @@
 import { ingresarConCorreoYContrasena, ingresarConGoogle, ingresarConFacebook, registroConCorreo, cerrarSesion } from './controller/autentificacion.js';
-import { agregarPost, eliminarPost, editarPost} from './controller/publicacion.js';
+import { agregarPost, eliminarPost, editarPost,postLike} from './controller/publicacion.js';
 
 // Funcion para cambiar la ruta
 export const cambiarHash = (hash) =>  {
@@ -111,8 +111,6 @@ export const cerrarSesionClick = () => {
     .catch(err => console.log('Error logout', err))
  }
  
-
-
  export const inicializarFire = () => {
     firebase.auth().onAuthStateChanged(()=>{
         const user = firebase.auth().currentUser;
@@ -139,29 +137,37 @@ export const guardarConClick = (event) => {
     const photoUser = user.photoURL;
     const nameUser = user.displayName;
     const valorMensaje = document.getElementById("id-publicacion").value;
-    let likes=0;
+    let likes =  0;
         return agregarPost(photoUser, nameUser, valorMensaje,likes);
- }
-/* export const verLike=(idPost)=>{
-  return  firebase.firestore().collection("publicaciones").doc(idPost).get().then((result)=>{
-const countLike= result.data().like;
-return countLike;
-  }).catch(()=>{})
-}; */
-/* export const contarLike=(idPost,likePost)=>{
-    let likeOnClick= firebase.firestore().collection("publicaciones").doc(idPost);
-  const countLike= result.data().like;
-  return countLike.upDate({like : likePost +=1,});
-   
-  }; */
-export const eliminarMensajeConClick = (event) =>{
-  event.preventDefault();
-  eliminarPost(event.target.id);
 }
-export const editarConClick = (event) => {
-  event.preventDefault();
-  const idMensaje = event.target.id
-  const post = "Lucero"
-  console.log("hola")
-  editarPost(idMensaje, post)
+
+export const eliminarMensajeConClick = (event) =>{
+    event.preventDefault();
+    eliminarPost(event.target.id);
+}
+export const editarMensajeConClick = (event) =>{
+    event.preventDefault();
+    const idEditar = event.target.id;
+    const idTextArea = "btn-"+(idEditar.slice(10, 30))
+    document.getElementById(idTextArea).readOnly= false;
+    console.log(idEditar)
+    document.getElementById("btnEditar-"+idEditar.slice(10, 30)).style.display = 'none';
+    document.getElementById("btnEliminar-"+idEditar.slice(10, 30)).style.display = 'inline';
+}
+
+export const likesConClick = (objPost, like) => {
+    
+   return postLike(objPost, like);
+    
+   // return postLike(objPost.id, like);
+  };
+export const editarGuardarMensajeConClick = (event) =>{
+    const idEditarGuardar = event.target.id;
+    const idTextArea = "btn-"+(idEditarGuardar.slice(12, 32))
+    document.getElementById(idTextArea).readOnly= true;
+    const idMensaje = idEditarGuardar.slice(12, 32)
+    const post = document.getElementById(idTextArea).value;
+    editarPost(idMensaje,post)
+    document.getElementById("btnEditar-"+idEditarGuardar.slice(12, 32)).style.display = 'inline';
+    document.getElementById("btnEliminar-"+idEditarGuardar.slice(12, 32)).style.display = 'none';
 }

@@ -1,4 +1,4 @@
-import { guardarConClick,eliminarMensajeConClick,editarConClick } from '../view-controller.js';
+import { guardarConClick,eliminarMensajeConClick,editarMensajeConClick, editarGuardarMensajeConClick,likesConClick  } from '../view-controller.js';
 import { obtenerPost} from '../controller/publicacion.js';
 
 export const cargarPublicaciones = () => {
@@ -26,7 +26,7 @@ export const cargarPublicaciones = () => {
     templatePublicaciones.innerHTML=publicaciones;
     const btnGuardarPost = templatePublicaciones.querySelector("#id-save");
     btnGuardarPost.addEventListener("click",guardarConClick);
-    obtenerPost();
+    obtenerPost();   
   return templatePublicaciones;
 }
 
@@ -35,14 +35,17 @@ export const templateContenedorPost = (data)=>{
     let listPublicaciones = "";
     data.forEach((doc)=>{
         const contenedorPost = `
-        <div>
+        <div class="info-post">
             <p id ="id-contenedorPost" class ="contenedor-post">${doc.autor}</p>
-            <p id ="id-contenedorPost" class ="contenedor-post">${doc.mensaje}</p>
-            <p id ="id-contenedorPost" class ="contenedor-post">${doc.fecha}</p>
-            <button type="button" id ="${doc.id}" class="btn-editar">Editar</button>
-            <button type="button" id ="${doc.id}" class="btn-eliminar">Eliminar</button>
-            <img src="img/like.png" type="button"  class="btn-like" id ="">
-            <label id="contenedor-like"></label>
+            <textarea id ="btn-${doc.id}" class ="contenedor-mensaje" readonly>${doc.mensaje}</textarea>
+            <p id ="id-contenedorPost" class ="contenedor-post" >${doc.fecha}</p>
+            <div>
+            <button type="button" id ="btnEditar-${doc.id}" class="btn-editar">Editar</button>
+            <button type="button" id ="btnEliminar-${doc.id}" class="btn-GuardarCambios">Guardar</button>
+            <img src="img/garbage.png" type="button" id ="${doc.id}" class="btn-eliminar">
+            <img src="img/like.png" type="button" id ="${doc.id}" class="btn-like" data-like=${doc.like}>
+            <label id="contenedor-like">${doc.like}</label>
+            </div>
         </div>
         `;
 
@@ -50,16 +53,25 @@ export const templateContenedorPost = (data)=>{
     });
     const contenedorPublicaciones = document.getElementById("id-contenedorPublicaciones");
     contenedorPublicaciones.innerHTML = listPublicaciones;
-    /* [...document.getElementsByClassName("btn-like")].forEach((btnLike)=>{
-        btnLike.addEventListener('click',contarLikesConClick());
-    });  */ 
+    
     [...document.getElementsByClassName("btn-eliminar")].forEach(function(btnEliminar){
         btnEliminar.addEventListener("click", eliminarMensajeConClick);
     });
     [...document.getElementsByClassName("btn-editar")].forEach(function(btnEditar){
-        btnEditar.addEventListener("click", editarConClick);
+        btnEditar.addEventListener("click", editarMensajeConClick);
     });
+  
+    [... document.getElementsByClassName("btn-like")].forEach((btnLike)=>{
+        btnLike.addEventListener('click',(e)=>{   
+            let likes = parseInt(e.target.dataset.like);
+            likes++;    
+            likesConClick(e.target.id , likes);
+        });
+    });
+    
+    [...document.getElementsByClassName("btn-GuardarCambios")].forEach(function(btnEditarGuardar){
+        btnEditarGuardar.addEventListener("click", editarGuardarMensajeConClick);
+    }); 
 };
 
-    
 
