@@ -66,7 +66,7 @@ export const templateContenedorPost = (data)=>{
         btnLike.addEventListener('click',(e)=>{ 
                 let likes = parseInt(e.target.dataset.like);
                 likes++;  
-                likesConClick(e.target.id , likes);  
+                likesConClick(e.target.id , likes);         
         });
     });
     [...document.getElementsByClassName("btn-GuardarCambios")].forEach(function(btnEditarGuardar){
