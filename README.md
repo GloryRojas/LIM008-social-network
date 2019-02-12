@@ -16,74 +16,11 @@
 * [Pistas / Tips / Lecturas complementarias](#recursos)
 * [Checklist](#checklist)
 
-## Preámbulo
 
-Instagram, Snapchat, Twitter, Facebook, Twitch, Linkedin, etc. Las redes
-sociales han invadido nuestras vidas. Las amamos u odiamos, y muchos no podemos
-vivir sin ellas.
 
-Hay redes sociales de todo tipo y para todo tipo de intereses. Por ejemplo,
-en una ronda de financiamiento con inversionistas, se presentó una red social
-para químicos en la que los usuarios podían publicar artículos sobre sus
-investigaciones, comentar en los artículos de sus colegas, y filtrar artículos
-de acuerdo a determinadas etiquetas o su popularidad, lo más reciente, o lo
-más comentado.
-
-## Introducción
-
-Una emprendedora nos ha encargado crear una red social. No nos da mucho detalle
-sobre qué tipo de red social quiere, sólo nos dice que creemos la mejor que
-podamos, y que luego la convenzamos de lanzarla al mercado. Nos da ciertos temas
-en los que le gustaría invertir:
-
-* Alimentación
-* Feminismo
-* Educación
-* Salud
-* Energías Renovables
-
-## Objetivos de Aprendizaje
-
-El objetivo principal de aprendizaje de este proyecto es construir una
-[Single-page Application (SPA)](https://es.wikipedia.org/wiki/Single-page_application)
-[_responsive_](https://github.com/Laboratoria/curricula-js/tree/master/topics/css/02-responsive)
- (con más de una vista / página) en la que podamos **leer y escribir datos.**
-
-Dicho en palabras sencillas, aprenderás a:
-
-* Aplicar y profundizar todo lo que aprendiste en el proyecto anterior.
-* Entender las necesidades de los usuarios para los que crearás el producto y
-  que ayudarás a resolver.
-* Poner en juego tu creatividad para generar ideas que lleven a una solución
-  original y valiosa del problema.
-* Contar con el apoyo de tus compañeras, debes trabajar en equipo buscando
-  _feedback_ constante.
-* Definir como crear la estructura de tu propia data y de qué forma mostrarla en
-  el producto.
-
-## Consideraciones generales
-
-Este proyecto se debe "resolver" en tríos.
-
-La lógica del proyecto debe estar implementada completamente en JavaScript (ES6+),
-HTML y CSS :smiley:. Para este proyecto no está permitido utilizar
-frameworks o librerías de CSS y JS.
-
-Para comenzar tendrás que hacer un _fork_ y _clonar_ este
-repositorio.
-
-## Parte obligatoria
-
-### General
-
-En este proyecto, tú junto a tus compañeras de equipo deberán definir los
-_tests_ que consideren necesarios; puedes guiarte de los proyectos
-anteriores. Igualmente el proyecto cuenta con una estructura de carpetas
-y archivos ya definida pero pueden modificarla de acuerdo a como desean
-trabajar la estructura de su proyecto :smiley:.
-
-### Definición del producto
-
+### Definición del Tema de la Red Social
+Se realizó una encuesta y se consideró las siguientes preguntas para definir el tema de la red social
+![sin titulo](img/encuest1.PNG)
 En el `README.md` colocar cómo conociste el mercado de las redes sociales, cómo
 descubriste las necesidades de los usuarios, cómo llegaste  la definición final
 de tu producto. Si tienes fotos de entrevistas, cuestionarios y/o sketches
