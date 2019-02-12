@@ -27,7 +27,7 @@ export const cargarPublicaciones = () => {
     templatePublicaciones.innerHTML=publicaciones;
     const btnGuardarPost = templatePublicaciones.querySelector("#id-save");
     btnGuardarPost.addEventListener("click",guardarConClick);
-    obtenerPost();   
+    obtenerPost(templateContenedorPost);   
   return templatePublicaciones;
 }
 
@@ -62,10 +62,11 @@ export const templateContenedorPost = (data)=>{
     });
   
     [... document.getElementsByClassName("btn-like")].forEach((btnLike)=>{
-        btnLike.addEventListener('click',(e)=>{   
-            let likes = parseInt(e.target.dataset.like);
-            likes++;    
-            likesConClick(e.target.id , likes);
+        btnLike.addEventListener('click',(e)=>{ 
+                let likes = parseInt(e.target.dataset.like);
+                likes++;  
+                likesConClick(e.target.id , likes);  
+            
         });
     });
     

@@ -2,13 +2,13 @@ import { iniciarSesion } from './templates/login.js';
 import { menuNavegacionHome } from './templates/network.js';
 import { registrarCuenta } from './templates/register.js';
 import { cargarPublicaciones } from './templates/post.js';
-import { obtenerPost } from './controller/publicacion.js';
+import { cargarMiPerfil } from './templates/myprofile.js';
 
 
 const cambiarTmp = (hash) => {
   if (hash === '#/' || hash === '' || hash === '#') {
     return vistaTmp('#/login');
-  } else if (hash === '#/login' || hash === '#/home' || hash === '#/signup') {
+  } else if (hash === '#/login' || hash === '#/home' || hash === '#/signup'|| hash === '#/myprofile') {
     return vistaTmp(hash);
   } else {
     return vistaTmp('#/login');
@@ -22,15 +22,17 @@ const vistaTmp = (routers) => {
   switch (router) {
     case 'home':
       root.appendChild(menuNavegacionHome());
-      root.appendChild(cargarPublicaciones())
-     // root.appendChild(inicializarFire());
-      //root.appendChild(muestraDatosUsuario());
+      root.appendChild(cargarPublicaciones());
       break;
     case 'login':
       root.appendChild(iniciarSesion());
       break;
     case 'signup':
       root.appendChild(registrarCuenta());
+      break;
+    case 'myprofile':
+      root.appendChild(menuNavegacionHome());
+      root.appendChild(cargarMiPerfil());
       break;
     default:
       root.appendChild(iniciarSesion());
