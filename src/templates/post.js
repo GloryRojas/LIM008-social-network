@@ -1,4 +1,4 @@
-import { guardarConClick,eliminarMensajeConClick,editarConClick } from '../view-controller.js';
+import { guardarConClick,eliminarMensajeConClick,editarMensajeConClick, editarGuardarMensajeConClick } from '../view-controller.js';
 import { obtenerPost} from '../controller/publicacion.js';
 
 export const cargarPublicaciones = () => {
@@ -26,7 +26,7 @@ export const cargarPublicaciones = () => {
     templatePublicaciones.innerHTML=publicaciones;
     const btnGuardarPost = templatePublicaciones.querySelector("#id-save");
     btnGuardarPost.addEventListener("click",guardarConClick);
-    obtenerPost();
+    obtenerPost();   
   return templatePublicaciones;
 }
 
@@ -36,9 +36,10 @@ export const templateContenedorPost = (data)=>{
         const contenedorPost = `
         <div>
             <p id ="id-contenedorPost" class ="contenedor-post">${doc.autor}</p>
-            <p id ="id-contenedorPost" class ="contenedor-post">${doc.mensaje}</p>
-            <p id ="id-contenedorPost" class ="contenedor-post">${doc.fecha}</p>
-            <button type="button" id ="${doc.id}" class="btn-editar">Editar</button>
+            <textarea id ="btn-${doc.id}" class ="contenedor-mensaje" readonly>${doc.mensaje}</textarea>
+            <p id ="id-contenedorPost" class ="contenedor-post" >${doc.fecha}</p>
+            <button type="button" id ="btnEditar-${doc.id}" class="btn-editar">Editar</button>
+            <button type="button" id ="btnEliminar-${doc.id}" class="btn-GuardarCambios">Guardar</button>
             <button type="button" id ="${doc.id}" class="btn-eliminar">Eliminar</button>
             <img src="img/like.png" type="button"  class="btn-like" id ="">
             <label id="contenedor-like"></label>
@@ -56,9 +57,11 @@ export const templateContenedorPost = (data)=>{
         btnEliminar.addEventListener("click", eliminarMensajeConClick);
     });
     [...document.getElementsByClassName("btn-editar")].forEach(function(btnEditar){
-        btnEditar.addEventListener("click", editarConClick);
+        btnEditar.addEventListener("click", editarMensajeConClick);
     });
+    [...document.getElementsByClassName("btn-GuardarCambios")].forEach(function(btnEditarGuardar){
+        btnEditarGuardar.addEventListener("click", editarGuardarMensajeConClick);
+    }); 
 };
 
-    
 
