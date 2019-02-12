@@ -12,7 +12,7 @@ export const cargarPublicaciones = () => {
                 <textarea type= "textfield" id="id-publicacion" class="id-publicacion" cols="50" rows="5"  autofocus placeholder="Publica aquí" ></textarea>
                 <button id = "id-save">Publicar</button>
             </div>
-            <select>
+            <select id="id-privacidad">
                     <option value="Publico">Publico</option>
                     <option value="Privado">Privado</option>
             </select>
@@ -38,7 +38,8 @@ export const templateContenedorPost = (data)=>{
         <div class="info-post">
             <p id ="id-contenedorPost" class ="contenedor-post">${doc.autor}</p>
             <textarea id ="btn-${doc.id}" class ="contenedor-mensaje" readonly>${doc.mensaje}</textarea>
-            <p id ="id-contenedorPost" class ="contenedor-post" >${doc.fecha}</p>
+            <p id="id-privacidad">${doc.privacidad}</p>
+            <p id ="id-fecha" class ="contenedor-post" >${doc.fecha}</p>
             <div>
             <button type="button" id ="btnEditar-${doc.id}" class="btn-editar">Editar</button>
             <button type="button" id ="btnEliminar-${doc.id}" class="btn-GuardarCambios">Guardar</button>
@@ -66,10 +67,8 @@ export const templateContenedorPost = (data)=>{
                 let likes = parseInt(e.target.dataset.like);
                 likes++;  
                 likesConClick(e.target.id , likes);  
-            
         });
     });
-    
     [...document.getElementsByClassName("btn-GuardarCambios")].forEach(function(btnEditarGuardar){
         btnEditarGuardar.addEventListener("click", editarGuardarMensajeConClick);
     }); 
