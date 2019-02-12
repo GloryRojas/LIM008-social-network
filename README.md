@@ -20,7 +20,9 @@
 
 ### Definición del Tema de la Red Social
 Se realizó una encuesta y se consideró las siguientes preguntas para definir el tema de la red social
+
 ![sin titulo](img/encuest1.PNG)
+
 En el `README.md` colocar cómo conociste el mercado de las redes sociales, cómo
 descubriste las necesidades de los usuarios, cómo llegaste  la definición final
 de tu producto. Si tienes fotos de entrevistas, cuestionarios y/o sketches
