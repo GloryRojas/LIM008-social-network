@@ -16,9 +16,9 @@ export const ingresarConFacebook = () =>{
 }
 
 // Registrarse con correo y contraseña
-export const registroConCorreo = (user, password) => 
-  firebase.auth().createUserWithEmailAndPassword(user, password)
-
+export const registroConCorreo = (user, password,name) => {
+  return firebase.auth().createUserWithEmailAndPassword(user, password)
+}
 // Cerrar Sesión
 export const cerrarSesion =() => 
   firebase.auth().signOut()
