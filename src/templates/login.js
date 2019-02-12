@@ -1,15 +1,16 @@
 import { ingresarConCorreoYContrasenaClick, ingresarConGoogleClick, ingresarConFacebookClick, cambiarHash } from '../view-controller.js'
 
 export const iniciarSesion = () => {
-  const formIniciar = document.createElement('section')
+  const formIniciar = document.createElement('section');
   const formLogin = `
     <div class='iniciar-sesion'>
      <div class='cabecera-login'>
-       <img class='logo' src='img/logo.png' alt=''>
-       <h1 class='titulo'>Infocourse</h1>
+       <img class='logo-inicio' src='img/logo.png' alt=''>
+       <h2 class='titulo-inicio'>Infocourse</h1>
        <span class='slogan'>Comparte tus conocimientos y aprende de otros</span>
      </div>
      <form id='form-autenticacion' class='form-autenticacion' action='index.html' method='post'>
+       <h4 id='error-login' class='error'></h4>
        <input class='form ' type='text' id='email' name='email' placeholder='Correo electrónico'></input>
        <input class='form' type='password' id='password' name='password' placeholder='Contraseña'></input>
        <button class='btn-login' id='btn-login' type='submit'>INICIAR SESIÓN</button>
@@ -37,8 +38,8 @@ export const iniciarSesion = () => {
 
   const btnRegister = formIniciar.querySelector('#btn-registrate');
   btnRegister.addEventListener('click', () => {
-  cambiarHash('/signup')
+  cambiarHash('#/signup')
   });
- 
+  
   return formIniciar;
 };
