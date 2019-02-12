@@ -1,14 +1,12 @@
 import { templateContenedorPost } from '../templates/post.js';
-import { verLike,contarLike } from '../view-controller.js';
-export const agregarPost = (mensajePost) => {
-  let user = firebase.auth().currentUser;
-  console.log(mensajePost); 
+export const agregarPost = (photoUser, nameUser, mensajePost,likes) => { 
   firebase.firestore().collection("publicaciones").add({
-  photo: user.photoURL,
-  autor : user.displayName,
+  photo: photoUser,
+  autor : nameUser,
   mensaje : mensajePost,
   fecha : Date(),
-  privacidad: "privacidad"
+  privacidad: "privacidad",
+  like: 0,
   })
    
 }
@@ -23,11 +21,12 @@ export const obtenerPost = () => {
   })
 }
 
-export const contarLikesConClick = (objPost)=>{
-  verLike(objPost.id);
-  let contenedorLike= document.getElementById('contenedor-like');
-  contenedorLike.innerHTML=contarLike(objPost.id,objPost.like);
-}
+ export const postLike=(idMensaje,likes)=>{
+ return firebase.firestore().collection('publicaciones').doc(idMensaje).update({
+      like : likes,
+    });
+   
+  };
   export const eliminarPost = (idMensaje) =>{
   firebase.firestore().collection("publicaciones").doc(idMensaje).delete();
 }
