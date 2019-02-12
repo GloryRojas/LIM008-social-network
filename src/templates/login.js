@@ -38,7 +38,7 @@ export const iniciarSesion = () => {
 
   const btnRegister = formIniciar.querySelector('#btn-registrate');
   btnRegister.addEventListener('click', () => {
-  cambiarHash('/signup')
+  cambiarHash('#/signup')
   });
   
   return formIniciar;
