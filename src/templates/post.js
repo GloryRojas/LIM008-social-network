@@ -32,7 +32,6 @@ export const cargarPublicaciones = () => {
 
 export const templateContenedorPost = (data)=>{
     console.log(data);
-    
     let listPublicaciones = "";
     data.forEach((doc)=>{
         const contenedorPost = `

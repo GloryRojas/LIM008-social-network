@@ -30,6 +30,7 @@ header{
   .bienvenidx{
   font-family: 'Dancing Script', cursive;
   font-family: 'Merienda', cursive;
+  color: white;
   }
 h1{ 
   float: left;
@@ -40,7 +41,7 @@ header .contendor{
 #btn-menu{
   display: none;
 }
-#error-login {
+.error {
   color: red;
   text-align: center;
 }
