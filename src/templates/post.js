@@ -61,10 +61,11 @@ export const templateContenedorPost = (data)=>{
     });
   
     [... document.getElementsByClassName("btn-like")].forEach((btnLike)=>{
-        btnLike.addEventListener('click',(e)=>{   
-            let likes = parseInt(e.target.dataset.like);
-            likes++;    
-            likesConClick(e.target.id , likes);
+        btnLike.addEventListener('click',(e)=>{ 
+                let likes = parseInt(e.target.dataset.like);
+                likes++;  
+                likesConClick(e.target.id , likes);  
+            
         });
     });
     
