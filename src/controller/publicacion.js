@@ -15,7 +15,6 @@ export const obtenerPost = () => {
     const posts =[];
     querySnapshot.forEach(function(doc){
         posts.push({id: doc.id, ...doc.data()});
-        
     })
     templateContenedorPost(posts);
   })
