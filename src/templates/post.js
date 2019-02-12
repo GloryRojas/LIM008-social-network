@@ -40,11 +40,13 @@ export const templateContenedorPost = (data)=>{
             <p id ="id-contenedorPost" class ="contenedor-post">${doc.autor}</p>
             <textarea id ="btn-${doc.id}" class ="contenedor-mensaje" readonly>${doc.mensaje}</textarea>
             <p id ="id-contenedorPost" class ="contenedor-post" >${doc.fecha}</p>
+            <div>
             <button type="button" id ="btnEditar-${doc.id}" class="btn-editar">Editar</button>
             <button type="button" id ="btnEliminar-${doc.id}" class="btn-GuardarCambios">Guardar</button>
-            <button type="button" id ="${doc.id}" class="btn-eliminar">Eliminar</button>
-            <button type="button" id ="${doc.id}" class="btn-like" data-like=${doc.like}>Like</button>
+            <img src="img/garbage.png" type="button" id ="${doc.id}" class="btn-eliminar">
+            <img src="img/like.png" type="button" id ="${doc.id}" class="btn-like" data-like=${doc.like}>
             <label id="contenedor-like">${doc.like}</label>
+            </div>
         </div>
         `;
 
