@@ -26,7 +26,7 @@ export const cargarPublicaciones = () => {
     templatePublicaciones.innerHTML=publicaciones;
     const btnGuardarPost = templatePublicaciones.querySelector("#id-save");
     btnGuardarPost.addEventListener("click",guardarConClick);
-    obtenerPost();   
+    obtenerPost(templateContenedorPost);   
   return templatePublicaciones;
 }
 

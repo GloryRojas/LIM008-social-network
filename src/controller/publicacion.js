@@ -1,7 +1,5 @@
-import { templateContenedorPost } from '../templates/post.js';
-
 export const agregarPost = (photoUser, nameUser, mensajePost,likes) => { 
-  firebase.firestore().collection("publicaciones").add({
+  return firebase.firestore().collection("publicaciones").add({
   photo: photoUser,
   autor : nameUser,
   mensaje : mensajePost,
@@ -11,14 +9,13 @@ export const agregarPost = (photoUser, nameUser, mensajePost,likes) => {
   })
  
  }
-export const obtenerPost = () => {
+export const obtenerPost = (callback) => {
   firebase.firestore().collection("publicaciones").onSnapshot(function(querySnapshot){
     const posts =[];
     querySnapshot.forEach(function(doc){
         posts.push({id: doc.id, ...doc.data()});
-        
     })
-    templateContenedorPost(posts);
+   callback(posts);
   })
 }
 
@@ -29,11 +26,11 @@ export const postLike=(idMensaje,likes)=>{
   };
 
 export const eliminarPost = (idMensaje) =>{
-  firebase.firestore().collection("publicaciones").doc(idMensaje).delete();
+  return firebase.firestore().collection("publicaciones").doc(idMensaje).delete();
 }
   
 export const editarPost = (idMensaje,post) =>{
-  firebase.firestore().collection("publicaciones").doc(idMensaje).update({
+  return firebase.firestore().collection("publicaciones").doc(idMensaje).update({
     mensaje: post
   });
 }
