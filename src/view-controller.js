@@ -104,8 +104,6 @@ export const cerrarSesionClick = () => {
     .catch(err => console.log('Error logout', err))
  }
  
-
-
  export const inicializarFire = () => {
     firebase.auth().onAuthStateChanged(()=>{
         const user = firebase.auth().currentUser;
@@ -137,20 +135,31 @@ export const guardarConClick = (event) => {
 }
 
 export const eliminarMensajeConClick = (event) =>{
-  event.preventDefault();
-  eliminarPost(event.target.id);
+    event.preventDefault();
+    eliminarPost(event.target.id);
 }
-export const editarConClick = (event) => {
-  event.preventDefault();
-  const idMensaje = event.target.id
-  const post = "Lucero le dijo gorda a Glory"
-  console.log("hola")
-  editarPost(idMensaje, post)
+export const editarMensajeConClick = (event) =>{
+    event.preventDefault();
+    const idEditar = event.target.id;
+    const idTextArea = "btn-"+(idEditar.slice(10, 30))
+    document.getElementById(idTextArea).readOnly= false;
+    console.log(idEditar)
+    document.getElementById("btnEditar-"+idEditar.slice(10, 30)).style.display = 'none';
+    document.getElementById("btnEliminar-"+idEditar.slice(10, 30)).style.display = 'inline';
 }
-
 export const likesConClick = (objPost, like) => {
     
    return postLike(objPost, like);
     
    // return postLike(objPost.id, like);
   };
+export const editarGuardarMensajeConClick = (event) =>{
+    const idEditarGuardar = event.target.id;
+    const idTextArea = "btn-"+(idEditarGuardar.slice(12, 32))
+    document.getElementById(idTextArea).readOnly= true;
+    const idMensaje = idEditarGuardar.slice(12, 32)
+    const post = document.getElementById(idTextArea).value;
+    editarPost(idMensaje,post)
+    document.getElementById("btnEditar-"+idEditarGuardar.slice(12, 32)).style.display = 'inline';
+    document.getElementById("btnEliminar-"+idEditarGuardar.slice(12, 32)).style.display = 'none';
+}
