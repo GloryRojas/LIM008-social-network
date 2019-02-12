@@ -13,7 +13,6 @@ global.firebase = firebasemock.MockFirebaseSdk(
 );
 
 // importamos la funcion que vamos a testear
-
 import { ingresarConCorreoYContrasena, ingresarConGoogle, ingresarConFacebook, registroConCorreo, cerrarSesion } from "../src/controller/autentificacion.js";
 
 describe('ingresarConCorreoYContrasena', () => {
@@ -51,5 +50,11 @@ describe('registroConCorreo', () => {
 describe('cerrarSesion', () => {
   it('debería ser una función', () => {
     expect(typeof cerrarSesion).toBe('function');
+  });
+  it('Debería poder cerrar sesion', () => {
+    return cerrarSesion('grojasm@gmail.com', 'grojasm')
+      .then((user) => {
+        expect(user).toBe(undefined)
+      })
   });
 });

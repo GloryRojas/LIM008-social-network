@@ -76,6 +76,7 @@ export const ingresarConFacebookClick = (event) => {
     let user = event.target.correo.value;
     let password = event.target.contrasena.value;
     let name = event.target.nombres.value;
+    let errorRegis = document.getElementById('error-registrarse');
     registroConCorreo(user, password)
         .then(() => {
             let user = firebase.auth().currentUser;
@@ -87,13 +88,19 @@ export const ingresarConFacebookClick = (event) => {
                 });
             user.sendEmailVerification()
             .catch((error) => {
-            console.log('No se pudo enviar email')
-            });
-            alert('Email enviado, revise su bandeja e inicie sesión');
-            cambiarHash('/login');
+                if(user === '' & password === '' & user === ''){
+                    errorRegis.innerHTML = 'Debe completar todos los campos'
+                }
+                console.log('No se pudo enviar email')
+                });
+                alert('Email enviado, revise su bandeja e inicie sesión');
+                cambiarHash('/login');
         })
         .catch(function(error) {
-            alert(error.message)
+            errorRegis.innerHTML = error.message;
+            if(user === '' & password === '' & user === ''){
+                errorRegis.innerHTML = 'Debe completar todos los campos'
+            }
             console.log(error.message);
         })
 } 
@@ -131,7 +138,8 @@ export const guardarConClick = (event) => {
     const nameUser = user.displayName;
     const valorMensaje = document.getElementById("id-publicacion").value;
     let likes =  0;
-        return agregarPost(photoUser, nameUser, valorMensaje,likes);
+    let privacidad = "privado";
+        return agregarPost(photoUser, nameUser, valorMensaje,likes, privacidad);
 }
 
 export const eliminarMensajeConClick = (event) =>{
@@ -147,6 +155,7 @@ export const editarMensajeConClick = (event) =>{
     document.getElementById("btnEditar-"+idEditar.slice(10, 30)).style.display = 'none';
     document.getElementById("btnEliminar-"+idEditar.slice(10, 30)).style.display = 'inline';
 }
+
 export const likesConClick = (objPost, like) => {
     
    return postLike(objPost, like);
