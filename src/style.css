@@ -245,7 +245,7 @@ header label{
     height: auto;
     padding: 0 5px;
     cursor: pointer;
-}
+  }
 #id-save,select{
   border-radius: 5px;
   background-color:#7f0000;
@@ -254,7 +254,7 @@ header label{
   font-family: 'Dancing Script', cursive;
   font-family: 'Merienda', cursive;
 }
-.btn-editar,.btn-eliminar{
+.btn-editar,.btn-eliminar,.btn-GuardarCambios{
   width: 60px;
   height: 30px;
   border-radius: 12px;
@@ -264,6 +264,12 @@ header label{
   font-family: 'Dancing Script', cursive;
   font-family: 'Merienda', cursive;
   }
+.btn-editar{
+  display: inline;
+}
+.btn-GuardarCambios{
+  display: none;
+}
 .btn-editar:hover{
   background-color: rgba(107, 31, 31, 0.787);
   border-radius: 12px;
@@ -271,6 +277,10 @@ header label{
 .btn-like,.btn-eliminar,.btn-editar :hover{
   cursor: pointer;
 }
+.contenedor-mensaje{
+  resize: none;
+}
+
   
     
  
