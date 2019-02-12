@@ -6,10 +6,11 @@ export const cargarPublicaciones = () => {
     
     const publicaciones = `
         <section id="id_publicaciones" class="formPost" >
-            <h3 >Ingresa tus publicaciones aqui!</h3><br>
+            <h3>Ingresa tus publicaciones!</h3><br>
+            <p id="id-MensajeError"></p><br>
             <div class="text-boton-post">
-            <textarea type= "textfield" id="id-publicacion" class="id-publicacion" cols="50" rows="5"  autofocus placeholder="publica aqui" ></textarea>
-            <button id = "id-save">guardar</button>
+                <textarea type= "textfield" id="id-publicacion" class="id-publicacion" cols="50" rows="5"  autofocus placeholder="Publica aquí" ></textarea>
+                <button id = "id-save">Publicar</button>
             </div>
             <select>
                     <option value="Publico">Publico</option>
@@ -18,7 +19,7 @@ export const cargarPublicaciones = () => {
         </section>
         <section id="id_contenedor">
             <div>
-                <h3 class="ingresar-post-aqui">Tus publicaciones aqui!</h3><br>
+                <h3 class="ingresar-post-aqui">Publicaciones Generales</h3><br>
                 <ul id="id-contenedorPublicaciones" class= "contenedor-publicaciones"></ul>
             </div>
         </section>
@@ -31,7 +32,6 @@ export const cargarPublicaciones = () => {
 }
 
 export const templateContenedorPost = (data)=>{
-    console.log(data);
     let listPublicaciones = "";
     data.forEach((doc)=>{
         const contenedorPost = `
@@ -62,10 +62,11 @@ export const templateContenedorPost = (data)=>{
     });
   
     [... document.getElementsByClassName("btn-like")].forEach((btnLike)=>{
-        btnLike.addEventListener('click',(e)=>{   
-            let likes = parseInt(e.target.dataset.like);
-            likes++;    
-            likesConClick(e.target.id , likes);
+        btnLike.addEventListener('click',(e)=>{ 
+                let likes = parseInt(e.target.dataset.like);
+                likes++;  
+                likesConClick(e.target.id , likes);  
+            
         });
     });
     
