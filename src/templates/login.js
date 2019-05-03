@@ -16,8 +16,8 @@ export const iniciarSesion = () => {
        <button class='form btn-login font1' id='btn-login' type='submit'><span>INICIAR SESIÓN</span></button>
      </form>
      <div class='iconos'>
-       <button id='btn-google' class='form formGoogle font1'><i class="fab fa-facebook"></i><span> Ingresa con Google</span></button>
-       <button id='btn-facebook' class='form formFacebook font1'><i class="fab fa-google"></i><span> Ingresa con Facebook</span></button>
+       <button id='btn-google' class='form formGoogle font1'><i class="fab fa-google"></i><span> Ingresa con Google</span></button>
+       <button id='btn-facebook' class='form formFacebook font1'><i class="fab fa-facebook"></i><span> Ingresa con Facebook</span></button>
        <p id='btn-registrate' class='font1 text-final'>¿No tienes cuenta? Regístrate AQUI</p>
      </div>
     </div>
