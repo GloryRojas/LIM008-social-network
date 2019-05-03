@@ -96,7 +96,7 @@ fieldset{
 header{
   width: 100%;
   height: 50px; 
-  background:#7f0000;
+  background:#88A451;
   color: rgb(247, 241, 241);
   position: fixed;
   top: 0;
@@ -104,11 +104,13 @@ header{
   z-index: 100;
 }
 .bienvenido{
-  color: white;
+  color: #1F1F1E;
   padding: 5px;
-}
-h1{ 
   float: left;
+}
+.logo{
+  height: 50px;
+  width: 50px;
 }
 #btn-menu{
   display: none;
@@ -119,31 +121,28 @@ header label{
   margin: 6px 0;
   cursor: pointer;
 }
-.menu{
+.nav-menu{
   position: absolute;
   top: 50px;
   left: 0;
-  width: 100%;
-  height: 100vh;
-  background:rgba(150, 38, 38, 0.507);
+  width: 50%;
+  height: 150px;;
+  background: #FAAE3B;
   transition: all 0.5s;
   transform: translateX(-100%);
-  font-family: 'Dancing Script', cursive;
-  font-family: 'Merienda', cursive;
 }
-.menu a{
-  background-color:solid rgba(175, 42, 42, 0.445); 
+.nav-menu a{ 
   display: block;
-  color: #ffffff;
+  color: #1F1F1E;
   height: 50px;
   text-decoration: none;
   padding: 15px;
-  border-bottom: 1px solid rgba(163, 29, 29, 0.5);
+  border-bottom: 1px solid #1F1F1E;
 }
-.menu a :hover{
+.nav-menu a :hover{
   background:rgba(255,255,255,0.5);
 }
-#btn-menu:checked ~ .menu {
+#btn-menu:checked ~ .nav-menu {
   transform: translateX(0);
 }
 
@@ -153,19 +152,17 @@ header label{
   width: 70%;
   border-radius: 10px;
 }
-.formPost{
+.form-post{
   margin-top: 20px;
   padding: 20px;
   margin: auto;
   width: 70%;
   margin-top: 12%;
   border-radius: 10px;
-  font-family: 'Merienda', cursive;
 }
 .ingresar-post-aqui{
   margin: auto;
   width: 70%;
-  font-family: 'Merienda', cursive;
 }
 .info-post{
   background: rgba(221, 215, 215, 0.74);
@@ -173,8 +170,6 @@ header label{
   padding: 10px;
   margin-top: 25px;
   border-radius: 10px;
-  font-family: 'Dancing Script', cursive;
-  font-family: 'Merienda', cursive; 
 }
 .btn-like,.btn-eliminar,.btn-editar{
   width: 40px;
@@ -182,26 +177,23 @@ header label{
   padding: 0 5px;
   cursor: pointer;
 }
-#id-save,select{
+.publicar, select{
   border-radius: 5px;
-  background-color:#7f0000;
-  color: #ffffff;
+  background-color:#FAAE3B;
+  color: #1F1F1E;
+  font-weight: 900;
   border: none;
-  font-family: 'Dancing Script', cursive;
-  font-family: 'Merienda', cursive;
-}
-#id-save{
   width: 100px;
+  height: 30px;
 }
+
 .btn-editar,.btn-GuardarCambios{
   width: 60px;
   height: 30px;
   border-radius: 12px;
-  background-color:#7f0000;
+  background-color:#FAAE3B;
   color: #ffffff;
   border: none;
-  font-family: 'Dancing Script', cursive;
-  font-family: 'Merienda', cursive;
   }
 .btn-eliminar{
   background-image: url("img/garbage.png");
@@ -243,7 +235,7 @@ header label{
 /* MODO RESPONSIVE PC */
 @media (min-width:900px){
   /* Header*/
-    .menu{
+    .nav-menu{
       position: static;
       width:auto;
       height: auto;
@@ -251,7 +243,7 @@ header label{
       float: right;
       display: flex;
     }
-    .menu a{
+    .nav-menu a{
       border: none;
     }
     header label{
