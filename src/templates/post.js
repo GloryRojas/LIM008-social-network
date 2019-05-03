@@ -4,12 +4,12 @@ import { obtenerPost} from '../controller/publicacion.js';
 export const cargarPublicaciones = () => {
     const templatePublicaciones = document.createElement('div');
     const publicaciones = `
-        <section id="id_publicaciones" class="formPost" >
+        <section id="id_publicaciones" class="form-post font1" >
             <h3>Ingresa tus publicaciones!</h3><br>
             <p id="id-MensajeError"></p><br>
             <div class="text-boton-post">
                 <textarea id="id-publicacion" class="id-publicacion" cols="50" rows="5"  autofocus placeholder="Publica aquí" ></textarea>
-                <button id = "id-save">Publicar</button>
+                <button id = "id-save" class='font1 publicar'>Publicar</button>
             </div>
             <select id="id-privacidad">
                     <option value="Publico">Publico</option>
@@ -18,7 +18,7 @@ export const cargarPublicaciones = () => {
         </section>
         <section id="id_contenedor">
             <div>
-                <h3 class="ingresar-post-aqui">Publicaciones Generales</h3><br>
+                <h3 class="ingresar-post-aqui font1">Publicaciones Generales</h3><br>
                 <ul id="id-contenedorPublicaciones" class= "contenedor-publicaciones"></ul>
             </div>
         </section>
@@ -34,16 +34,16 @@ export const templateContenedorPost = (data)=>{
     let listPublicaciones = '';
     data.forEach((doc)=>{
         const contenedorPost = `
-        <div class="info-post">
+        <div class="info-post font1">
             <p id ="id-contenedorPost" class ="contenedor-post">${doc.autor}</p>
             <textarea id ="btn-${doc.id}" class ="contenedor-mensaje" readonly>${doc.mensaje}</textarea>
             <p id="id-mostrarPrivacidad">${doc.privacidad}</p>
             <p id ="id-fecha" class ="contenedor-post" >${doc.fecha}</p>
             <div>
-            <button type="button" id ="btnEditar-${doc.id}" class="btn-editar">Editar</button>
-            <button type="button" id ="btnEliminar-${doc.id}" class="btn-GuardarCambios">Guardar</button>
-            <img src="img/garbage.png" id ="${doc.id}" class="btn-eliminar" alt="elimininar">
-            <img src="img/like.png" id ="${doc.id}" class="btn-like" data-like=${doc.like} alt = "like">
+            <button type="button" id ="btnEditar-${doc.id}" class="btn-editar font1">Editar</button>
+            <button type="button" id ="btnEliminar-${doc.id}" class="btn-GuardarCambios font1">Guardar</button>
+            <img src="img/garbage.png" id ="${doc.id}" class="btn-eliminar font1" alt="elimininar">
+            <img src="img/like.png" id ="${doc.id}" class="btn-like font1" data-like=${doc.like} alt = "like">
             <label id="contenedor-like">${doc.like}</label>
             </div>
         </div>
