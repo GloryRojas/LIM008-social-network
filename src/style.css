@@ -256,10 +256,23 @@ header label{
     max-width: 100%;
     max-height: 90%;
   }
-  .iniciar-sesion{
-    margin: auto;
-    width: 90%;
-    max-width: 500px;
-    margin-top: 10%;
+  .posicion-login{
+    margin: 1% 0 1% 50%;
+  }
+  .posicion-register{
+    margin: 2% 45% 2% 10%;
+  }
+}
+/* MODO RESPONSIVE CELULAR */
+@media(max-width:540px){
+  .form{
+    max-width: 100%;
+    max-height: 90%;
+  }
+  .posicion-login{
+    margin: 1%;
+  }
+  .posicion-register{
+    margin: 1%;
   }
 }
