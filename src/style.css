@@ -1,16 +1,97 @@
-/* Estilos formulario login */
-@import url('https://fonts.googleapis.com/css?family=Dancing+Script|Merienda');
+@import url('https://fonts.googleapis.com/css?family=Muli|Roboto');
 *{
   margin:0;
   padding:0;
   box-sizing: border-box;
-  font-family: 'Merienda', cursive;
 }
-body{
-  font-family: 'open Sans',sans-serif;
+/*** Definiendo clases para fuentes ***/
+.font1 {
+  font-family: 'Roboto', sans-serif;
+}
+.font2 {
+  font-family: 'Muli', sans-serif;
+  font-size: 40px;
+}
+
+/**** Login ****/
+.login{
+  padding: 10px;
+  background-image: url(https://user-images.githubusercontent.com/45070947/56932406-4750b680-6aa9-11e9-8541-a132ea0e4e73.jpg);
+  background-position: center;
+  background-size: cover;
   background-attachment: fixed;
-  background-size: 100vw 100vh;
 }
+
+/*** Sign Up ***/
+.signup{
+  padding: 10px;
+  background-image: url(https://user-images.githubusercontent.com/45070947/56933500-bfb97680-6aad-11e9-88c3-f5a7e0635e3e.jpg);
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+/*** Formulario de inicio de sesion y registro ***/
+.form-login{
+  margin: auto;
+  max-width: 400px;
+  background: rgba(236, 228, 183, 0.74);
+  box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+  padding: 30px;
+  border-radius: 8px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+.posicion-login{
+  margin: 1% 0 1% 60%;
+}
+.posicion-register{
+  margin: 2% 55% 2% 10%;
+}
+fieldset{
+  border: none;
+}
+.cabecera-login{
+  font-size: 17px;
+  padding: 20px;
+}
+.logo-inicio{
+ width: 100px;
+ height: 100px;
+}
+.slogan{
+  width: 100%;
+  display: block;
+  position: relative;
+}
+.form {
+  display:block;
+  padding: 10px;
+  width: 100%;
+  margin: 15px 0;
+  font-size: 20px;
+  border: 0;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-bottom: 0; 
+  transform: scale(0.95);
+}
+.btn-login{
+  background-color: #FAAE3B;
+}
+.text-final{
+  margin: 10px;
+  text-decoration: underline; 
+}
+.error {
+  color: red;
+  text-align: center;
+}
+  /*Estilos de Posts*/
+.text-boton-post{
+  display: flex;
+}
+
 /*Estilo al header de la pantalla principal*/
 header{
   width: 100%;
@@ -65,105 +146,7 @@ header label{
 #btn-menu:checked ~ .menu {
   transform: translateX(0);
 }
-/*Inicio de sesion*/
-.iniciar-sesion{
-  margin: auto;
-  width: 70%;
-  max-width: 500px;
-  background: rgba(236, 228, 183, 0.74);
-  box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
-  background: rgba(236, 228, 183, 0.74);
-  box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
-  padding: 30px;
-  border-radius: 10px;
-  border: 1px solid rgba(0, 0, 0, 0.2);
-  margin-top: 6%;
-}
-.titulo-inicio{
-  text-align: center;
-  margin-bottom: 20px;
-  color: rgba(8, 0, 0, 0.897);
-}
-.cabecera-login{
-  font-size: 17px;
-  margin-left: 10%;
-  text-align: center;
-}
-.logo-inicio{
- width: 100px;
- height: 100px;
-}
-.titulo-inicio,.slogan{
-  width: 100%;
-  display: flex;
-  text-align: center;
-  position: relative;
-}
-.titulo-inicio{
-  margin-left: 30%;
-}
-.form,.btn-login,#btn-google,#btn-facebook, #btn-registrate{
-  display:block;
-  padding: 10px;
-  width: 100%;
-  margin: 15px 0;
-  font-size: 20px;
-  border: 0;
-  cursor: pointer;
-  border-radius: 15px;
-  margin-bottom: 0; 
-}
-.btn-login{
-  background-color:rgba(163, 29, 29, 0.74);
-}
-#btn-facebook{
-  background-color: #3B5998;
-}
-#btn-facebook{
-  background-color: #3B5998;
-  display: flex;
-  flex-direction: row;
-  justify-content:center;
-}
-#btn-google,#btn-facebook, #btn-registrate{
-  font-size: 15px;
-}
-.form,.btn-login,#btn-google,#btn-facebook, #btn-registrate:hover{
-  opacity: 1;
-}
-.form,.btn-login,#btn-google,#btn-facebook, #btn-registrate:active{
-  transform: scale(0.95);
-}
-.error {
-  color: red;
-  text-align: center;
-}
-  /*Estilos de registro*/
-.text-boton-post{
-  display: flex;
-  }
-.id-save{
-  width: 60px;
-  }
-.registrarse{
-  margin: auto;
-  width: 70%;
-  max-width: 500px;
-  background: rgba(236, 228, 183, 0.74);
-  box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
-  background: rgba(236, 228, 183, 0.74);
-  box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
-  padding: 30px;
-  border-radius: 10px;
-  border: 1px solid rgba(0, 0, 0, 0.2);
-  margin-top: 6%; 
-}
-.logo-registro{
-  margin: auto;
-  width: 100%;
-  max-width: 500px;
-  border-radius: 15px; 
-}
+
 /*Estilos contenido post*/
 .contenedor-publicaciones{
   margin: auto;

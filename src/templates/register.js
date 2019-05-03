@@ -3,22 +3,26 @@ import { registroConCorreoClick, cambiarHash } from '../view-controller.js';
 export const registrarCuenta = () => {
   const formularioRegistro = document.createElement('div');
   const formulario = `
-  <div class='registrarse'>
-    <img class='logo-registro' src='img/icono-registrar.png' alt=''>
-   <form id='form-registrar' class='form-registrar' action='index.html' method='post'>
-     <fieldset>
-       <span class='titulo-registrarse'>Regístrate con tu direccion de correo electronico</span>
-       <h4 id='error-registrarse' class='error'></h4>
-       <input class='form' type='text' name='nombres' placeholder='Nombres'>
-       <input class='form' type='text' name='correo' placeholder='Correo electrónico'>
-       <input class='form' type='password' name='contrasena' placeholder='Contraseña'>
-       <button class='btn-login' id='btn-register' type='submit'><span>REGISTRATE</span></button>
-     </fieldset>
-   </form>
-   <button class='btn-login' id='btn-iniciar' type='submit'><span>INICIA SESIÓN</span></button>
+  <div class='form-login posicion-register'>
+    <div class='cabecera-login'>
+      <img class='logo-inicio' src='https://user-images.githubusercontent.com/45070947/57118007-e7b30f00-6d25-11e9-8393-7fcd9d99e174.png' alt='logo'>
+      <h2 class='slogan font2'>SinSoroche</h2>
+      <span class='slogan font1'>Comparte tus viajes y experiencias</span>
+    </div>
+    <form id='form-registrar' class='form-registrar' action='index.html' method='post'>
+      <fieldset>
+        <span class='slogan font1'>Regístrate con tu direccion de correo electronico</span>
+        <h4 id='error-registrarse' class='error'></h4>
+        <input class='form font1' type='text' name='nombres' placeholder='Nombres'>
+        <input class='form font1' type='text' name='correo' placeholder='Correo electrónico'>
+        <input class='form font1' type='password' name='contrasena' placeholder='Contraseña'>
+        <button class='form font1 btn-login' id='btn-register' type='submit'><span>REGISTRATE</span></button>
+      </fieldset>
+    </form>
+    <p class='font1 text-final' id='btn-iniciar'>Volver a Inicio de sesión</p>
   </div>
   `;
-
+formularioRegistro.classList.add('signup');
 formularioRegistro.innerHTML = formulario;
 
 const subRegistrar = formularioRegistro.querySelector('#form-registrar');
