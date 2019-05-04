@@ -5,24 +5,20 @@ export const cargarPublicaciones = () => {
     const templatePublicaciones = document.createElement('div');
     const publicaciones = `
         <section id="id_publicaciones" class="form-post font1" >
-            <h3>Ingresa tus publicaciones!</h3><br>
-            <p id="id-MensajeError"></p><br>
-            <div class="text-boton-post">
-                <textarea id="id-publicacion" class="id-publicacion" cols="50" rows="5"  autofocus placeholder="Publica aquí" ></textarea>
-                <button id = "id-save" class='font1 publicar'>Publicar</button>
-            </div>
-            <select id="id-privacidad">
-                    <option value="Publico">Publico</option>
-                    <option value="Privado">Privado</option>
+            <h3>Crear Publicación!</h3>
+            <p id="id-MensajeError"></p>
+            <textarea id="id-publicacion" class="id-publicacion font1" cols="40" rows="5" autofocus placeholder="Cuéntanos tu última aventura!!" ></textarea>
+            <select id="id-privacidad" class='font1'>
+                <option value="Publico">Público</option>
+                <option value="Privado">Privado</option>
             </select>
+            <button id = "id-save" class='font1 publicar'>Publicar</button>
         </section>
         <section id="id_contenedor">
-            <div>
-                <h3 class="ingresar-post-aqui font1">Publicaciones Generales</h3><br>
-                <ul id="id-contenedorPublicaciones" class= "contenedor-publicaciones"></ul>
-            </div>
+            <ul id="id-contenedorPublicaciones" class= "form-post contenedor-publicaciones"></ul>
         </section>
     `;
+    templatePublicaciones.classList.add('publicar-post');
     templatePublicaciones.innerHTML=publicaciones;
     const btnGuardarPost = templatePublicaciones.querySelector('#id-save');
     btnGuardarPost.addEventListener('click',guardarConClick);
@@ -33,16 +29,17 @@ export const cargarPublicaciones = () => {
 export const templateContenedorPost = (data)=>{
     let listPublicaciones = '';
     data.forEach((doc)=>{
+        const fecha = doc.fecha;
+        const fechaMostrar = fecha.slice(0, fecha.lastIndexOf('G'));
         const contenedorPost = `
-        <div class="info-post font1">
+        <div class="info-post form-post font1">
             <p id ="id-contenedorPost" class ="contenedor-post">${doc.autor}</p>
+            <p id ="id-fecha" class ="contenedor-post" >${fechaMostrar}</p>
             <textarea id ="btn-${doc.id}" class ="contenedor-mensaje" readonly>${doc.mensaje}</textarea>
-            <p id="id-mostrarPrivacidad">${doc.privacidad}</p>
-            <p id ="id-fecha" class ="contenedor-post" >${doc.fecha}</p>
             <div>
             <button type="button" id ="btnEditar-${doc.id}" class="btn-editar font1">Editar</button>
             <button type="button" id ="btnEliminar-${doc.id}" class="btn-GuardarCambios font1">Guardar</button>
-            <img src="img/garbage.png" id ="${doc.id}" class="btn-eliminar font1" alt="elimininar">
+            <img src="img/garbage.png" id ="${doc.id}" class="btn-eliminar font1" alt="eliminar">
             <img src="img/like.png" id ="${doc.id}" class="btn-like font1" data-like=${doc.like} alt = "like">
             <label id="contenedor-like">${doc.like}</label>
             </div>

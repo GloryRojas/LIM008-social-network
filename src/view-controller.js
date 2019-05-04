@@ -135,7 +135,7 @@ export const guardarConClick = (event) => {
     event.preventDefault();
     const inputMensaje = document.getElementById("id-publicacion").value;
     if (inputMensaje === ""){
-        document.getElementById('id-MensajeError').innerHTML = "Para publicar es necesario que ingreses un texto";
+        document.getElementById('id-MensajeError').innerHTML = "Es necesario que ingreses un texto";
     }else{
         document.getElementById('id-MensajeError').innerHTML = "";
         const user = firebase.auth().currentUser;

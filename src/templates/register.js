@@ -6,7 +6,7 @@ export const registrarCuenta = () => {
   <div class='form-login posicion-register'>
     <div class='cabecera-login'>
       <img class='logo-inicio' src='https://user-images.githubusercontent.com/45070947/57118007-e7b30f00-6d25-11e9-8393-7fcd9d99e174.png' alt='logo'>
-      <h2 class='slogan font2'>SinSoroche</h2>
+      <h2 class='slogan font2'>FOREIGN</h2>
       <span class='slogan font1'>Comparte tus viajes y experiencias</span>
     </div>
     <form id='form-registrar' class='form-registrar' action='index.html' method='post'>
